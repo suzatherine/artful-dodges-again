@@ -1,0 +1,1211 @@
+:: StoryTitle
+The Artful Dodges Again
+
+
+:: StoryData
+{
+	"ifid": "F9E39354-F641-4070-8B45-C312A3FDC8C2",
+	"format": "SugarCube",
+	"format-version": "2.36.1",
+	"start": "landing",
+	"zoom": 0.3
+}
+
+
+:: Story Stylesheet [stylesheet]
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+
+/* GENERICS */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* Mostly equivalates to 10px but allows users accessibility zoom settings to work*/
+  /* font-size: 10px; */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  font-size: 10px;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Try to keep your margins going in one direction to avoid margin collapase or grounding. I switch all the top margins off to avoid this issue. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+blockquote,
+address,
+article,
+aside,
+details,
+dialogue,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+header,
+hr,
+main,
+nav,
+pre,
+section,
+table,
+p {
+  margin-top: 0;
+  margin-block-start: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  /* You MUST make sure that links stand out from nomal text though...*/
+}
+
+
+img {
+  /* This means that it can be less than 100% of the width of its parent IF the image is INTRINSICALLY smaller */
+  max-width: 100%;
+
+  height: auto;
+  /* 'auto' is the initial value for height BUT for images (and other elements which have an intrinic height) that is not the case. To make an image responsive you set one dimension (usually width) to [max-]width: 100%; and the other to 'auto' to ensure it keeps aspect ratio. 'auto' basically tells the browser to decide. */
+  vertical-align: middle;
+  /* minor vertical centering. Works for images IF there is a baseline (i.e. they are displayed inline or inline-block) */
+}
+
+/* Because we us <ul>s for lists that we don't always want bulletted. */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* To make actual bulletted lists */
+ul.typographic {
+  list-style: initial;
+  padding-inline-start: 20px;
+}
+
+/* stops icons being the target of JS click events */
+a.btn *,
+button * {
+  pointer-events: null;
+}
+
+/* For 'accessibility text'. If your button only has an image inside it that isn't good for accessibility. Put a span inside there and give it this class and put some descriptive text for what the button does into the span. */
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: auto;
+  -webkit-clip-path: auto;
+  white-space: normal;
+}
+
+/* GET RID OF TWINE STYLES */
+#story{
+  margin:0
+}
+
+#passages {
+	max-width: 100%;
+
+}
+
+#story a.link-external:after {
+	content: "";
+}
+
+button{
+    background-color: transparent;
+    border: #fff 1px solid;
+    border-radius: 3px;
+}
+
+button:hover{
+	background-color:#cf1b98;
+	border: #fff 1px solid;
+	color: #fff;
+}
+
+a {
+  color: #f2647d;
+}
+
+a:active {
+  background-color: #f2647d;
+}
+
+a:hover {
+  color: #fff;
+}
+
+#story a.link-external:after {
+	content: "";
+}
+
+#story {
+	margin: 0
+}
+
+/* GENERAL STYLES */
+body{
+  font-size: 1.6rem;
+  font-family: "Space Grotesk";
+  overflow:scroll;
+  background:#000;
+  /* padding: 1.5rem */
+  display:flex;
+  flex-direction: column
+}
+
+header{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+    padding: 2rem
+}
+
+main{
+   padding: 2rem;
+   margin-block-end: 4rem
+}
+
+footer{
+   display:flex;
+  justify-content: space-between;
+  align-items: flex-end; 
+  position:fixed;
+  bottom: 0;
+  padding: 2rem;
+  width: 100%;
+  background-color: #000
+}
+
+nav{
+  display:flex;
+    justify-content: space-between;
+}
+
+.nav-wrapper{
+display:flex;
+  flex-direction:column;
+align-items: flex-start
+}
+
+.nav-wrapper:last-child{
+align-items: flex-end
+}
+
+.nav-item{
+  margin-block-end: 1.5rem
+}
+
+.nav-item:last-child{
+  margin-block-end: 0
+}
+
+
+.nav-wrapper:last-child{
+display:flex;
+align-items: flex-end
+}
+
+.menu-wrapper{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-wrapper > button{
+margin-inline-end: 10px;
+margin-block-end: 10px
+}
+
+.door-container{
+  display:flex;
+  flex-direction: row;
+justify-content: space-around;
+  align-items:center;
+  text-align: right;
+}
+
+.door-item{
+  display:flex;
+  flex-direction:column
+}
+
+.door-item > button > img {
+  max-width: 7rem
+}
+
+.door-item > span {
+  text-align: center
+}
+
+textarea{
+  min-width: 60vw
+}
+
+.wordcontainer{
+  display:flex;
+  flex-direction: row;
+}
+
+.letter-item > input[type=text]{
+    min-width: 2em;
+  	max-width: 2em;
+  	margin-inline-end:10px;
+}
+
+.letter-item > .correct-letter{
+  min-width: 2em;
+  	max-width: 2em;
+  	margin-inline-end:10px;
+}
+
+/* MAP */
+	.map{
+width: 100%;
+    height: 60vh;
+    border: 0;
+    margin: auto;
+    }
+
+
+.directions-card {
+    display: none!important
+}
+
+@media screen and (min-width: 450px) {
+.map{
+	max-width:60vw;
+	height:50vh;
+	border:0
+}
+}
+
+
+:: Story JavaScript [script]
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove();
+// TYPEWRITER FN
+!function() {
+    postrender.typewriter = function (b) {
+        if (this.tags) {
+            var r = new RegExp("t8n.typewriter.([0-9]+)(?:[^0-9]|$)","g");
+            var t = r.exec(this.tags.toString());
+            if (t) {
+                typeout(b, t[1]+0);
+            }
+        }
+        return b;
+    };
+    var typeout = function(c,t) {
+        var Furl = function(current) {
+            this.n = current;
+            this.out = false;
+            this.data = current.nodeValue;
+            current.nodeValue = "";
+            this.kids = [];
+            var cn = current.childNodes;
+            if (current.style && current.style.display=="none") {
+                return;
+            }
+            while (cn.length>0) {
+                var f = new Furl(cn[0]);
+                current.removeChild(cn[0]);
+                f.out = true;this.kids.push(f);
+            }
+        };
+        var nodes = new Furl(c);
+        var unfurl = function(furled,d) {
+            var n = furled.n;
+            if (furled.out) {
+                d.appendChild(n);
+                furled.out = false;
+            }
+            if (furled.data) {
+                n.nodeValue += furled.data[0];
+                furled.data = furled.data.slice(1);
+                return true;
+            }
+            for (var j=0; j<furled.kids.length; j++) {
+                var ret = unfurl(furled.kids[j],n);
+                if (ret) {
+                    return true;
+                }
+            }
+            return false;
+        };
+        var title = passage();
+        var intr = setInterval (
+            function() {
+                if (passage() == title && unfurl(nodes,null)) {
+                    return;
+                }
+                clearInterval(intr);
+            }
+        ,t);
+    };
+}();
+
+// MAKE MAP FUNCTION
+
+setup.generateDirectionsMap = function (latorg, longorg, latdest, longdest){
+const iFrame = document.createElement("iframe")
+iFrame.classList.add("map")
+iFrame.setAttribute("loading", "lazy")
+iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
+// iFrame.setAttribute("allowfullscreen")
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${latorg},${longorg}&zoom=17&origin=${latorg},${longorg}&destination=${latdest},${longdest}&mode=walking`)
+const mount = document.getElementById("mapMount")
+console.log(iFrame)
+return iFrame
+// this.mapMount.appendChild(iFrame)
+}
+
+//Get random 5 letter word
+
+setup.generate5LetterCode = () => {
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+let word = ""
+for (let i =0 ; i < 5 ; i++){
+word += alphabet[Math.round((alphabet.length-1)*Math.random())];
+}
+  return word;
+}
+
+
+:: StoryInit {"position":"100,100","size":"100,100"}
+<<cacheaudio "badjoke" "https://youhavefoundconey.net/CG/what/assets/audio/badjoke.mp3">>
+<<waitforaudio>>
+
+
+
+:: header {"position":"100,225","size":"100,100"}
+<header>The Artful Dodges Again</header>
+
+
+:: footer {"position":"100,350","size":"100,100"}
+<footer><div class="nav-wrapper "><div class="nav-item"><<button "Replay">><<goto $passage>><</button>> </div><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "I'm lost">><<goto "lost">><</button>></div></div></footer>
+
+
+:: landing {"position":"375,150","size":"100,100"}
+<<set $passage to "landing">>
+<<include "header">>
+<main>
+landing page
+
+<<button "begin">><<set $prevpass to $passage>><<goto "ADA-05">><</button>>
+</main>
+<<include "footer">>
+
+
+:: lost {"position":"100,500","size":"100,100"}
+<<set $passage to "lost">>
+<<include "header">>
+<main>
+Sorry to hear that you're lost! 
+You have two options:
+
+<<button "Begin the adventure again">><<goto "landing">><</button>>
+
+<<button "Take me straight to the end location!">><<goto "end">><</button>>
+</main>
+<<include "footer">>
+
+
+:: ADA-05 {"position":"600,400","size":"100,100"}
+<<set $passage to "ADA-05">>
+<<include "header">>
+<main>
+/* SFX - Some hustle and bustle. Sounds of London, not necessarily 19th century and not necessarily 21st either but busy, bustling, everyone on the make. */
+JACK:
+  <div id="captions"><<type 70ms >>Hullo my covey
+ <</type>></div>
+<<timed 3s>><<replace "#captions">><<type 70ms >>Oi fam!<</type>>
+<</replace>><</timed>> 
+<<timed 5s>><<replace "#captions">><<type 70ms >>Over ‘ere<</type>>
+<</replace>><</timed>> 
+<<timed 7s>><<replace "#captions">><<type 70ms >>My eyes, you’re all over the place.
+You must be green.<</type>><</replace>><</timed>> 
+<<timed 11s>><<replace "#captions">><<type 70ms >>You’re facing that Royal Exchange,right? It’s closed today, which is lucky because I’m banned, innit. On the gates there are two ladies. The posh sort, you know what I mean?<</type>><</replace>><</timed>> 
+<<timed 16s>>But not the posh sort that call the
+ol’ Bill soon as look at a young gentleman such as myself.
+
+Now turn around. You’ll see a
+camera. Down from there. That’s where I am.
+
+You can’t see me yet, I know. But I
+am there and I can see you.
+
+Now I did say this was an adventure
+for my own sort. That’s to say what you might call...children. I don’t like to use that word though. Whenever you say you’re a child, people tell you about all the things you’re not allowed to do. And I don’t like being told I can’t do things.
+
+So while I may be a child
+(technically speaking that is), I’m also my own man.
+
+Best of both worlds, you might say.
+
+So what are you? And before you
+answer, this adventure’s for grown ups and children so if you’re all grown ups, choose the youngest ones to be the children. And if you’re all children, the biggest can pretend to be grown-ups for the day. Either way, we want an even split.
+
+Work that out amongst yourselves if
+you must. And then tell me which one you are.<</timed>>
+
+<<timed 20s>>
+<<button "A child">><<set $prevpass to $passage>><<set $age to "child">><<goto "ADA-06C">><</button>>
+<<button "A grown up">><<set $prevpass to $passage>><<set $age to "adult">><<goto "ADA-06A">><</button>>
+<<button "Both (sharing a screen)">><<set $prevpass to $passage>><<set $age to "both">><<goto "ADA-06B">><</button>>
+<</timed>>
+</main>
+<<include "footer">>
+
+
+:: ADA-06C {"position":"800,400","size":"100,100"}
+<<set $passage to "ADA-06C">>
+<<include "header">>
+<main>Don’t you fret your eyelids, pal.
+We’ll have a fine ol’ time together. This City’s not as scary as it looks. Stick with me and you’ll be right as rain.
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 10s>><<set $prevpass to $passage>><<goto "AC-07">><</timed>>
+</main>
+<<include "footer">>
+
+:: ADA-06A {"position":"800,400","size":"100,100"}
+<<set $passage to "ADA-06C">>
+<<include "header">>
+<main>One o’ them. Alright, alright. Well I’ll allow you since you’re here to look after your own and you wouldn’t want to entrust them to me, I don’t suppose.
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 10s>><<set $prevpass to $passage>><<goto "AC-07">><</timed>>
+</main>
+<<include "footer">>
+
+
+:: ADA-06B {"position":"800,400","size":"100,100"}
+<<set $passage to "ADA-06C">>
+<<include "header">>
+<main>In that case, I’ll tell you both the instructions. But you’d best be putting your fingers in your ears or covering up your eyes when it doesn’t apply to you. Don’t worry, I trust ya.
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 10s>><<set $prevpass to $passage>><<goto "AC-07">><</timed>>
+</main>
+<<include "footer">>
+
+:: ADA-07 {"position":"1000,400","size":"100,100"}
+<<set $passage to "ADA-07">>
+<<include "header">>
+<main>
+Now we got that outta the way,
+let’s get going. Cross over first to where I am. Make sure you’re standing under the cameras so I can talk to you. I can’t risk getting seen by those things. Not when there’s a price on my head, know what I mean? Let me know when you’re across.
+
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+<<timed 5s>><<button "I'm here">><<set $prevpass to $passage>><<goto "ADA-08">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+
+:: ADA-08 {"position":"1200,400","size":"100,100"}
+<<set $passage to "AC-08">><<set $nextpass to "">>
+<<include "header">>
+<main>
+Pleased to make your acquaintance I’m sure. Jack Dawkins is the name. Though you may know me better as The Artful Dodger.
+
+Now before we move on. There are a
+couple of things I wanna say about Mr Charles Dickens and his descriptions of me in what is otherwise a very fine book, Oliver Twist, about my posh mate Olly.
+
+There are some inaccuracies.
+
+/* sounds of him flicking through the book to the right page) */
+
+Didn’t think I could read, did he?
+
+“Short of his age”. Average for my time, I’ll have you know.
+
+“Bow legs”! Perfectly regular legs as you can see!
+
+And this is real kicker: “little...sharp...ugly eyes”
+
+I ask you! 
+
+Now I don’t wanna get personal but Charlie himself looked like a dustpan ‘n’ brush. Calling another man “ugly” saying that my eyes are “little”. Of course they’re little! I’m little! They’re in proportion!
+
+/* Jack takes a deep breath. */
+
+Alright then. That’s just something I’ve wanted to get off my chest for about two hundred years.
+
+Thank you kindly for the opportunity.
+
+Today, I’mma show you the City of London.
+
+Now some people look at a city like this and they think it’s the dirtiest and most wretched place that they’ve ever seen. That the streets are narrow and muddy and the air is pregnant with filthy odours.
+
+Now I’m not saying that’s not true.
+If you’re being all literal but these people: they lack imagination. They don’t have their own inner world. Not like children do.
+
+To me, this place is a playground.
+
+And that’s I’m gonna show you.
+
+Are you ready for the first game?
+
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+<<timed 10s>>
+<<button "Let’s go">><<set $prevpass to $passage>><<goto "ADA-09">><</button>>
+<<button "Let’s double go">><<set $prevpass to $passage>><<goto "ADA-09">><</button>>
+<</timed>>
+</main>
+<<include "footer">>
+
+
+:: ADA-09 {"position":"1400,400","size":"100,100"}
+<<set $passage to "AC-09">>
+<<include "header">>
+<main>
+<<type 70ms >>That’s what I like to hear.<</type>>
+
+<<timed 5s>><<set $prevpass to $passage>>
+<<switch $age>>
+<<case "child">>
+  <<goto "ADA-10C">>
+<<case "adult">>
+  <<goto "ADA-10A">>
+<<case "both">>
+	  <<goto "ADA-10B">>
+<</switch>>
+<</timed>>
+</main>
+<<include "footer">>
+
+
+:: ADA-10A {"position":"600,900","size":"100,100"}
+<<set $passage to "ADA-10A">>
+<<include "header">>
+<main>
+For this game all you have to do is walk. That’s it. Simple as.
+
+This here’s the Bank of England.
+Imagine the riches in there. They wouldn’t let someone like me in though. And they’re right. Because I’d nick stuff. It’s just what I’m like.
+
+It’s the weekend so we can’t go inside any case. Walk round the corner to Bartholomew Lane. Don’t cross the street because we don’t want to worry about cars.
+
+Keep going and don’t worry about your little ones. Not like me to lead them astray or nothing.
+
+Let me know when you get to Lothbury.
+
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+
+<<timed 10s>><<button "I'm at the corner of Lothbury and Bartholomew Lane">><<set $prevpass to $passage>><<goto "ADA-11A">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+
+:: ADA-11A {"position":"800,900","size":"100,100"}
+<<set $passage to "ADA-11A">>
+<<include "header">>
+<main>
+You done well so far. Reckon you’ve worked out what the game is by now?
+
+Well if you have, maybe try to play along. Do a silly walk. Start hopping. Or whatever you like. Let them know that you know they’re copying you.
+
+Have some fun with it! Go on. Let’s keep playing until you get to the corner of Tokenhouse Yard.
+
+Let me know when you get there.
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+<<timed 5s>><<button "I'm at the corner of Tokenhouse Yard">><<set $prevpass to $passage>><<goto "ADA-15">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+:: ADA-10C {"position":"600,900","size":"100,100"}
+<<set $passage to "ADA-10C">>
+<<include "header">>
+<main>
+These grown ups are going to start walking, just walking without a clue what’s going on. What we’re going to do is imitate them. To begin with, better to start imitating the grown ups you came here with: your parent, your sibling or maybe you’re like me and you got a Fagin, I don’t know.
+
+Start with them though. If there are others around though and you want to do a swap with another child, do that. Make sure they agree though.
+
+People don’t always like it when they see someone copying their mum. Trust me on that!
+
+I’ve told the grown ups where to go but all we’re doing is going round the corner onto a street called Bartholomew Lane. Stay on this pavement, don’t cross the road. Wouldn’t want you getting lost. When you get to the end of the street, where it turns onto a street called Lothbury, let me know on here.
+
+Now let’s go!
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+<<timed 5s>><<button "I'm at the corner">><<set $prevpass to $passage>><<goto "ADA-11C">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+:: ADA-11C {"position":"600,900","size":"100,100"}
+<<set $passage to "ADA-11C">>
+<<include "header">>
+<main>
+Nicely done, my covey, nicely done.
+
+Now they’re in on the game so they’re gonna start making it harder for you. Chuck a few trick moves in to throw you off. But don’t worry. I know you can take anything they have up their sleeves! We’ll keep going down this street to the corner of Tokenhouse Yard. Have fun and let me know when you get there.
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+
+<<timed 5s>><<button "I'm here">><<set $prevpass to $passage>><<goto "ADA-15">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+:: ADA-10B {"position":"600,900","size":"100,100"}
+<<set $passage to "ADA-10B">>
+<<include "header">>
+<main>
+For this game, all the grown-ups have to do is walk. We’ll go round the corner here on Bartholomew Lane, all the way to the corner with Lothbury. But before you start walking, pass me over to the children because I have a message for them...
+
+Make sure they can’t see or hear
+me...
+
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+
+<<timed 5s>><<button "Okay">><<set $prevpass to $passage>><<goto "ADA-11B">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+:: ADA-11B {"position":"800,900","size":"100,100"}
+<<set $passage to "ADA-11B">>
+<<include "header">>
+<main>
+Okay children what you’re going to do is copy how they walk! To begin with, better to start imitating the grown ups you came here with: your parent, your sibling or maybe you’re like me and you got a Fagin, I don’t know.
+
+Start with them. If there are others around though and you want to do a swap with another child, do that. Make sure they agree though.
+
+People don’t always like it when they see someone copying their mum. Trust me on that!
+
+This here’s the Bank of England.
+Imagine the riches in there. They wouldn’t let someone like me in though. And they’re right. Because I’d nick stuff. It’s just what I’m like.
+
+It’s the weekend so we can’t go inside any case.
+
+The grown-ups should stop at the corner of Lothbury. If they don’t, shout at them!
+
+When you’re there, let me know.
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+<<timed 5s>><<button "at the corner of Lothbury and Bartholomew Lane">><<set $prevpass to $passage>><<goto "ADA-12B">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+:: ADA-12B {"position":"800,900","size":"100,100"}
+<<set $passage to "ADA-12B">><<include "header">>
+<main>
+
+<<type 70ms >>Okay, you can give the screen back
+to the grown up now.<</type>>
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+<<timed 5s>><<button "Okay">><<set $prevpass to $passage>><<goto "ADA-13B">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+:: ADA-13B {"position":"800,900","size":"100,100"}
+<<set $passage to "ADA-13B">><<include "header">>
+<main>
+Hullo again! Good effort so far.
+Reckon you’ve worked out what the game is by now?
+
+Well if you have, maybe try to play along. Do a silly walk. Start hopping. Or whatever you like. Let them know that you know they’re copying you.
+
+Have some fun with it! Go on. Let’s keep playing until you get to the corner of Tokenhouse Yard.
+
+Now pass the screen back to the children
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+<<timed 5s>><<button "Okay">><<set $prevpass to $passage>><<goto "ADA-14B">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+:: ADA-14B {"position":"800,900","size":"100,100"}
+<<set $passage to "ADA-14B">><<include "header">>
+<main>
+They’re in on the game now. So they might try to make it harder for you. But don’t worry, I know you can do it. We’re going to the corner of Tokenhouse Yard. Let me know when you get there.
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+<<timed 5s>><<button "I'm at the corner of Tokenhouse Yard">><<set $prevpass to $passage>><<goto "ADA-15">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+:: ADA-15 {"position":"800,900","size":"100,100"}
+<<set $passage to "ADA-15">><<include "header">>
+<main>
+There you are. After carefully considering my personal, extremely complex scoring system, I can confidently say that the adults scored a grand total of 672 points in that game
+
+But the children are the winners with 3,793 points!
+
+Don’t give up hope, adults, though.
+There’s everything to play for in the next round.
+
+Also if anyone does fancy buying a watch, come find me after. Totally kosher, don’t you worry, son.
+
+Are we ready for the next game?
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+<<timed 5s>>
+<<button "I'm ready">><<set $prevpass to $passage>><<goto "ADA-16">><</button>>
+<<button "Let’s go!">><<set $prevpass to $passage>><<goto "ADA-16">><</button>>
+<</timed>>
+</main>
+<<include "footer">>
+
+
+:: ADA-16 {"position":"600,1300","size":"100,100"}
+<<set $passage to "ADA-16">>
+<<include "header">>
+<main>
+Well let’s not dawdle then. Fix up, look sharp.
+
+C’mon. Let’s go into Tokenhouse Yard.
+
+Keep going along here.
+
+ Until you get to a dead end.
+
+When you’re there, choose one of you to start as grandma.
+
+You know this game, don’t you?
+
+Grandma’s Footsteps. Whoever’s grandma goes over there and stands
+facing the wall next to number 11.
+
+Everyone else starts on side of the bollards up the door to the other ‘ere.
+
+You all try to reach grandma and pick her pocket - I mean - tap her on the shoulder. What am I like? Always confusing those two.
+
+If grandma turns around, everyone has to freeze. If grandma sees any movement at all, you’re out.
+
+If you do tap grandma on the shoulder, you win that round and you become grandma.
+
+If you’re standing or walking behind the bollards, you’re not part of the game.
+
+If you see folk what want to join in, just catch them up on the rules or tell them to listen to me.
+
+Play as many round as you fancy and when you’re ready to go, just let me know.
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+<<timed 10s>><<set $prevpass to $passage>>
+<<switch $age>>
+<<case "child" "both">>
+  <<goto "ADA-17B">>
+<<case "adult">>
+  <<goto "ADA-10A">>
+<</switch>>
+<</timed>>
+</main>
+<<include "footer">>
+
+
+:: ADA-17B {"position":"800,1300","size":"100,100"}
+<<set $passage to "ADA-17B">>
+<<include "header">>
+<main>Make sure you get the adults to
+play this too. They’ll be really bad at it and fall over and we can all laugh at them. Ha!
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+
+<<timed 5s>><<button "Let’s keep going, Jack">><<set $prevpass to $passage>><<goto "ADA-18">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+:: ADA-17A {"position":"800,1300","size":"100,100"}
+<<set $passage to "ADA-17A">>
+<<include "header">>
+<main>You’ve got to play too. Don’t think
+this is just for the children!
+/* TODO NEEDS TO SHOW AFTER THE TEXT */
+
+<<timed 5s>><<button "Let’s keep going, Jack">><<set $prevpass to $passage>><<goto "ADA-18">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+:: ADA-18 {"position":"1200,1300","size":"100,100"}
+<<set $passage to "ADA-18">><<set $myMap = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>>
+<<include "header">>
+<main>
+Well played all. I’ve added up the scores and that’s...
+
+Yes, that’s right. It’s 473 points for the adults but the children are still in the lead with...
+
+One million points!
+
+Hurrah!
+
+Don’t worry though, adults, the last game is where the real points are. There’s ooooh 16 million points up for grabs in that one, I reckon.
+
+Let’s go and find out. Through this tunnel. Yeah, that’s the one, toward the Dover Harbour, you know: Barber!
+
+Go all the way through until you get to Telegraph Street.
+
+We’ll play a game in here too.
+
+On Telegraph Street, make sure you’re heading left. Then look
+under your feat.
+
+We’re going to play: don’t step on the cracks. Just as far as the bollards there. This street is pretty easy so we can all play it. No points for this. Like a trial run. Off you go and let me know when you’re at the bollards.
+
+You know what a telegraph is, don’t you? It’s some way that I can tell you something through symbols. Don’t matter if it’s flags or needles pointing to letters of the alphabet. Or some other way you have of using symbols. As it happens, the year of the events described by Mr Charles Dickens, unfortunate for some (my dear Nancy) and fortunate for others (that lucky little so-and-so Oliver), that was the same year the first telegraph was invented. 1837. Not in London, as it happens. On the Liverpool-Manchester railway. So they could communicate at a distance. And now look at you. Communicating at a distance all the time. That’s when it all started you might say.
+
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 5s>>$myMap<</timed>>
+<<timed 15s>><<button "I'm at the bollards">><<set $prevpass to $passage>><<goto "ADA-19">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+
+:: ADA-19 {"position":"1400,1300","size":"100,100"}
+<<set $passage to "ADA-19">><<set $nextpass to "">><<set $myMap2 = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>>
+<<include "header">>
+<main>
+Nicely done, my covey, nicely done.
+Now hop across Moorgate, watching out for carriages, to Great Bell Alley.
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 5s>>$myMap2<</timed>>
+<<timed 15s>><<button "I’m at Great Bell Alley">><<set $prevpass to $passage>><<goto "ADA-20">><</button>><</timed>>
+</main>
+<<include "footer">>
+
+
+:: ADA-20 {"position":"600,1700","size":"100,100"}
+<<set $passage to "ADA-20">><<set $myMap3 = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>>
+<<include "header">>
+<main>
+Okay, this time, it’s only the grown ups who have to avoid the cracks. Children, it’s your job to stop them succeeding. So find any way you can to get in their way. Don’t push them over or trip them though. That’s a foul.
+
+Any adult who touches a crack ten points deducted from the adults. And don’t think I can’t see you. I see everything!
+
+Now off you go and let me know when you’re at the end of the Alley at Coleman Street.
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 5s>>$myMap3<</timed>>
+<<timed 15s>><<button "I’m at the end of Great Bell Alley">><<set $prevpass to $passage>><<goto "ADA-21">><</button>><</timed>>
+  
+</main>
+<<include "footer">>
+
+
+:: ADA-21 {"position":"800,1700","size":"100,100"}
+<<set $passage to "ADA-21">><<set $myMap4 = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>><<include "header">>
+<main>
+So you are! Let’s see.
+
+Looks like that’s minus 700 points for the grown ups. Oooh gonna be hard to catch up now but never fear. You have a chance to get revenge!
+
+Cross Coleman Street to Mason’s Avenue first though.
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 5s>>$myMap4<</timed>>
+<<timed 15s>><<button "I'm at Masons Avenue">><<set $prevpass to $passage>><<goto "ADA-22">><</button>><</timed>>
+  
+</main>
+<<include "footer">>
+
+
+:: ADA-22 {"position":"1000,1700","size":"100,100"}
+<<set $passage to "ADA-22">><<include "header">><<set $myMap5 = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>>
+<main>
+ Good. Alright then. Because children are much better at this game than grown-ups and we have smaller feet, I’ve chosen Mason’s Avenue for the children because it’s advanced level Pavement Crack Avoiding.
+
+Same rules apply. Grown ups, do what you can to make the children step on the cracks. No pushing or tripping. That’s a foul and I’ll deduct 500 points for that.
+
+Otherwise, any crack stepped on is minus 10 points.
+
+Good luck! 
+
+There’s Old Dr Butler’s Head to the left. It’s the name of a pub, not his actual ‘ead!
+
+Dr Butler lived before my time even. I’m not sure you’d call him a “doctor” anymore. He had a lot of them “miracle cures”. One of them, the best one, I reckon, could only take place on London Bridge. The patient’d get there and Dr Butler would tell them exactly where to stand. When they were in position, he’d pull a lever and open a trapdoor underneath them and they’d fall straight down into the Thames!
+
+Reckon whatever illness they had was the least of their worries after that!
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 5s>>$myMap5<</timed>>
+<<timed 15s>><<button "At the end of Mason’s Avenue">><<set $prevpass to $passage>><<goto "ADA-23">><</button>><</timed>>
+  
+</main>
+<<include "footer">>
+
+
+:: ADA-23 {"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-23">><<include "header">>
+<main>
+I knew that! Let me just work out those scores...
+
+That’s one crack stepped on by the children so minus 10 for them. An almost flawless performance and a foul committed by the grown ups so they lose 500 points.
+
+Bad day to be grown up, it would seem!
+
+Still plenty to play for though, plenty to play for!
+
+Let’s cross Basinghall Street next.
+There’s the Guildhall. Now...if you haven’t been you should take a look around the Guildhall but not now. There was an incident that involved a misunderstanding where I was innocently wanting to borrow an item but my motives were misinterpreted, you know what I mean?
+
+Anyway, I wouldn’t say I’m banned exactly. Just that it’s best I stay away from it!
+
+So take a right here.
+
+Now, adults, I don’t want to be encouraging you to try to leap over those bollards but if any of you could do it... I bet your children would be impressed...
+
+No pressure. I’ll give a moment.
+
+/* Enough time for some of the adults to try to leap over the bollards. */
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 10s>><<set $prevpass to $passage>><<goto "ADA-24">><</timed>>
+  
+</main>
+<<include "footer">>
+
+:: ADA-24 {"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-24">><<include "header">>
+<main>
+I knew that! Let me just work out those scores...
+
+That’s one crack stepped on by the children so minus 10 for them. An almost flawless performance and a foul committed by the grown ups so they lose 500 points.
+
+Bad day to be grown up, it would seem!
+
+Still plenty to play for though, plenty to play for!
+
+Let’s cross Basinghall Street next.
+There’s the Guildhall. Now...if you haven’t been you should take a look around the Guildhall but not now. There was an incident that involved a misunderstanding where I was innocently wanting to borrow an item but my motives were misinterpreted, you know what I mean?
+
+Anyway, I wouldn’t say I’m banned exactly. Just that it’s best I stay away from it!
+
+So take a right here.
+
+Now, adults, I don’t want to be encouraging you to try to leap over those bollards but if any of you could do it... I bet your children would be impressed...
+
+No pressure. I’ll give a moment.
+
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 8s>><<set $prevpass to $passage>>
+<<switch $age>>
+<<case "child">>
+  <<goto "ADA-24C">>
+<<case "adult" "both">>
+  <<goto "ADA-24B">>
+<</switch>>
+<</timed>>
+  
+</main>
+<<include "footer">>
+
+:: ADA-24C {"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-24C">><<include "header">>
+<main>
+When I'm done scoring the grown ups, <<button "Let's move on">><<set $prevpass to $passage>><<goto "ADA-26">><</button>>  
+</main>
+<<include "footer">>
+
+:: ADA-24B {"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-24C">><<include "header">>
+<main>
+Now, be honest. Did you leap over one?
+<<button "Yes, I did">><<goto "ADA-25B-Y">><</button>>
+<<button "No, I failed">><<goto "ADA-25B-N">><</button>>
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 8s>><<set $prevpass to $passage>>
+  <<goto "ADA-24C">>
+<</timed>>
+  
+</main>
+<<include "footer">>
+
+:: ADA-25B-Y {"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-25B-Y">><<include "header">>
+<main>
+Nice work! I believe you, I’m a trusting fella. You can get an extra 10 points. How about that? Every point counts.
+<<timed 5s>><<set $prevpass to $passage>><<goto "ADA-26">><</timed>>
+
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+
+  
+</main>
+<<include "footer">>
+
+:: ADA-25B-N {"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-25B-N">><<include "header">>
+<main>
+Yeah, it’s not easy. Maybe if you have some really tall and athletic friends, you can bring them and get them to do it!
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 8s>><<button "Lets move on">><<set $prevpass to $passage>>
+  <<goto "ADA-26">><</button>>
+<</timed>>
+  
+</main>
+<<include "footer">>
+
+:: ADA-26{"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-26">><<include "header">><<set $myMap6 = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>>
+<main>
+Go towards that fountain to Aldermanbury.
+
+Lucky it’s a Saturday because the Aldermen are always on my case!
+
+Don’t bother tryin’ to nick that statue. It’s miles too heavy.
+
+Not far from the last game now.
+Cross Aldermanbury and make your down Love Lane, going either side of the garden here, to Wood Street.
+
+The tree’s not too solid. Wouldn’t suggest trying to climb it. I got the wounds still from last time I tried.
+
+Now, cross Wood Street to St Albans Court.
+<<timed 5s>>$myMap6<</timed>>
+<<timed 15s>><<button "I’m across">><<set $prevpass to $passage>><<goto "ADA-27">><</button>><</timed>>
+  
+</main>
+<<include "footer">>
+
+:: ADA-27{"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-27">><<include "header">>
+<main>
+Narrow ol’ alley this one. Before I was reformed an’ all, it’d be perfect for stealing some ol’ gentleman’s purse, I reckon.
+
+Beat to give them time to get to end of passageway.
+
+When you’re out of there, you should see a grassy area under a big tree. That’s where we’ll play the final game.
+
+See it?
+
+<<timed 15s>><<button "I can see it">><<set $prevpass to $passage>><<goto "ADA-28">><</button>><</timed>>
+  
+</main>
+<<include "footer">>
+
+:: ADA-28{"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-28">><<include "header">>
+<main>
+Good. Now go and stand on the green. Get into a circle with
+everyone what wants to play and two of you in the middle. Best to play with ten or more of you but if there are any more than 5, you can start it up and hope others join in. We make do.
+
+Let me know when you’re there. We
+need two players of more or less the same height in the middle and everyone else in a circle around them. If others join, just get them to add themselves to the circle.
+
+<<timed 15s>><<button "We’re in a circle">><<set $prevpass to $passage>><<goto "ADA-29">><</button>><</timed>>
+  
+</main>
+<<include "footer">>
+
+:: ADA-29{"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-29">><<include "header">>
+<main>
+Good. I’mma play you a tune that you might recognize.
+/* Music: the tune from Oranges and Lemons. */
+Everyone knows that!
+Now do you know the words?
+/* (singing over the tune just played) */
+ Oranges and lemons,
+Say the bells of St Clement’s. You owe me five farthings,
+Say the bells of St Martin’s. When will you pay me?
+Say the bells of Old Bailey. When I grow rich,
+Say the bells of Shoreditch. When will that be?
+Say the bells of Stepney.
+I do not know,
+Says the great bell of Bow.
+Here comes a candle to light you to bed, And here comes a chopper to chop off your head! Chip-chop-chip-chop The last one’s head Must come OFF!
+
+Got it?
+
+Right, this time sing along. To do that, you’ll all need to count down and start together. So all press “Ready” at the same time.
+<<timed 15s>><<button "Ready">><<set $prevpass to $passage>><<goto "ADA-30">><</button>><</timed>>
+  
+</main>
+<<include "footer">>
+
+:: ADA-30 {"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-30">><<include "header">>
+<main>
+/* TODO SMALL COUNTDOWN */
+5,4,3,2,1
+/* The song is repeated with the players singing along this time. */
+
+Sounds like you got it first time!
+
+Now do you know how to play?
+
+The two players in the middle make an arch by joining their hands and raising them.
+
+Everyone else in the circle holds hands and moves around the circle as we sing the song.
+
+When it gets to “the great bell of Bow”, everyone has to pass through the “arch” one by one as fast as they can. The last player to go through when the song ends so that’s the word “off” is caught and they’re out of the game.
+The winner is the last survivor.
+
+Play as many rounds as you want. I can play the song again if you need it. Let me know when you’re done though and I’ll work out the points!
+<<timed 10s>><<set $prevpass to $passage>><<goto "ADA-31">><</timed>>
+  
+</main>
+<<include "footer">>
+
+:: ADA-31 {"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-31">><<include "header">>
+<main>
+<<button "Play the song">><<goto "ADA-32">><</button>>
+<<button "Tell us the scores">><<goto "ADA-33">><</button>>
+
+</main>
+<<include "footer">>
+
+:: ADA-32 {"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-32">><<include "header">>
+<main>
+play the song
+
+</main>
+<<include "footer">>
+
+:: ADA-33 {"position":"1200,1700","size":"100,100"}
+<<set $passage to "ADA-33">><<include "header">>
+<main>
+Right then. As you know there were 16 million points up for grabs in that one. So everything to play for.
+
+The grown ups did very well. Getting 3 million points. 
+But the children are the victors with 18.5 million points!
+
+Well done all but well done, children, in particular. Taking part’s important and all but winning’s even better. That’s what I say.
+
+I’ve been Jack Dawkins, the Artful Dodger. And if you remember one thing about me, remember this. This town can have its airs and its graces, it can get all clean and safe and expensive. But it’s still my town. And nothing’s gonna change that. Not never.
+
+Oh and if anyone does want one of them watches, come see me. No questions asked innit.
+<<button "End">><<goto "end">><</button>>
+</main>
+<<include "footer">>
+
+
+
+:: end {"position":"100,700","size":"100,100"}
+<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>><<include "header">>
+<main>
+
+End location
+
+$endMap
+  
+</main>
+<<include "footer">>
+

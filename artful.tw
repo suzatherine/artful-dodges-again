@@ -185,7 +185,7 @@ a:hover {
 	margin: 0
 }
 
-/* GENERAL STYLES */
+/*---- GENERAL STYLES ----*/
 body{
   font-size: 1.6rem;
   font-family: "Space Grotesk";
@@ -195,7 +195,12 @@ body{
   display:flex;
   flex-direction: column
 }
+main{
+   padding: 2rem;
+   margin-block-end: 8rem
+}
 
+/* Header */
 header{
   display:flex;
   justify-content: flex-end;
@@ -203,11 +208,8 @@ header{
     padding: 2rem
 }
 
-main{
-   padding: 2rem;
-   margin-block-end: 4rem
-}
 
+/* Footer */
 footer{
    display:flex;
   justify-content: space-between;
@@ -235,17 +237,20 @@ align-items: flex-end
 }
 
 .nav-item{
-  margin-block-end: 1.5rem
+  margin-block-end: 0.5rem
 }
 
 .nav-item:last-child{
   margin-block-end: 0
 }
 
-
 .nav-wrapper:last-child{
 display:flex;
 align-items: flex-end
+}
+
+.nav-item > button{
+  font-size:1rem
 }
 
 .menu-wrapper{
@@ -260,6 +265,33 @@ margin-inline-end: 10px;
 margin-block-end: 10px
 }
 
+/* MAP */
+	.map{
+width: 100%;
+    height: 60vh;
+    border: 0;
+    margin: auto;
+    margin-bottom: 2rem
+    }
+
+
+.directions-card {
+    display: none!important
+}
+
+@media screen and (min-width: 450px) {
+.map{
+	max-width:60vw;
+	height:50vh;
+	border:0
+}
+}
+
+/* SPECIFICS */
+
+.countdown{
+  font-size: 2rem
+}
 .door-container{
   display:flex;
   flex-direction: row;
@@ -302,26 +334,7 @@ textarea{
   	margin-inline-end:10px;
 }
 
-/* MAP */
-	.map{
-width: 100%;
-    height: 60vh;
-    border: 0;
-    margin: auto;
-    }
 
-
-.directions-card {
-    display: none!important
-}
-
-@media screen and (min-width: 450px) {
-.map{
-	max-width:60vw;
-	height:50vh;
-	border:0
-}
-}
 
 
 :: Story JavaScript [script]
@@ -426,7 +439,7 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 
 
 :: footer {"position":"100,350","size":"100,100"}
-<footer><div class="nav-wrapper "><div class="nav-item"><<button "Replay">><<goto $passage>><</button>> </div><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "I'm lost">><<goto "lost">><</button>></div></div></footer>
+<footer><div class="nav-wrapper "><div class="nav-item"><<button "REPLAY">><<goto $passage>><</button>> </div><div class="nav-item"><<button "BACK">><<goto $prevpass>><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "I'M LOST">><<goto "lost">><</button>></div></div></footer>
 
 
 :: landing {"position":"375,150","size":"100,100"}
@@ -455,47 +468,39 @@ You have two options:
 
 
 :: ADA-05 {"position":"600,400","size":"100,100"}
-<<set $passage to "ADA-05">>
-<<include "header">>
-<main>
-/* SFX - Some hustle and bustle. Sounds of London, not necessarily 19th century and not necessarily 21st either but busy, bustling, everyone on the make. */
-JACK:
-  <div id="captions"><<type 70ms >>Hullo my covey
+<<set $passage to "ADA-05">><<include "header">><main>/* SFX - Some hustle and bustle. Sounds of London, not necessarily 19th century and not necessarily 21st either but busy, bustling, everyone on the make. */
+
+<div id="captions"><<type 70ms >>Hullo my covey
  <</type>></div>
 <<timed 3s>><<replace "#captions">><<type 70ms >>Oi fam!<</type>>
 <</replace>><</timed>> 
-<<timed 5s>><<replace "#captions">><<type 70ms >>Over ‘ere<</type>>
+<<timed 6s>><<replace "#captions">><<type 70ms >>Over ‘ere<</type>>
 <</replace>><</timed>> 
-<<timed 7s>><<replace "#captions">><<type 70ms >>My eyes, you’re all over the place.
+<<timed 8s>><<replace "#captions">><<type 70ms >>My eyes, you’re all over the place.
 You must be green.<</type>><</replace>><</timed>> 
-<<timed 11s>><<replace "#captions">><<type 70ms >>You’re facing that Royal Exchange,right? It’s closed today, which is lucky because I’m banned, innit. On the gates there are two ladies. The posh sort, you know what I mean?<</type>><</replace>><</timed>> 
-<<timed 16s>>But not the posh sort that call the
-ol’ Bill soon as look at a young gentleman such as myself.
+<<timed 15s>><<replace "#captions">><<type 70ms >>You’re facing that Royal Exchange,right? It’s closed today, which is lucky because I’m banned, innit. On the gates there are two ladies. The posh sort, you know what I mean?<</type>><</replace>><</timed>> 
+<<timed 16s>>But not the posh sort that call the ol’ Bill soon as look at a young gentleman such as myself.
 
-Now turn around. You’ll see a
-camera. Down from there. That’s where I am.
+Now turn around. You’ll see a camera. Down from there. That’s where I am.
 
-You can’t see me yet, I know. But I
-am there and I can see you.
+You can’t see me yet, I know. But I am there and I can see you.
 
-Now I did say this was an adventure
-for my own sort. That’s to say what you might call...children. I don’t like to use that word though. Whenever you say you’re a child, people tell you about all the things you’re not allowed to do. And I don’t like being told I can’t do things.
+Now I did say this was an adventure for my own sort. That’s to say what you might call...children. I don’t like to use that word though. Whenever you say you’re a child, people tell you about all the things you’re not allowed to do. And I don’t like being told I can’t do things.
 
-So while I may be a child
-(technically speaking that is), I’m also my own man.
+So while I may be a child (technically speaking that is), I’m also my own man.
 
 Best of both worlds, you might say.
 
-So what are you? And before you
-answer, this adventure’s for grown ups and children so if you’re all grown ups, choose the youngest ones to be the children. And if you’re all children, the biggest can pretend to be grown-ups for the day. Either way, we want an even split.
+So what are you? And before you answer, this adventure’s for grown ups and children so if you’re all grown ups, choose the youngest ones to be the children. And if you’re all children, the biggest can pretend to be grown-ups for the day. Either way, we want an even split.
 
-Work that out amongst yourselves if
-you must. And then tell me which one you are.<</timed>>
+Work that out amongst yourselves if you must. And then tell me which one you are.<</timed>>
 
 <<timed 20s>>
-<<button "A child">><<set $prevpass to $passage>><<set $age to "child">><<goto "ADA-06C">><</button>>
-<<button "A grown up">><<set $prevpass to $passage>><<set $age to "adult">><<goto "ADA-06A">><</button>>
-<<button "Both (sharing a screen)">><<set $prevpass to $passage>><<set $age to "both">><<goto "ADA-06B">><</button>>
+<div class="menu-wrapper">
+  <<button "A child">><<set $prevpass to $passage>><<set $age to "child">><<goto "ADA-06C">><</button>>
+  <<button "A grown up">><<set $prevpass to $passage>><<set $age to "adult">><<goto "ADA-06A">><</button>>
+  <<button "Both (sharing a screen)">><<set $prevpass to $passage>><<set $age to "both">><<goto "ADA-06B">><</button>>
+</div >
 <</timed>>
 </main>
 <<include "footer">>
@@ -504,10 +509,11 @@ you must. And then tell me which one you are.<</timed>>
 :: ADA-06C {"position":"800,400","size":"100,100"}
 <<set $passage to "ADA-06C">>
 <<include "header">>
+/* Ideally this passage takes the same time as ADA-06A */
 <main>Don’t you fret your eyelids, pal.
 We’ll have a fine ol’ time together. This City’s not as scary as it looks. Stick with me and you’ll be right as rain.
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 10s>><<set $prevpass to $passage>><<goto "AC-07">><</timed>>
+<<timed 10s>><<set $prevpass to $passage>><<goto "ADA-07">><</timed>>
 </main>
 <<include "footer">>
 
@@ -516,7 +522,7 @@ We’ll have a fine ol’ time together. This City’s not as scary as it looks.
 <<include "header">>
 <main>One o’ them. Alright, alright. Well I’ll allow you since you’re here to look after your own and you wouldn’t want to entrust them to me, I don’t suppose.
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 10s>><<set $prevpass to $passage>><<goto "AC-07">><</timed>>
+<<timed 10s>><<set $prevpass to $passage>><<goto "ADA-07">><</timed>>
 </main>
 <<include "footer">>
 
@@ -526,7 +532,7 @@ We’ll have a fine ol’ time together. This City’s not as scary as it looks.
 <<include "header">>
 <main>In that case, I’ll tell you both the instructions. But you’d best be putting your fingers in your ears or covering up your eyes when it doesn’t apply to you. Don’t worry, I trust ya.
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 10s>><<set $prevpass to $passage>><<goto "AC-07">><</timed>>
+<<timed 10s>><<set $prevpass to $passage>><<goto "ADA-07">><</timed>>
 </main>
 <<include "footer">>
 
@@ -544,7 +550,7 @@ let’s get going. Cross over first to where I am. Make sure you’re standing u
 
 
 :: ADA-08 {"position":"1200,400","size":"100,100"}
-<<set $passage to "AC-08">><<set $nextpass to "">>
+<<set $passage to "ADA-08">><<set $nextpass to "">>
 <<include "header">>
 <main>
 Pleased to make your acquaintance I’m sure. Jack Dawkins is the name. Though you may know me better as The Artful Dodger.
@@ -586,18 +592,18 @@ To me, this place is a playground.
 And that’s I’m gonna show you.
 
 Are you ready for the first game?
-
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 10s>>
-<<button "Let’s go">><<set $prevpass to $passage>><<goto "ADA-09">><</button>>
-<<button "Let’s double go">><<set $prevpass to $passage>><<goto "ADA-09">><</button>>
+<<timed 10s>><div class="menu-wrapper">
+  <<button "Let’s go">><<set $prevpass to $passage>><<goto "ADA-09">><</button>>
+  <<button "Let’s double go">><<set $prevpass to $passage>><<goto "ADA-09">><</button>>
+</div>
 <</timed>>
 </main>
 <<include "footer">>
 
 
 :: ADA-09 {"position":"1400,400","size":"100,100"}
-<<set $passage to "AC-09">>
+<<set $passage to "ADA-09">>
 <<include "header">>
 <main>
 <<type 70ms >>That’s what I like to hear.<</type>>
@@ -774,8 +780,10 @@ Also if anyone does fancy buying a watch, come find me after. Totally kosher, do
 Are we ready for the next game?
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
 <<timed 5s>>
-<<button "I'm ready">><<set $prevpass to $passage>><<goto "ADA-16">><</button>>
-<<button "Let’s go!">><<set $prevpass to $passage>><<goto "ADA-16">><</button>>
+<div class="menu-wrapper">
+  <<button "You bet we are, Jack">><<set $prevpass to $passage>><<goto "ADA-16">><</button>>
+  <<button "You bet we are, Jack">><<set $prevpass to $passage>><<goto "ADA-16">><</button>>
+</div>
 <</timed>>
 </main>
 <<include "footer">>
@@ -829,8 +837,7 @@ Play as many round as you fancy and when you’re ready to go, just let me know.
 :: ADA-17B {"position":"800,1300","size":"100,100"}
 <<set $passage to "ADA-17B">>
 <<include "header">>
-<main>Make sure you get the adults to
-play this too. They’ll be really bad at it and fall over and we can all laugh at them. Ha!
+<main>Make sure you get the adults to play this too. They’ll be really bad at it and fall over and we can all laugh at them. Ha!
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
 
 <<timed 5s>><<button "Let’s keep going, Jack">><<set $prevpass to $passage>><<goto "ADA-18">><</button>><</timed>>
@@ -849,7 +856,7 @@ this is just for the children!
 <<include "footer">>
 
 :: ADA-18 {"position":"1200,1300","size":"100,100"}
-<<set $passage to "ADA-18">><<set $myMap = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>>
+<<set $passage to "ADA-18">><<set $myMap = setup.generateDirectionsMap(51.51475181321926, -0.08845052243756538,51.51565833716061, -0.08892530366773153)>>
 <<include "header">>
 <main>
 Well played all. I’ve added up the scores and that’s...
@@ -883,7 +890,7 @@ You know what a telegraph is, don’t you? It’s some way that I can tell you s
 
 
 :: ADA-19 {"position":"1400,1300","size":"100,100"}
-<<set $passage to "ADA-19">><<set $nextpass to "">><<set $myMap2 = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>>
+<<set $passage to "ADA-19">><<set $nextpass to "">><<set $myMap2 = setup.generateDirectionsMap(51.51565833716061, -0.08892530366773153,51.515695197856026, -0.08941678253564316)>>
 <<include "header">>
 <main>
 Nicely done, my covey, nicely done.
@@ -896,7 +903,7 @@ Now hop across Moorgate, watching out for carriages, to Great Bell Alley.
 
 
 :: ADA-20 {"position":"600,1700","size":"100,100"}
-<<set $passage to "ADA-20">><<set $myMap3 = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>>
+<<set $passage to "ADA-20">><<set $myMap3 = setup.generateDirectionsMap(51.515695197856026, -0.08941678253564316, 51.515790604379575, -0.08991730389566155)>>
 <<include "header">>
 <main>
 Okay, this time, it’s only the grown ups who have to avoid the cracks. Children, it’s your job to stop them succeeding. So find any way you can to get in their way. Don’t push them over or trip them though. That’s a foul.
@@ -913,7 +920,7 @@ Now off you go and let me know when you’re at the end of the Alley at Coleman 
 
 
 :: ADA-21 {"position":"800,1700","size":"100,100"}
-<<set $passage to "ADA-21">><<set $myMap4 = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>><<include "header">>
+<<set $passage to "ADA-21">><<set $myMap4 = setup.generateDirectionsMap(51.51577938009306, -0.08983162906827102,51.515782186164955, -0.090336659629731)>><<include "header">>
 <main>
 So you are! Let’s see.
 
@@ -929,7 +936,7 @@ Cross Coleman Street to Mason’s Avenue first though.
 
 
 :: ADA-22 {"position":"1000,1700","size":"100,100"}
-<<set $passage to "ADA-22">><<include "header">><<set $myMap5 = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>>
+<<set $passage to "ADA-22">><<include "header">><<set $myMap5 = setup.generateDirectionsMap(51.515782186164955, -0.090336659629731,51.51579341045079, -0.09090030980993191)>>
 <main>
  Good. Alright then. Because children are much better at this game than grown-ups and we have smaller feet, I’ve chosen Mason’s Avenue for the children because it’s advanced level Pavement Crack Avoiding.
 
@@ -1019,7 +1026,9 @@ No pressure. I’ll give a moment.
 :: ADA-24C {"position":"1200,1700","size":"100,100"}
 <<set $passage to "ADA-24C">><<include "header">>
 <main>
-When I'm done scoring the grown ups, <<button "Let's move on">><<set $prevpass to $passage>><<goto "ADA-26">><</button>>  
+When I'm done scoring the grown ups, 
+
+<<button "Let's move on">><<set $prevpass to $passage>><<goto "ADA-26">><</button>>  
 </main>
 <<include "footer">>
 
@@ -1062,7 +1071,7 @@ Yeah, it’s not easy. Maybe if you have some really tall and athletic friends, 
 <<include "footer">>
 
 :: ADA-26{"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-26">><<include "header">><<set $myMap6 = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>>
+<<set $passage to "ADA-26">><<include "header">><<set $myMap6 = setup.generateDirectionsMap(51.516531611170905, -0.09236516569324225,51.51637005442947, -0.09346830016698235)>>
 <main>
 Go towards that fountain to Aldermanbury.
 
@@ -1100,14 +1109,11 @@ See it?
 
 :: ADA-28{"position":"1200,1700","size":"100,100"}
 <<set $passage to "ADA-28">><<include "header">>
-<main>
-Good. Now go and stand on the green. Get into a circle with
-everyone what wants to play and two of you in the middle. Best to play with ten or more of you but if there are any more than 5, you can start it up and hope others join in. We make do.
+<main>Good. Now go and stand on the green. Get into a circle with everyone what wants to play and two of you in the middle. Best to play with ten or more of you but if there are any more than 5, you can start it up and hope others join in. We make do.
 
-Let me know when you’re there. We
-need two players of more or less the same height in the middle and everyone else in a circle around them. If others join, just get them to add themselves to the circle.
+Let me know when you’re there. We need two players of more or less the same height in the middle and everyone else in a circle around them. If  others join, just get them to add themselves to the circle.
 
-<<timed 15s>><<button "We’re in a circle">><<set $prevpass to $passage>><<goto "ADA-29">><</button>><</timed>>
+<<timed 10s>><<button "We’re in a circle">><<set $prevpass to $passage>><<goto "ADA-29">><</button>><</timed>>
   
 </main>
 <<include "footer">>
@@ -1133,18 +1139,20 @@ Here comes a candle to light you to bed, And here comes a chopper to chop off yo
 Got it?
 
 Right, this time sing along. To do that, you’ll all need to count down and start together. So all press “Ready” at the same time.
-<<timed 15s>><<button "Ready">><<set $prevpass to $passage>><<goto "ADA-30">><</button>><</timed>>
+
+<<timed 10s>><<button "Ready">><<set $prevpass to $passage>><<goto "ADA-30">><</button>><</timed>>
   
 </main>
 <<include "footer">>
 
 :: ADA-30 {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-30">><<include "header">>
-<main>
-/* TODO SMALL COUNTDOWN */
-5,4,3,2,1
-/* The song is repeated with the players singing along this time. */
-
+<<set $passage to "ADA-30">><<include "header">><<set $seconds to 5>>
+<main><span id="countdown" class="countdown">5</span>
+<<timed 1s>><<silently>><<repeat 1s>><<set $seconds to $seconds - 1>><<if $seconds gt 0>><<replace "#countdown">>$seconds<</replace>>
+  		<<else>> <<replace "#countdown">>Times up!<</replace>>
+  			<<stop>>	<</if>><</repeat>>
+  <</silently>>
+<</timed>>/* The song is repeated with the players singing along this time. */
 Sounds like you got it first time!
 
 Now do you know how to play?
@@ -1165,8 +1173,13 @@ Play as many rounds as you want. I can play the song again if you need it. Let m
 :: ADA-31 {"position":"1200,1700","size":"100,100"}
 <<set $passage to "ADA-31">><<include "header">>
 <main>
-<<button "Play the song">><<goto "ADA-32">><</button>>
-<<button "Tell us the scores">><<goto "ADA-33">><</button>>
+
+
+
+<div class="menu-wrapper">
+  <<button "Play the song">><<goto "ADA-32">><</button>>
+  <<button "Tell us the scores">><<goto "ADA-33">><</button>>
+</div>
 
 </main>
 <<include "footer">>
@@ -1192,6 +1205,7 @@ Well done all but well done, children, in particular. Taking part’s important 
 I’ve been Jack Dawkins, the Artful Dodger. And if you remember one thing about me, remember this. This town can have its airs and its graces, it can get all clean and safe and expensive. But it’s still my town. And nothing’s gonna change that. Not never.
 
 Oh and if anyone does want one of them watches, come see me. No questions asked innit.
+
 <<button "End">><<goto "end">><</button>>
 </main>
 <<include "footer">>
@@ -1199,7 +1213,7 @@ Oh and if anyone does want one of them watches, come see me. No questions asked 
 
 
 :: end {"position":"100,700","size":"100,100"}
-<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap(51.515145100985166,-0.08905860787295125,51.51341581900639, -0.0850674807043743)>><<include "header">>
+<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap(51.516580852032476, -0.09431729185196457,51.51685580782133, -0.09511198679939459)>><<include "header">>
 <main>
 
 End location

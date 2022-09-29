@@ -1033,7 +1033,7 @@ When I'm done scoring the grown ups,
 <<include "footer">>
 
 :: ADA-24B {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-24C">><<include "header">>
+<<set $passage to "ADA-24B">><<include "header">>
 <main>
 Now, be honest. Did you leap over one?
 <<button "Yes, I did">><<goto "ADA-25B-Y">><</button>>

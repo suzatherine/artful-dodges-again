@@ -160,17 +160,17 @@ button{
 }
 
 button:hover{
-	background-color:#cf1b98;
+	background-color:#ea9e25;
 	border: #fff 1px solid;
 	color: #fff;
 }
 
 a {
-  color: #f2647d;
+  color:#ea9e25;;
 }
 
 a:active {
-  background-color: #f2647d;
+  background-color: #ea9e25;;
 }
 
 a:hover {
@@ -188,13 +188,17 @@ a:hover {
 /*---- GENERAL STYLES ----*/
 body{
   font-size: 1.6rem;
+  font-weight: 600;
   font-family: "Space Grotesk";
+  color:#fff;
+  /* color:#000; */
   overflow:scroll;
-  background:#000;
+  background: #1c8f93;
   /* padding: 1.5rem */
   display:flex;
   flex-direction: column
 }
+
 main{
    padding: 2rem;
    margin-block-end: 8rem
@@ -209,16 +213,17 @@ header{
 }
 
 
-/* Footer */
+/* FOOTER  */
+
 footer{
    display:flex;
   justify-content: space-between;
-  align-items: flex-end; 
+align-items: end;
   position:fixed;
   bottom: 0;
   padding: 2rem;
   width: 100%;
-  background-color: #000
+background: #1c8f93;
 }
 
 nav{
@@ -237,20 +242,32 @@ align-items: flex-end
 }
 
 .nav-item{
-  margin-block-end: 0.5rem
+  margin-block-end: 0.5rem;
+  width:100%;
+  display:flex
 }
 
-.nav-item:last-child{
-  margin-block-end: 0
+.nav-item.replay, .nav-item.end{
+justify-content: center
+}
+.nav-item.replay, .nav-item.forward{
+justify-content: end
 }
 
-.nav-wrapper:last-child{
-display:flex;
-align-items: flex-end
+.nav-item.replay, .nav-item.back{
+justify-content: start
+}
+
+.nav-item.forward > button, 
+.nav-item.back > button{
+  font-size:2rem
+}
+footer > button:first-child,  {
+  font-size:2rem
 }
 
 .nav-item > button{
-  font-size:1rem
+ font-size: 1.3rem
 }
 
 .menu-wrapper{
@@ -429,7 +446,42 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "badjoke" "https://youhavefoundconey.net/CG/what/assets/audio/badjoke.mp3">>
+<<cacheaudio "ADA_05" "./assets/audio/ADA_05.mp3">>
+<<cacheaudio "ADA_06A" "./assets/audio/ADA_06A.mp3">>
+<<cacheaudio "ADA_06B" "./assets/audio/ADA_06B.mp3">>
+<<cacheaudio "ADA_06C" "./assets/audio/ADA_06C.mp3">>
+<<cacheaudio "ADA_07" "./assets/audio/ADA_07.mp3">>
+<<cacheaudio "ADA_08" "./assets/audio/ADA_08.mp3">>
+<<cacheaudio "ADA_09" "./assets/audio/ADA_09.mp3">>
+<<cacheaudio "ADA_10A" "./assets/audio/ADA_10A.mp3">>
+<<cacheaudio "ADA_10B" "./assets/audio/ADA_10B.mp3">>
+<<cacheaudio "ADA_10C" "./assets/audio/ADA_10C.mp3">>
+<<cacheaudio "ADA_11A" "./assets/audio/ADA_11A.mp3">>
+<<cacheaudio "ADA_11B" "./assets/audio/ADA_11B.mp3">>
+<<cacheaudio "ADA_11C" "./assets/audio/ADA_11C.mp3">>
+<<cacheaudio "ADA_12B" "./assets/audio/ADA_11B.mp3">>
+<<cacheaudio "ADA_13B" "./assets/audio/ADA_11B.mp3">>
+<<cacheaudio "ADA_14B" "./assets/audio/ADA_11B.mp3">>
+<<cacheaudio "ADA_15" "./assets/audio/ADA_15.mp3">>
+<<cacheaudio "ADA_16" "./assets/audio/ADA_16.mp3">>
+<<cacheaudio "ADA_17A" "./assets/audio/ADA_17A.mp3">>
+<<cacheaudio "ADA_17A_17B" "./assets/audio/ADA_17A_17B.mp3">>
+<<cacheaudio "ADA_18" "./assets/audio/ADA_18.mp3">>
+<<cacheaudio "ADA_20" "./assets/audio/ADA_20.mp3">>
+<<cacheaudio "ADA_21-001" "./assets/audio/ADA_21-001.mp3">>
+<<cacheaudio "ADA_21-002" "./assets/audio/ADA_21-002.mp3">>
+<<cacheaudio "ADA_22" "./assets/audio/ADA_22.mp3">>
+<<cacheaudio "ADA_24A_24B" "./assets/audio/ADA_24A_24B.mp3">>
+<<cacheaudio "ADA_25A_25B_N" "./assets/audio/ADA_25A_25B.mp3_N">>
+<<cacheaudio "ADA_25A_25B_Y" "./assets/audio/ADA_25A_25B.mp3_Y">>
+<<cacheaudio "ADA_26.5" "./assets/audio/ADA_26.5.mp3">>
+<<cacheaudio "ADA_26" "./assets/audio/ADA_26.mp3">>
+<<cacheaudio "ADA_27" "./assets/audio/ADA_27.mp3">>
+<<cacheaudio "ADA_28" "./assets/audio/ADA_28.mp3">>
+<<cacheaudio "ADA_29" "./assets/audio/ADA_29.mp3">>
+<<cacheaudio "ADA_30" "./assets/audio/ADA_30.mp3">>
+<<cacheaudio "ADA_32" "./assets/audio/ADA_32.mp3">>
+<<cacheaudio "ADA_33" "./assets/audio/ADA_33.mp3">>
 <<waitforaudio>>
 
 
@@ -439,12 +491,17 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 
 
 :: footer {"position":"100,350","size":"100,100"}
-<footer><div class="nav-wrapper "><div class="nav-item"><<button "REPLAY">><<goto $passage>><</button>> </div><div class="nav-item"><<button "BACK">><<goto $prevpass>><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "I'M LOST">><<goto "lost">><</button>></div></div></footer>
+<footer>
+<div class="nav-item back"><<button "<">><<goto $prevpass>><</button>></div>
+<div class="nav-item replay"><<button "Replay">><<goto $passage>><</button>> </div>
+<div class="nav-item end"><<button "Take me to the end">><<set $prevpass to $passage>><<goto "lost">><</button>></div>
+<div class="nav-item forward"><<button ">">><<set $prevpass to $passage>><<goto $nextpassage>><</button>></div>
+</footer>
 
 
 :: landing {"position":"375,150","size":"100,100"}
 <<set $passage to "landing">>
-<<include "header">>
+
 <main>
 landing page
 
@@ -454,8 +511,8 @@ landing page
 
 
 :: lost {"position":"100,500","size":"100,100"}
-<<set $passage to "lost">>
-<<include "header">>
+<<set $passage to "lost">><<audio ":all" stop>>
+
 <main>
 Sorry to hear that you're lost! 
 You have two options:
@@ -468,8 +525,8 @@ You have two options:
 
 
 :: ADA-05 {"position":"600,400","size":"100,100"}
-<<set $passage to "ADA-05">><<include "header">><main>/* SFX - Some hustle and bustle. Sounds of London, not necessarily 19th century and not necessarily 21st either but busy, bustling, everyone on the make. */
-
+<<set $passage to "ADA-05">><<set $nextpassage to $passage>><<audio ":all" stop>><<audio "ADA_05" play>>
+<main>
 <div id="captions"><<type 70ms >>Hullo my covey
  <</type>></div>
 <<timed 3s>><<replace "#captions">><<type 70ms >>Oi fam!<</type>>
@@ -507,8 +564,8 @@ Work that out amongst yourselves if you must. And then tell me which one you are
 
 
 :: ADA-06C {"position":"800,400","size":"100,100"}
-<<set $passage to "ADA-06C">>
-<<include "header">>
+<<set $passage to "ADA-06C">><<set $nextpassage to "ADA-07">><<audio "ADA_06C" play>>
+
 /* Ideally this passage takes the same time as ADA-06A */
 <main>Don’t you fret your eyelids, pal.
 We’ll have a fine ol’ time together. This City’s not as scary as it looks. Stick with me and you’ll be right as rain.
@@ -518,8 +575,8 @@ We’ll have a fine ol’ time together. This City’s not as scary as it looks.
 <<include "footer">>
 
 :: ADA-06A {"position":"800,400","size":"100,100"}
-<<set $passage to "ADA-06C">>
-<<include "header">>
+<<set $passage to "ADA-06C">><<set $nextpassage to "ADA-07">><<audio ":all" stop>><<audio "ADA_06A" play>>
+
 <main>One o’ them. Alright, alright. Well I’ll allow you since you’re here to look after your own and you wouldn’t want to entrust them to me, I don’t suppose.
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 <<timed 10s>><<set $prevpass to $passage>><<goto "ADA-07">><</timed>>
@@ -528,8 +585,8 @@ We’ll have a fine ol’ time together. This City’s not as scary as it looks.
 
 
 :: ADA-06B {"position":"800,400","size":"100,100"}
-<<set $passage to "ADA-06C">>
-<<include "header">>
+<<set $passage to "ADA-06C">><<set $nextpassage to "ADA-07">><<audio ":all" stop>><<audio "ADA_06B" play>>
+
 <main>In that case, I’ll tell you both the instructions. But you’d best be putting your fingers in your ears or covering up your eyes when it doesn’t apply to you. Don’t worry, I trust ya.
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 <<timed 10s>><<set $prevpass to $passage>><<goto "ADA-07">><</timed>>
@@ -537,11 +594,10 @@ We’ll have a fine ol’ time together. This City’s not as scary as it looks.
 <<include "footer">>
 
 :: ADA-07 {"position":"1000,400","size":"100,100"}
-<<set $passage to "ADA-07">>
-<<include "header">>
+<<set $passage to "ADA-07">><<set $nextpassage to "ADA-08">><<audio ":all" stop>><<audio "ADA_07" play>>
+
 <main>
-Now we got that outta the way,
-let’s get going. Cross over first to where I am. Make sure you’re standing under the cameras so I can talk to you. I can’t risk getting seen by those things. Not when there’s a price on my head, know what I mean? Let me know when you’re across.
+Now we got that outta the way, let’s get going. Cross over first to where I am. Make sure you’re standing under the cameras so I can talk to you. I can’t risk getting seen by those things. Not when there’s a price on my head, know what I mean? Let me know when you’re across.
 
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
 <<timed 5s>><<button "I'm here">><<set $prevpass to $passage>><<goto "ADA-08">><</button>><</timed>>
@@ -550,8 +606,8 @@ let’s get going. Cross over first to where I am. Make sure you’re standing u
 
 
 :: ADA-08 {"position":"1200,400","size":"100,100"}
-<<set $passage to "ADA-08">><<set $nextpass to "">>
-<<include "header">>
+<<set $passage to "ADA-08">><<set $nextpassage to "ADA-09">><<audio ":all" stop>><<audio "ADA_08" play>>
+
 <main>
 Pleased to make your acquaintance I’m sure. Jack Dawkins is the name. Though you may know me better as The Artful Dodger.
 
@@ -559,8 +615,6 @@ Now before we move on. There are a
 couple of things I wanna say about Mr Charles Dickens and his descriptions of me in what is otherwise a very fine book, Oliver Twist, about my posh mate Olly.
 
 There are some inaccuracies.
-
-/* sounds of him flicking through the book to the right page) */
 
 Didn’t think I could read, did he?
 
@@ -574,7 +628,6 @@ I ask you!
 
 Now I don’t wanna get personal but Charlie himself looked like a dustpan ‘n’ brush. Calling another man “ugly” saying that my eyes are “little”. Of course they’re little! I’m little! They’re in proportion!
 
-/* Jack takes a deep breath. */
 
 Alright then. That’s just something I’ve wanted to get off my chest for about two hundred years.
 
@@ -603,8 +656,8 @@ Are you ready for the first game?
 
 
 :: ADA-09 {"position":"1400,400","size":"100,100"}
-<<set $passage to "ADA-09">>
-<<include "header">>
+<<set $passage to "ADA-09">><<set $nextpassage to $passage>><<audio ":all" stop>><<audio "ADA_09" play>>
+
 <main>
 <<type 70ms >>That’s what I like to hear.<</type>>
 
@@ -623,8 +676,8 @@ Are you ready for the first game?
 
 
 :: ADA-10A {"position":"600,900","size":"100,100"}
-<<set $passage to "ADA-10A">>
-<<include "header">>
+<<set $passage to "ADA-10A">><<set $nextpassage to "ADA-11A">><<audio ":all" stop>><<audio "ADA_10A" play>>
+
 <main>
 For this game all you have to do is walk. That’s it. Simple as.
 
@@ -645,8 +698,8 @@ Let me know when you get to Lothbury.
 
 
 :: ADA-11A {"position":"800,900","size":"100,100"}
-<<set $passage to "ADA-11A">>
-<<include "header">>
+<<set $passage to "ADA-11A">><<set $nextpassage to "ADA-15">><<audio ":all" stop>><<audio "ADA_11A" play>>
+
 <main>
 You done well so far. Reckon you’ve worked out what the game is by now?
 
@@ -661,8 +714,8 @@ Let me know when you get there.
 <<include "footer">>
 
 :: ADA-10C {"position":"600,900","size":"100,100"}
-<<set $passage to "ADA-10C">>
-<<include "header">>
+<<set $passage to "ADA-10C">><<set $nextpassage to "ADA-11C">><<audio ":all" stop>><<audio "ADA_10C" play>>
+
 <main>
 These grown ups are going to start walking, just walking without a clue what’s going on. What we’re going to do is imitate them. To begin with, better to start imitating the grown ups you came here with: your parent, your sibling or maybe you’re like me and you got a Fagin, I don’t know.
 
@@ -679,8 +732,8 @@ Now let’s go!
 <<include "footer">>
 
 :: ADA-11C {"position":"600,900","size":"100,100"}
-<<set $passage to "ADA-11C">>
-<<include "header">>
+<<set $passage to "ADA-11C">><<set $nextpassage to "ADA-15">><<audio ":all" stop>><<audio "ADA_11C" play>>
+
 <main>
 Nicely done, my covey, nicely done.
 
@@ -692,8 +745,8 @@ Now they’re in on the game so they’re gonna start making it harder for you. 
 <<include "footer">>
 
 :: ADA-10B {"position":"600,900","size":"100,100"}
-<<set $passage to "ADA-10B">>
-<<include "header">>
+<<set $passage to "ADA-10B">><<set $nextpassage to "ADA-11B">><<audio ":all" stop>><<audio "ADA_10B" play>>
+
 <main>
 For this game, all the grown-ups have to do is walk. We’ll go round the corner here on Bartholomew Lane, all the way to the corner with Lothbury. But before you start walking, pass me over to the children because I have a message for them...
 
@@ -707,8 +760,8 @@ me...
 <<include "footer">>
 
 :: ADA-11B {"position":"800,900","size":"100,100"}
-<<set $passage to "ADA-11B">>
-<<include "header">>
+<<set $passage to "ADA-11B">><<set $nextpassage to "ADA-12B">><<audio ":all" stop>><<audio "ADA_11B" play>>
+
 <main>
 Okay children what you’re going to do is copy how they walk! To begin with, better to start imitating the grown ups you came here with: your parent, your sibling or maybe you’re like me and you got a Fagin, I don’t know.
 
@@ -730,7 +783,7 @@ When you’re there, let me know.
 <<include "footer">>
 
 :: ADA-12B {"position":"800,900","size":"100,100"}
-<<set $passage to "ADA-12B">><<include "header">>
+<<set $passage to "ADA-12B">><<set $nextpassage to "ADA-13B">><<audio ":all" stop>><<audio "ADA_12B" play>>
 <main>
 
 <<type 70ms >>Okay, you can give the screen back
@@ -741,7 +794,7 @@ to the grown up now.<</type>>
 <<include "footer">>
 
 :: ADA-13B {"position":"800,900","size":"100,100"}
-<<set $passage to "ADA-13B">><<include "header">>
+<<set $passage to "ADA-13B">><<set $nextpassage to "ADA-14B">><<audio ":all" stop>><<audio "ADA_13B" play>>
 <main>
 Hullo again! Good effort so far.
 Reckon you’ve worked out what the game is by now?
@@ -757,7 +810,7 @@ Now pass the screen back to the children
 <<include "footer">>
 
 :: ADA-14B {"position":"800,900","size":"100,100"}
-<<set $passage to "ADA-14B">><<include "header">>
+<<set $passage to "ADA-14B">><<set $nextpassage to "ADA-15">><<audio ":all" stop>><<audio "ADA_14B" play>>
 <main>
 They’re in on the game now. So they might try to make it harder for you. But don’t worry, I know you can do it. We’re going to the corner of Tokenhouse Yard. Let me know when you get there.
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
@@ -766,7 +819,7 @@ They’re in on the game now. So they might try to make it harder for you. But d
 <<include "footer">>
 
 :: ADA-15 {"position":"800,900","size":"100,100"}
-<<set $passage to "ADA-15">><<include "header">>
+<<set $passage to "ADA-15">><<set $nextpassage to "ADA-16">><<audio ":all" stop>><<audio "ADA_15" play>>
 <main>
 There you are. After carefully considering my personal, extremely complex scoring system, I can confidently say that the adults scored a grand total of 672 points in that game
 
@@ -790,8 +843,8 @@ Are we ready for the next game?
 
 
 :: ADA-16 {"position":"600,1300","size":"100,100"}
-<<set $passage to "ADA-16">>
-<<include "header">>
+<<set $passage to "ADA-16">><<set $nextpassage to $passage>><<audio ":all" stop>><<audio "ADA_16" play>>
+
 <main>
 Well let’s not dawdle then. Fix up, look sharp.
 
@@ -827,7 +880,7 @@ Play as many round as you fancy and when you’re ready to go, just let me know.
 <<case "child" "both">>
   <<goto "ADA-17B">>
 <<case "adult">>
-  <<goto "ADA-10A">>
+  <<goto "ADA-17A">>
 <</switch>>
 <</timed>>
 </main>
@@ -835,8 +888,8 @@ Play as many round as you fancy and when you’re ready to go, just let me know.
 
 
 :: ADA-17B {"position":"800,1300","size":"100,100"}
-<<set $passage to "ADA-17B">>
-<<include "header">>
+<<set $passage to "ADA-17B">><<set $nextpassage to "ADA-18">><<audio ":all" stop>><<audio "ADA_17B" play>>
+
 <main>Make sure you get the adults to play this too. They’ll be really bad at it and fall over and we can all laugh at them. Ha!
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
 
@@ -845,8 +898,8 @@ Play as many round as you fancy and when you’re ready to go, just let me know.
 <<include "footer">>
 
 :: ADA-17A {"position":"800,1300","size":"100,100"}
-<<set $passage to "ADA-17A">>
-<<include "header">>
+<<set $passage to "ADA-17A">><<set $nextpassage to "ADA-18">><<audio ":all" stop>><<audio "ADA_17A" play>>
+
 <main>You’ve got to play too. Don’t think
 this is just for the children!
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
@@ -856,8 +909,8 @@ this is just for the children!
 <<include "footer">>
 
 :: ADA-18 {"position":"1200,1300","size":"100,100"}
-<<set $passage to "ADA-18">><<set $myMap = setup.generateDirectionsMap(51.51475181321926, -0.08845052243756538,51.51565833716061, -0.08892530366773153)>>
-<<include "header">>
+<<set $passage to "ADA-18">><<set $myMap = setup.generateDirectionsMap(51.51475181321926, -0.08845052243756538,51.51565833716061, -0.08892530366773153)>><<set $nextpassage to "ADA-19">><<audio ":all" stop>><<audio "ADA_18" play>>
+
 <main>
 Well played all. I’ve added up the scores and that’s...
 
@@ -890,9 +943,9 @@ You know what a telegraph is, don’t you? It’s some way that I can tell you s
 
 
 :: ADA-19 {"position":"1400,1300","size":"100,100"}
-<<set $passage to "ADA-19">><<set $nextpass to "">><<set $myMap2 = setup.generateDirectionsMap(51.51565833716061, -0.08892530366773153,51.515695197856026, -0.08941678253564316)>>
-<<include "header">>
-<main>
+<<set $passage to "ADA-19">><<set $nextpassage to "ADA-20">><<audio ":all" stop>>
+/* <<audio "ADA_19" play>> *//* TODO MISSING AUDIO */
+<<set $myMap2 = setup.generateDirectionsMap(51.51565833716061, -0.08892530366773153,51.515695197856026, -0.08941678253564316)>><main>
 Nicely done, my covey, nicely done.
 Now hop across Moorgate, watching out for carriages, to Great Bell Alley.
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
@@ -903,8 +956,8 @@ Now hop across Moorgate, watching out for carriages, to Great Bell Alley.
 
 
 :: ADA-20 {"position":"600,1700","size":"100,100"}
-<<set $passage to "ADA-20">><<set $myMap3 = setup.generateDirectionsMap(51.515695197856026, -0.08941678253564316, 51.515790604379575, -0.08991730389566155)>>
-<<include "header">>
+<<set $passage to "ADA-20">><<set $myMap3 = setup.generateDirectionsMap(51.515695197856026, -0.08941678253564316, 51.515790604379575, -0.08991730389566155)>><<set $nextpassage to "ADA-21">><<audio ":all" stop>><<audio "ADA_20" play>>
+
 <main>
 Okay, this time, it’s only the grown ups who have to avoid the cracks. Children, it’s your job to stop them succeeding. So find any way you can to get in their way. Don’t push them over or trip them though. That’s a foul.
 
@@ -920,7 +973,7 @@ Now off you go and let me know when you’re at the end of the Alley at Coleman 
 
 
 :: ADA-21 {"position":"800,1700","size":"100,100"}
-<<set $passage to "ADA-21">><<set $myMap4 = setup.generateDirectionsMap(51.51577938009306, -0.08983162906827102,51.515782186164955, -0.090336659629731)>><<include "header">>
+<<set $passage to "ADA-21">><<set $myMap4 = setup.generateDirectionsMap(51.51577938009306, -0.08983162906827102,51.515782186164955, -0.090336659629731)>><<set $nextpassage to "ADA-22">><<audio ":all" stop>><<audio "ADA_21-001" play>>
 <main>
 So you are! Let’s see.
 
@@ -936,7 +989,7 @@ Cross Coleman Street to Mason’s Avenue first though.
 
 
 :: ADA-22 {"position":"1000,1700","size":"100,100"}
-<<set $passage to "ADA-22">><<include "header">><<set $myMap5 = setup.generateDirectionsMap(51.515782186164955, -0.090336659629731,51.51579341045079, -0.09090030980993191)>>
+<<set $passage to "ADA-22">><<set $myMap5 = setup.generateDirectionsMap(51.515782186164955, -0.090336659629731,51.51579341045079, -0.09090030980993191)>><<set $nextpassage to "ADA-23">><<audio ":all" stop>><<audio "ADA_21-002" play>>
 <main>
  Good. Alright then. Because children are much better at this game than grown-ups and we have smaller feet, I’ve chosen Mason’s Avenue for the children because it’s advanced level Pavement Crack Avoiding.
 
@@ -960,7 +1013,7 @@ Reckon whatever illness they had was the least of their worries after that!
 
 
 :: ADA-23 {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-23">><<include "header">>
+<<set $passage to "ADA-23">><<set $nextpassage to "ADA-24">><<audio ":all" stop>><<audio "ADA_22" play>>
 <main>
 I knew that! Let me just work out those scores...
 
@@ -983,35 +1036,7 @@ No pressure. I’ll give a moment.
 
 /* Enough time for some of the adults to try to leap over the bollards. */
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 10s>><<set $prevpass to $passage>><<goto "ADA-24">><</timed>>
-  
-</main>
-<<include "footer">>
-
-:: ADA-24 {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-24">><<include "header">>
-<main>
-I knew that! Let me just work out those scores...
-
-That’s one crack stepped on by the children so minus 10 for them. An almost flawless performance and a foul committed by the grown ups so they lose 500 points.
-
-Bad day to be grown up, it would seem!
-
-Still plenty to play for though, plenty to play for!
-
-Let’s cross Basinghall Street next.
-There’s the Guildhall. Now...if you haven’t been you should take a look around the Guildhall but not now. There was an incident that involved a misunderstanding where I was innocently wanting to borrow an item but my motives were misinterpreted, you know what I mean?
-
-Anyway, I wouldn’t say I’m banned exactly. Just that it’s best I stay away from it!
-
-So take a right here.
-
-Now, adults, I don’t want to be encouraging you to try to leap over those bollards but if any of you could do it... I bet your children would be impressed...
-
-No pressure. I’ll give a moment.
-
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 8s>><<set $prevpass to $passage>>
+<<timed 10s>><<set $prevpass to $passage>>
 <<switch $age>>
 <<case "child">>
   <<goto "ADA-24C">>
@@ -1019,12 +1044,16 @@ No pressure. I’ll give a moment.
   <<goto "ADA-24B">>
 <</switch>>
 <</timed>>
-  
+
 </main>
 <<include "footer">>
 
+
+
 :: ADA-24C {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-24C">><<include "header">>
+<<set $passage to "ADA-24C">><<set $nextpassage to "ADA-26">><<audio ":all" stop>>
+/* <<audio "ADA_24C" play>> */
+/* TODO AUDIO MISSING */
 <main>
 When I'm done scoring the grown ups, 
 
@@ -1033,7 +1062,7 @@ When I'm done scoring the grown ups,
 <<include "footer">>
 
 :: ADA-24B {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-24B">><<include "header">>
+<<set $passage to "ADA-24B">><<set $nextpassage to $passage>><<audio ":all" stop>><<audio "ADA_24A_24B" play>>
 <main>
 Now, be honest. Did you leap over one?
 <<button "Yes, I did">><<goto "ADA-25B-Y">><</button>>
@@ -1047,7 +1076,7 @@ Now, be honest. Did you leap over one?
 <<include "footer">>
 
 :: ADA-25B-Y {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-25B-Y">><<include "header">>
+<<set $passage to "ADA-25B-Y">><<set $nextpassage to "ADA-26">><<audio ":all" stop>><<audio "ADA_25B-Y" play>>
 <main>
 Nice work! I believe you, I’m a trusting fella. You can get an extra 10 points. How about that? Every point counts.
 <<timed 5s>><<set $prevpass to $passage>><<goto "ADA-26">><</timed>>
@@ -1059,7 +1088,8 @@ Nice work! I believe you, I’m a trusting fella. You can get an extra 10 points
 <<include "footer">>
 
 :: ADA-25B-N {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-25B-N">><<include "header">>
+<<set $passage to "ADA-25B-N">><<set $nextpassage to "ADA-26">><<audio ":all" stop>><<audio "ADA_25B-N" play>>
+<main>
 <main>
 Yeah, it’s not easy. Maybe if you have some really tall and athletic friends, you can bring them and get them to do it!
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
@@ -1071,7 +1101,7 @@ Yeah, it’s not easy. Maybe if you have some really tall and athletic friends, 
 <<include "footer">>
 
 :: ADA-26{"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-26">><<include "header">><<set $myMap6 = setup.generateDirectionsMap(51.516531611170905, -0.09236516569324225,51.51637005442947, -0.09346830016698235)>>
+<<set $passage to "ADA-26">><<set $myMap6 = setup.generateDirectionsMap(51.516531611170905, -0.09236516569324225,51.51637005442947, -0.09346830016698235)>><<set $nextpassage to "ADA-27">><<audio ":all" stop>><<audio "ADA_26" play>>
 <main>
 Go towards that fountain to Aldermanbury.
 
@@ -1092,7 +1122,7 @@ Now, cross Wood Street to St Albans Court.
 <<include "footer">>
 
 :: ADA-27{"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-27">><<include "header">>
+<<set $passage to "ADA-27">><<set $nextpassage to "ADA-28">><<audio ":all" stop>><<audio "ADA_27" play>>
 <main>
 Narrow ol’ alley this one. Before I was reformed an’ all, it’d be perfect for stealing some ol’ gentleman’s purse, I reckon.
 
@@ -1108,7 +1138,8 @@ See it?
 <<include "footer">>
 
 :: ADA-28{"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-28">><<include "header">>
+<<set $passage to "ADA-28">><<set $nextpassage to "ADA-29">><<audio ":all" stop>><<audio "ADA_28" play>>
+
 <main>Good. Now go and stand on the green. Get into a circle with everyone what wants to play and two of you in the middle. Best to play with ten or more of you but if there are any more than 5, you can start it up and hope others join in. We make do.
 
 Let me know when you’re there. We need two players of more or less the same height in the middle and everyone else in a circle around them. If  others join, just get them to add themselves to the circle.
@@ -1119,14 +1150,14 @@ Let me know when you’re there. We need two players of more or less the same he
 <<include "footer">>
 
 :: ADA-29{"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-29">><<include "header">>
+<<set $passage to "ADA-29">><<set $nextpassage to "ADA-30">><<audio ":all" stop>><<audio "ADA_29" play>>
 <main>
 Good. I’mma play you a tune that you might recognize.
-/* Music: the tune from Oranges and Lemons. */
+
 Everyone knows that!
 Now do you know the words?
-/* (singing over the tune just played) */
- Oranges and lemons,
+
+Oranges and lemons,
 Say the bells of St Clement’s. You owe me five farthings,
 Say the bells of St Martin’s. When will you pay me?
 Say the bells of Old Bailey. When I grow rich,
@@ -1146,13 +1177,25 @@ Right, this time sing along. To do that, you’ll all need to count down and sta
 <<include "footer">>
 
 :: ADA-30 {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-30">><<include "header">><<set $seconds to 5>>
+<<set $passage to "ADA-30">><<set $seconds to 5>><<set $nextpassage to "ADA-31">><<audio ":all" stop>><<audio "ADA_30" play>>
 <main><span id="countdown" class="countdown">5</span>
 <<timed 1s>><<silently>><<repeat 1s>><<set $seconds to $seconds - 1>><<if $seconds gt 0>><<replace "#countdown">>$seconds<</replace>>
   		<<else>> <<replace "#countdown">>Times up!<</replace>>
   			<<stop>>	<</if>><</repeat>>
   <</silently>>
-<</timed>>/* The song is repeated with the players singing along this time. */
+<</timed>>
+
+Oranges and lemons,
+Say the bells of St Clement’s. You owe me five farthings,
+Say the bells of St Martin’s. When will you pay me?
+Say the bells of Old Bailey. When I grow rich,
+Say the bells of Shoreditch. When will that be?
+Say the bells of Stepney.
+I do not know,
+Says the great bell of Bow.
+Here comes a candle to light you to bed, And here comes a chopper to chop off your head! Chip-chop-chip-chop The last one’s head Must come OFF!
+
+
 Sounds like you got it first time!
 
 Now do you know how to play?
@@ -1165,13 +1208,13 @@ When it gets to “the great bell of Bow”, everyone has to pass through the �
 The winner is the last survivor.
 
 Play as many rounds as you want. I can play the song again if you need it. Let me know when you’re done though and I’ll work out the points!
-<<timed 10s>><<set $prevpass to $passage>><<goto "ADA-31">><</timed>>
+<<timed 20s>><<set $prevpass to $passage>><<goto "ADA-31">><</timed>>
   
 </main>
 <<include "footer">>
 
 :: ADA-31 {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-31">><<include "header">>
+<<set $passage to "ADA-31">><<set $nextpassage to $passage>><<audio ":all" stop>>
 <main>
 
 
@@ -1185,15 +1228,32 @@ Play as many rounds as you want. I can play the song again if you need it. Let m
 <<include "footer">>
 
 :: ADA-32 {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-32">><<include "header">>
+<<set $passage to "ADA-32">><<set $seconds to 5>><<set $nextpassage to "ADA-33">><<audio ":all" stop>><<audio "ADA_32" play>>
 <main>
-play the song
+<span id="countdown" class="countdown">5</span>
+<<timed 1s>><<silently>><<repeat 1s>><<set $seconds to $seconds - 1>><<if $seconds gt 0>><<replace "#countdown">>$seconds<</replace>>
+  		<<else>> <<replace "#countdown">>Times up!<</replace>>
+  			<<stop>>	<</if>><</repeat>>
+  <</silently>>
+<</timed>>
 
+Oranges and lemons,
+Say the bells of St Clement’s. You owe me five farthings,
+Say the bells of St Martin’s. When will you pay me?
+Say the bells of Old Bailey. When I grow rich,
+Say the bells of Shoreditch. When will that be?
+Say the bells of Stepney.
+I do not know,
+Says the great bell of Bow.
+Here comes a candle to light you to bed, And here comes a chopper to chop off your head! Chip-chop-chip-chop The last one’s head Must come OFF!
+
+
+  <<button "Tell us the scores">><<goto "ADA-33">><</button>>
 </main>
 <<include "footer">>
 
 :: ADA-33 {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-33">><<include "header">>
+<<set $passage to "ADA-33">><<set $nextpassage to "end">><<audio ":all" stop>><<audio "ADA_33" play>>
 <main>
 Right then. As you know there were 16 million points up for grabs in that one. So everything to play for.
 
@@ -1213,7 +1273,7 @@ Oh and if anyone does want one of them watches, come see me. No questions asked 
 
 
 :: end {"position":"100,700","size":"100,100"}
-<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap(51.516580852032476, -0.09431729185196457,51.51685580782133, -0.09511198679939459)>><<include "header">>
+<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap(51.516580852032476, -0.09431729185196457,51.51685580782133, -0.09511198679939459)>>
 <main>
 
 End location

@@ -1,12 +1,12 @@
 :: StoryTitle
-The Artful Dodges Again
+The Artful Dodges Again DONE
 
 
 :: StoryData
 {
 	"ifid": "F9E39354-F641-4070-8B45-C312A3FDC8C2",
 	"format": "SugarCube",
-	"format-version": "2.36.1",
+	"format-version": "2.34.1",
 	"start": "landing",
 	"zoom": 0.3
 }
@@ -446,9 +446,9 @@ return iFrame
 <<cacheaudio "ADA_11A" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11A.mp3">>
 <<cacheaudio "ADA_11B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11B.mp3">>
 <<cacheaudio "ADA_11C" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11C.mp3">>
-<<cacheaudio "ADA_12B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11B.mp3">>
-<<cacheaudio "ADA_13B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11B.mp3">>
-<<cacheaudio "ADA_14B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11B.mp3">>
+<<cacheaudio "ADA_12B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_12B.mp3">>
+<<cacheaudio "ADA_13B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_13B.mp3">>
+<<cacheaudio "ADA_14B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_14B.mp3">>
 <<cacheaudio "ADA_15" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_15.mp3">>
 <<cacheaudio "ADA_16" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_16.mp3">>
 <<cacheaudio "ADA_17A" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_17A.mp3">>
@@ -487,6 +487,15 @@ return iFrame
 <div class="nav-item forward"><<button ">">><<set $prevpass to $passage>><<goto $nextpassage>><</button>></div>
 </footer>
 
+:: footersimple {"position":"100,353","size":"100,100"}
+<footer><div class="nav-item replay"><<button "Replay">><<goto $passage>><</button>> </div>
+<div class="nav-item end"><<button "Take me to the end">><<set $prevpass to $passage>><<goto "lost">><</button>></div></footer>
+
+:: footerend {"position":"219,485","size":"100,100"}
+<footer>
+<div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div>
+</footer>
+
 
 :: landing {"position":"375,150","size":"100,100"}
 <<set $passage to "landing">>
@@ -501,153 +510,147 @@ return iFrame
 <<set $passage to "lost">><<audio ":all" stop>>
 
 <main>
-Sorry to hear that you're lost! 
 You have two options:
 
 <<button "Begin the adventure again">><<goto "landing">><</button>>
 
 <<button "Take me straight to the end location!">><<goto "end">><</button>>
-</main>
 <<include "footer">>
+</main>
 
 
-:: ADA-05 {"position":"600,400","size":"100,100"}
+
+:: ADA-05 {"position":"516,160","size":"200,100"}
 <<set $passage to "ADA-05">><<set $nextpassage to $passage>><<audio ":all" stop>><<audio "ADA_05" play>>
 <main>
-<div id="captions"><<type 70ms >>Hullo my covey
- <</type>></div>
-<<timed 3s>><<replace "#captions">><<type 70ms >>Oi fam!<</type>>
-<</replace>><</timed>> 
-<<timed 6s>><<replace "#captions">><<type 70ms >>Over ‘ere<</type>>
-<</replace>><</timed>> 
-<<timed 8s>><<replace "#captions">><<type 70ms >>My eyes, you’re all over the place.
-You must be green.<</type>><</replace>><</timed>> 
-<<timed 15s>><<replace "#captions">><<type 70ms >>You’re facing that Royal Exchange,right? It’s closed today, which is lucky because I’m banned, innit. On the gates there are two ladies. The posh sort, you know what I mean?<</type>><</replace>><</timed>> 
-<<timed 16s>>But not the posh sort that call the ol’ Bill soon as look at a young gentleman such as myself.
+<div id="mount"></div>
+<<timed 8s>><<replace "#mount">><<type 50ms>>Hello my covey! <</type>><</replace>><</timed>> 
+<<timed 12s>><<replace "#mount">><<type 50ms>>Oi, fam! Over here!<</type>><</replace>><</timed>>  
+<<timed 19s>><<replace "#mount">><<type 50ms>>My eyes, you're all over the place, you must be green. You're facing that Royal Exchange, right? It's closed today, which is lucky because I'm banned i
 
-Now turn around. You’ll see a camera. Down from there. That’s where I am.
+nnit.<</type>><</replace>><</timed>>    
+<<timed 31s>><<replace "#mount">><<type 50ms>>On the gates there are two ladies, the posh sort, d'you know what i mean. Not the posh sort that'll call the Old Bill soon as they see a young gentleman such as myself.<</type>><</replace>><</timed>>    
+<<timed 41s>><<replace "#mount">><<type 50ms>>Now turn around, you'll see a camera. 
 
-You can’t see me yet, I know. But I am there and I can see you.
+Down from there, that's where I am. 
 
-Now I did say this was an adventure for my own sort. That’s to say what you might call...children. I don’t like to use that word though. Whenever you say you’re a child, people tell you about all the things you’re not allowed to do. And I don’t like being told I can’t do things.
+You can't see me yet. I know. But I am there, and I can see you.<</type>><</replace>><</timed>>    
+<<timed 53s>><<replace "#mount">><<type 50ms>>Now, I did say this was an adventure for my own sort. 
 
-So while I may be a child (technically speaking that is), I’m also my own man.
+That is to say what you might call children. 
 
-Best of both worlds, you might say.
+I don't like to use that word though. <</type>><</replace>><</timed>>  
+<<timed 61s>><<replace "#mount">><<type 50ms>>Whenever people say you're a child, people tell you all about the things you're not allowed to do. 
 
-So what are you? And before you answer, this adventure’s for grown ups and children so if you’re all grown ups, choose the youngest ones to be the children. And if you’re all children, the biggest can pretend to be grown-ups for the day. Either way, we want an even split.
+I don't like being told I can't do things.<</type>><</replace>><</timed>>    
+<<timed 70s>><<replace "#mount">><<type 50ms>>So while I may be a child, technically speaking, that is, I'm also my own man. Best of both worlds, you might say. So what are you?<</type>><</replace>><</timed>>    /*AUDIO HERE ISN'T Q EDITED RIGHT, there's a line repeat*/
+<<timed 84s>><<replace "#mount">><<type 55ms>>And before you answer this adventures for grownups and children, so if you're all grown ups, choose the youngest ones to be the children. 
 
-Work that out amongst yourselves if you must. And then tell me which one you are.<</timed>>
+And if you're all children, the biggest can pretend to be the grown ups for the day.<</type>><</replace>><</timed>>    
+<<timed 96s>><<replace "#mount">><<type 50ms>>Either way, we want an even split. 
 
-<<timed 20s>>
+Work that out amongst yourselves if you must. 
+
+And then tell me which one you are.<</type>><</replace>><</timed>> 
+
+<<timed 107s>><<replace "#mount">>
 <div class="menu-wrapper">
   <<button "A child">><<set $prevpass to $passage>><<set $age to "child">><<goto "ADA-06C">><</button>>
   <<button "A grown up">><<set $prevpass to $passage>><<set $age to "adult">><<goto "ADA-06A">><</button>>
   <<button "Both (sharing a screen)">><<set $prevpass to $passage>><<set $age to "both">><<goto "ADA-06B">><</button>>
-</div >
-<</timed>>
+</div>
+<</replace>><</timed>>
 </main>
-<<include "footer">>
+
+<<include "footersimple">>
 
 
-:: ADA-06C {"position":"800,400","size":"100,100"}
+:: ADA-06C {"position":"1173,160","size":"200,100"}
 <<set $passage to "ADA-06C">><<set $nextpassage to "ADA-07">><<audio ":all" stop>><<audio "ADA_06C" play>>
-
-/* Ideally this passage takes the same time as ADA-06A */
-<main>Don’t you fret your eyelids, pal.
-We’ll have a fine ol’ time together. This City’s not as scary as it looks. Stick with me and you’ll be right as rain.
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 10s>><<set $prevpass to $passage>><<goto "ADA-07">><</timed>>
+<main>
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>Don't fret your eyelids, pals. We'll have a fine old time together. The city's not as scary as it looks. Stick with me and you'll be right as rain!<</type>><</replace>><</timed>> 
+<<timed 12s>><<set $prevpass to $passage>><<goto "ADA-07">><</timed>>
 </main>
 <<include "footer">>
 
 
-:: ADA-06A {"position":"800,400","size":"100,100"}
+:: ADA-06A {"position":"740,156","size":"200,100"}
 <<set $passage to "ADA-06C">><<set $nextpassage to "ADA-07">><<audio ":all" stop>><<audio "ADA_06A" play>>
 
-<main>One o’ them. Alright, alright. Well I’ll allow you since you’re here to look after your own and you wouldn’t want to entrust them to me, I don’t suppose.
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 10s>><<set $prevpass to $passage>><<goto "ADA-07">><</timed>>
+<main>
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>One of them! All right, all right! Well I'll allow you since you're here to look after your own. You wouldn't want to entrust them to me I don't suppose.<</type>><</replace>><</timed>> 
+<<timed 12s>><<set $prevpass to $passage>><<goto "ADA-07">><</timed>>
 </main>
 <<include "footer">>
 
 
-:: ADA-06B {"position":"800,400","size":"100,100"}
+:: ADA-06B {"position":"960,166","size":"200,100"}
 <<set $passage to "ADA-06C">><<set $nextpassage to "ADA-07">><<audio ":all" stop>><<audio "ADA_06B" play>>
-
-<main>In that case, I’ll tell you both the instructions. But you’d best be putting your fingers in your ears or covering up your eyes when it doesn’t apply to you. Don’t worry, I trust ya.
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 10s>><<set $prevpass to $passage>><<goto "ADA-07">><</timed>>
+<main>
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>In that case, I'll tell you both the instructions. But you best be putting your fingers in your ears, or covering up your eyes when it doesn't apply to you! Don't worry I trust you!<</type>><</replace>><</timed>> 
+<<timed 12s>><<set $prevpass to $passage>><<goto "ADA-07">><</timed>>
 </main>
 <<include "footer">>
 
 
-:: ADA-07 {"position":"1000,400","size":"100,100"}
+:: ADA-07 {"position":"1400,159","size":"200,100"}
 <<set $passage to "ADA-07">><<set $nextpassage to "ADA-08">><<audio ":all" stop>><<audio "ADA_07" play>>
 
 <main>
-Now we got that outta the way, let’s get going. Cross over first to where I am. Make sure you’re standing under the cameras so I can talk to you. I can’t risk getting seen by those things. Not when there’s a price on my head, know what I mean? Let me know when you’re across.
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 45ms>>Now we've got that out of the way let's get going.<</type>><</replace>><</timed>>   
+<<timed 3.5s>><<replace "#mount">><<type 50ms>>Cross over first to where I am. Make sure you're standing under the camera so I can talk to you. 
 
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>><<button "I'm here">><<set $prevpass to $passage>><<goto "ADA-08">><</button>><</timed>>
+I can't risk getting seen by those things. Not when there's a price on my head, d'you know what i mean? Let me know when you're across.<</type>><</replace>><</timed>> 
+<<timed 20s>><<button "I'm here">><<set $prevpass to $passage>><<goto "ADA-08">><</button>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: ADA-08 {"position":"1200,400","size":"100,100"}
+:: ADA-08 {"position":"1650,163","size":"200,100"}
 <<set $passage to "ADA-08">><<set $nextpassage to "ADA-09">><<audio ":all" stop>><<audio "ADA_08" play>>
-
 <main>
-Pleased to make your acquaintance I’m sure. Jack Dawkins is the name. Though you may know me better as The Artful Dodger.
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>Pleased to make your acquaintance, for sure. 
 
-Now before we move on. There are a
-couple of things I wanna say about Mr Charles Dickens and his descriptions of me in what is otherwise a very fine book, Oliver Twist, about my posh mate Olly.
+Jack Dawkins is the name, though you may know me better as the Artful Dodger.<</type>><</replace>><</timed>>    
+<<timed 10s>><<replace "#mount">><<type 53ms>>Now, before we move on, there are a couple things I want to say about Mr. Charles Dickens and his descriptions of me, in what is, otherwise a very fine book, "Oliver Twist" about my posh mate Ollie.<</type>><</replace>><</timed>>    
+<<timed 24s>><<replace "#mount">><<type 65ms>>Now there are some inaccuracies. Didn't think I could read, did he? Short for his age? Average for my time, I'll have you know!<</type>><</replace>><</timed>>    
+<<timed 38s>><<replace "#mount">><<type 70ms>>Bow legs? Perfectly regular legs, as you can see! 
 
-There are some inaccuracies.
+And this is the real kicker! Little sharp, ugly eyes! HAHA! 
 
-Didn’t think I could read, did he?
+Ask you? Now, I don't want to get personal but Charlie himself looked like a dustpan and brush.<</type>><</replace>><</timed>>   
+<<timed 59s>><<replace "#mount">><<type 65ms>>Calling another man ugly, saying my eyes are little? 
 
-“Short of his age”. Average for my time, I’ll have you know.
+Well of course they're little, I'm little. They're in proportion! 
 
-“Bow legs”! Perfectly regular legs as you can see!
+Alright then! That's just something I wanted to get off my chest for about 200 years.Thank you kindly for the opportunity.<</type>><</replace>><</timed>>    
+<<timed 77s>><<replace "#mount">><<type 50ms>>Now, today, I'm gonna show you the City of London. 
 
-And this is real kicker: “little...sharp...ugly eyes”
+Now, some people look at a city like this. And they think it's the dirtiest, most wretched place they've ever seen.<</type>><</replace>><</timed>>    
+<<timed 88s>><<replace "#mount">><<type 50ms>>That the streets are narrow and muddy, and the air is pregnant with filthy odors. 
 
-I ask you! 
+Now I'm not saying that's not true, if you are being all literal!<</type>><</replace>><</timed>>    
+<<timed 98s>><<replace "#mount">><<type 55ms>>But these people they lack imagination. They don't have their own inner world but like children do. To me. This place is a playground. And that's what I'm going to show you.<</type>><</replace>><</timed>>    
+<<timed 113s>><<replace "#mount">><<type 50ms>>Are you ready for your first game?<</type>><</replace>><</timed>> 
 
-Now I don’t wanna get personal but Charlie himself looked like a dustpan ‘n’ brush. Calling another man “ugly” saying that my eyes are “little”. Of course they’re little! I’m little! They’re in proportion!
-
-
-Alright then. That’s just something I’ve wanted to get off my chest for about two hundred years.
-
-Thank you kindly for the opportunity.
-
-Today, I’mma show you the City of London.
-
-Now some people look at a city like this and they think it’s the dirtiest and most wretched place that they’ve ever seen. That the streets are narrow and muddy and the air is pregnant with filthy odours.
-
-Now I’m not saying that’s not true.
-If you’re being all literal but these people: they lack imagination. They don’t have their own inner world. Not like children do.
-
-To me, this place is a playground.
-
-And that’s I’m gonna show you.
-
-Are you ready for the first game?
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 10s>><div class="menu-wrapper">
+<<timed 118s>><<replace "#mount">><div class="menu-wrapper">
   <<button "Let’s go">><<set $prevpass to $passage>><<goto "ADA-09">><</button>>
   <<button "Let’s double go">><<set $prevpass to $passage>><<goto "ADA-09">><</button>>
 </div>
-<</timed>>
+<</replace>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: ADA-09 {"position":"1400,400","size":"100,100"}
-<<set $passage to "ADA-09">><<set $nextpassage to $passage>><<audio ":all" stop>><<audio "ADA_09" play>>
-
+:: ADA-09 {"position":"1870,153","size":"200,100"}
+<<set $passage to "ADA-09">><<audio ":all" stop>><<audio "ADA_09" play>>
 <main>
+<div id="mount"></div>
 <<type 70ms >>That’s what I like to hear.<</type>>
 
 <<timed 5s>><<set $prevpass to $passage>>
@@ -661,218 +664,220 @@ Are you ready for the first game?
 <</switch>>
 <</timed>>
 </main>
-<<include "footer">>
+<<include "footersimple">>
 
 
-:: ADA-10A {"position":"600,700","size":"100,100"}
+:: ADA-10A {"position":"360,506","size":"200,100"}
 <<set $passage to "ADA-10A">><<set $nextpassage to "ADA-11A">><<audio ":all" stop>><<audio "ADA_10A" play>>
-
 <main>
-For this game all you have to do is walk. That’s it. Simple as.
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>For this game, all you have to do is walk. 
 
-This here’s the Bank of England.
-Imagine the riches in there. They wouldn’t let someone like me in though. And they’re right. Because I’d nick stuff. It’s just what I’m like.
+That's it. Simple as. 
 
-It’s the weekend so we can’t go inside any case. Walk round the corner to Bartholomew Lane. Don’t cross the street because we don’t want to worry about cars.
+This here's the Bank of England. Imagine the riches in there.<</type>><</replace>><</timed>>   
+<<timed 11s>><<replace "#mount">><<type 50ms>>They wouldn't let somebody like me in though. 
 
-Keep going and don’t worry about your little ones. Not like me to lead them astray or nothing.
+And they're right. Because I'd nick stuff. It's just what I'm like. 
 
-Let me know when you get to Lothbury.
+It's the weekend so we can't go inside any case.<</type>><</replace>><</timed>>   
+<<timed 21s>><<replace "#mount">><<type 50ms>>Walk around the corner to Bartholemew Lane. Don't cross the street because we don't want to worry about cars. 
 
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
+Keep going and don't worry about your little ones. Not like me to lead them astray or nothing.<</type>><</replace>><</timed>>    
+<<timed 33s>><<replace "#mount">><<type 50ms>>Let me know when you get to Loftbury.<</type>>
 
-<<timed 10s>><<button "I'm at the corner of Lothbury and Bartholomew Lane">><<set $prevpass to $passage>><<goto "ADA-11A">><</button>><</timed>>
+<<button "I'm at the corner of Lothbury and Bartholomew Lane">><<set $prevpass to $passage>><<goto "ADA-11A">><</button>><</replace>><</timed>> 
+
 </main>
 <<include "footer">>
 
 
-:: ADA-11A {"position":"800,900","size":"100,100"}
+:: ADA-11A {"position":"593,526","size":"200,100"}
 <<set $passage to "ADA-11A">><<set $nextpassage to "ADA-15">><<audio ":all" stop>><<audio "ADA_11A" play>>
-
 <main>
-You done well so far. Reckon you’ve worked out what the game is by now?
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 55ms>>You've done well so far! Reckon you've worked out what the game is by now? 
 
-Well if you have, maybe try to play along. Do a silly walk. Start hopping. Or whatever you like. Let them know that you know they’re copying you.
+Well, if you have, maybe tried to play along.<</type>><</replace>><</timed>>    
+<<timed 10s>><<replace "#mount">><<type 50ms>>Do a silly walk, start hopping, whatever you like. 
 
-Have some fun with it! Go on. Let’s keep playing until you get to the corner of Tokenhouse Yard.
+Let them know you know they're copying you! Have some fun with it, go on!<</type>><</replace>><</timed>>    
+<<timed 20s>><<replace "#mount">><<type 50ms>>Let's keep playing until you get to the corner of Tokenhouse Yard. Let me know when you get there.
 
-Let me know when you get there.
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>><<button "I'm at the corner of Tokenhouse Yard">><<set $prevpass to $passage>><<goto "ADA-15">><</button>><</timed>>
+<<button "I'm at the corner of Tokenhouse Yard">><<set $prevpass to $passage>><<goto "ADA-15">><</button>><</type>><</replace>><</timed>> 
 </main>
 <<include "footer">>
 
 
-:: ADA-10C {"position":"600,700","size":"100,100"}
+:: ADA-10C {"position":"353,766","size":"200,100"}
 <<set $passage to "ADA-10C">><<set $nextpassage to "ADA-11C">><<audio ":all" stop>><<audio "ADA_10C" play>>
 
 <main>
-These grown ups are going to start walking, just walking without a clue what’s going on. What we’re going to do is imitate them. To begin with, better to start imitating the grown ups you came here with: your parent, your sibling or maybe you’re like me and you got a Fagin, I don’t know.
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>These grownups are gonna start walking, just walking without a clue what's going on? What we're going to do is imitate them.<</type>><</replace>><</timed>>    
+<<timed 9s>><<replace "#mount">><<type 50ms>>To begin with, better start imitating the grown ups you came here with, your parent, your sibling, or maybe you're like me and you've got a Fagin, I dunno.<</type>><</replace>><</timed>>    
+<<timed 18s>><<replace "#mount">><<type 50ms>>Start with them though. 
 
-Start with them though. If there are others around though and you want to do a swap with another child, do that. Make sure they agree though.
+If there are others around though, and you do want to swap with another child do that. 
 
-People don’t always like it when they see someone copying their mum. Trust me on that!
+Make sure they agree though. People don't always like it when they see someone copying their mum. Trust me on that.<</type>><</replace>><</timed>>    
+<<timed 32s>><<replace "#mount">><<type 45ms>>I've told the grown ups where to go, but all we're doing is going around the corner onto a street called Bartholomew Lane. Stay on this pavement, don't cross the road - wouldn't want you getting lost.<</type>><</replace>><</timed>>   
+<<timed 42s>><<replace "#mount">><<type 50ms>>When you get to the end of the street, where it turns onto a street called Loftbury, let me know on here. Now, let's go!
 
-I’ve told the grown ups where to go but all we’re doing is going round the corner onto a street called Bartholomew Lane. Stay on this pavement, don’t cross the road. Wouldn’t want you getting lost. When you get to the end of the street, where it turns onto a street called Lothbury, let me know on here.
+<<button "I'm at the corner">><<set $prevpass to $passage>><<goto "ADA-11C">><</button>><</type>><</replace>><</timed>> 
 
-Now let’s go!
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>><<button "I'm at the corner">><<set $prevpass to $passage>><<goto "ADA-11C">><</button>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: ADA-11C {"position":"600,700","size":"100,100"}
+:: ADA-11C {"position":"603,773","size":"200,100"}
 <<set $passage to "ADA-11C">><<set $nextpassage to "ADA-15">><<audio ":all" stop>><<audio "ADA_11C" play>>
-
 <main>
-Nicely done, my covey, nicely done.
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>Nicely done, my covey, nicely done. Now they're in on the game, so they're going to start making it harder for you! 
 
-Now they’re in on the game so they’re gonna start making it harder for you. Chuck a few trick moves in to throw you off. But don’t worry. I know you can take anything they have up their sleeves! We’ll keep going down this street to the corner of Tokenhouse Yard. Have fun and let me know when you get there.
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
+Chuck in a few trick moves to throw you off, but don't worry, I know you can take anything they have up their sleeves.<</type>><</replace>><</timed>>  
+<<timed 17s>><<replace "#mount">><<type 50ms>>We'll keep going down this street to the corner of Tokenhouse Yard. 
 
-<<timed 5s>><<button "I'm here">><<set $prevpass to $passage>><<goto "ADA-15">><</button>><</timed>>
+Have fun, and let me know when you get there.
+
+<<button "I'm here">><<set $prevpass to $passage>><<goto "ADA-15">><</button>><</type>><</replace>><</timed>> 
+
 </main>
 <<include "footer">>
 
 
-:: ADA-10B {"position":"600,700","size":"100,100"}
+:: ADA-10B {"position":"350,650","size":"200,100"}
 <<set $passage to "ADA-10B">><<set $nextpassage to "ADA-11B">><<audio ":all" stop>><<audio "ADA_10B" play>>
-
 <main>
-For this game, all the grown-ups have to do is walk. We’ll go round the corner here on Bartholomew Lane, all the way to the corner with Lothbury. But before you start walking, pass me over to the children because I have a message for them...
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>For this game all the grownups have to do is walk. We'll go round the corner here on Bartholomew Lane, all the way down to the corner with Loftbury.<</type>><</replace>><</timed>>    
+<<timed 10s>><<replace "#mount">><<type 50ms>>But before you start walking, pass me over to the children, because I have a message for them.
 
-Make sure they can’t see or hear
-me...
+<<button "Okay">><<set $prevpass to $passage>><<goto "ADA-11B">><</button>><</type>><</replace>><</timed>> 
 
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-
-<<timed 5s>><<button "Okay">><<set $prevpass to $passage>><<goto "ADA-11B">><</button>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: ADA-11B {"position":"800,700","size":"100,100"}
+:: ADA-11B {"position":"586,646","size":"200,100"}
 <<set $passage to "ADA-11B">><<set $nextpassage to "ADA-12B">><<audio ":all" stop>><<audio "ADA_11B" play>>
-
 <main>
-Okay children what you’re going to do is copy how they walk! To begin with, better to start imitating the grown ups you came here with: your parent, your sibling or maybe you’re like me and you got a Fagin, I don’t know.
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>Make sure they can't see or hear me. 
 
-Start with them. If there are others around though and you want to do a swap with another child, do that. Make sure they agree though.
+Okay, children, what you're going to do is copy how they walk.<</type>><</replace>><</timed>>    
+<<timed 9s>><<replace "#mount">><<type 50ms>>To begin with, better start imitating the grown ups  you came here with, your parent, your sibling, or maybe you're like me and you've got a Fagin, I dunno? 
 
-People don’t always like it when they see someone copying their mum. Trust me on that!
+Start with them.<</type>><</replace>><</timed>>    
+<<timed 19s>><<replace "#mount">><<type 50ms>>If there are others around though, and you want to do a swap with another child, do that. 
 
-This here’s the Bank of England.
-Imagine the riches in there. They wouldn’t let someone like me in though. And they’re right. Because I’d nick stuff. It’s just what I’m like.
+Make sure they agree though. People don't always like it when they see someone copying their mum. Trust me on that.<</type>><</replace>><</timed>>    
+<<timed 34s>><<replace "#mount">><<type 50ms>>This here is the Bank of England. Imagine the riches in there. 
 
-It’s the weekend so we can’t go inside any case.
+They wouldn't let someone like me in there though, and they're right, because I'd nick stuff. It's just what I'm like.<</type>><</replace>><</timed>>    
+<<timed 48s>><<replace "#mount">><<type 50ms>>It's the weekend so we can't go inside, in any case. 
 
-The grown-ups should stop at the corner of Lothbury. If they don’t, shout at them!
+The grown ups should stop at the corner of Loftbury. If they don't shout at them. When you're there, let me know.
 
-When you’re there, let me know.
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>><<button "at the corner of Lothbury and Bartholomew Lane">><<set $prevpass to $passage>><<goto "ADA-12B">><</button>><</timed>>
+<<button "I'm at the corner of Lothbury and Bartholomew Lane">><<set $prevpass to $passage>><<goto "ADA-12B">><</button>><</type>><</replace>><</timed>> 
+
 </main>
 <<include "footer">>
 
 
-:: ADA-12B {"position":"1000,700","size":"100,100"}
+:: ADA-12B {"position":"810,660","size":"200,100"}
 <<set $passage to "ADA-12B">><<set $nextpassage to "ADA-13B">><<audio ":all" stop>><<audio "ADA_12B" play>>
 <main>
-
-<<type 70ms >>Okay, you can give the screen back
-to the grown up now.<</type>>
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>><<button "Okay">><<set $prevpass to $passage>><<goto "ADA-13B">><</button>><</timed>>
+<div id="mount"></div>
+<<type 70ms >>Okay, you can give the screen back to the grown up now.<</type>>
+<<timed 7s>><<button "Okay">><<set $prevpass to $passage>><<goto "ADA-13B">><</button>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: ADA-13B {"position":"1200,700","size":"100,100"}
+:: ADA-13B {"position":"1033,616","size":"200,200"}
 <<set $passage to "ADA-13B">><<set $nextpassage to "ADA-14B">><<audio ":all" stop>><<audio "ADA_13B" play>>
 <main>
-Hullo again! Good effort so far.
-Reckon you’ve worked out what the game is by now?
+<div id="mount"></div>
+  
+<<timed 1s>><<replace "#mount">><<type 50ms>>Hello again, good efforts so far. Reckon you've worked out what the game is by now?<</type>><</replace>><</timed>>    
+<<timed 7s>><<replace "#mount">><<type 50ms>>Well, if you have, maybe try to play along, do a silly walk, start hopping, or whatever you like, let them know you know they're copying you. Have some fun with it, go on.<</type>><</replace>><</timed>>    
+<<timed 20s>><<replace "#mount">><<type 50ms>>Let's keep playing until you get to the corner of Tokenhouse Yard. Now pass the screen back to the children.
 
-Well if you have, maybe try to play along. Do a silly walk. Start hopping. Or whatever you like. Let them know that you know they’re copying you.
+<<button "Okay">><<set $prevpass to $passage>><<goto "ADA-14B">><</button>><</type>><</replace>><</timed>> 
 
-Have some fun with it! Go on. Let’s keep playing until you get to the corner of Tokenhouse Yard.
-
-Now pass the screen back to the children
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>><<button "Okay">><<set $prevpass to $passage>><<goto "ADA-14B">><</button>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: ADA-14B {"position":"1425,700","size":"100,100"}
+:: ADA-14B {"position":"1253,616","size":"200,200"}
 <<set $passage to "ADA-14B">><<set $nextpassage to "ADA-15">><<audio ":all" stop>><<audio "ADA_14B" play>>
 <main>
-They’re in on the game now. So they might try to make it harder for you. But don’t worry, I know you can do it. We’re going to the corner of Tokenhouse Yard. Let me know when you get there.
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>><<button "I'm at the corner of Tokenhouse Yard">><<set $prevpass to $passage>><<goto "ADA-15">><</button>><</timed>>
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>They're in on the game now, so they might try to make it harder for you, but don't worry I know you can do it!<</type>><</replace>><</timed>>    
+<<timed 8s>><<replace "#mount">><<type 50ms>>We're going to the corner of Tokenhouse yard. Let me know when you get there.
+
+<<button "I'm at the corner of Tokenhouse Yard">><<set $prevpass to $passage>><<goto "ADA-15">><</button>><</type>><</replace>><</timed>> 
+
 </main>
 <<include "footer">>
 
 
-:: ADA-15 {"position":"1600,800","size":"100,100"}
+:: ADA-15 {"position":"1475,706","size":"200,200"}
 <<set $passage to "ADA-15">><<set $nextpassage to "ADA-16">><<audio ":all" stop>><<audio "ADA_15" play>>
 <main>
-There you are. After carefully considering my personal, extremely complex scoring system, I can confidently say that the adults scored a grand total of 672 points in that game
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 70ms>>There you are. 
 
-But the children are the winners with 3,793 points!
+Now, after carefully considering my personal extremely complex scoring system, I can confidently say that the adults scored a grand total of 672 points in that game.<</type>><</replace>><</timed>>    
+<<timed 20s>><<replace "#mount">><<type 60ms>>But the children are the winners with 3793 points. 
 
-Don’t give up hope, adults, though.
-There’s everything to play for in the next round.
-
-Also if anyone does fancy buying a watch, come find me after. Totally kosher, don’t you worry, son.
+Don't give up hope though adults, there is plenty to play for in the next round.<</type>><</replace>><</timed>>  
+<<timed 34s>><<replace "#mount">><<type 50ms>>Also, if anyone does fancy buying a watch, you can come find me after! Totally kosher, don't you worry, son. 
 
 Are we ready for the next game?
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>>
+
 <div class="menu-wrapper">
   <<button "You bet we are, Jack">><<set $prevpass to $passage>><<goto "ADA-16">><</button>>
   <<button "Yes, Jack!">><<set $prevpass to $passage>><<goto "ADA-16">><</button>>
-</div>
-<</timed>>
+</div><</type>><</replace>><</timed>> 
 </main>
 <<include "footer">>
 
 
-:: ADA-16 {"position":"1800,800","size":"100,100"}
+:: ADA-16 {"position":"1695,713","size":"200,200"}
 <<set $passage to "ADA-16">><<set $nextpassage to $passage>><<audio ":all" stop>><<audio "ADA_16" play>>
 
 <main>
-Well let’s not dawdle then. Fix up, look sharp.
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 60ms>>Well, let's not dawdle, then! Fix Up! Look Sharp! 
 
-C’mon. Let’s go into Tokenhouse Yard.
+Come on, let's go into Tokenhouse Yard. Keep going along here, until you get to a dead end.<</type>><</replace>><</timed>>    
+<<timed 14s>><<replace "#mount">><<type 55ms>>When you're there, choose one of you to start as grandma.
 
-Keep going along here.
+You know this game don't you! Grandma's Footsteps.<</type>><</replace>><</timed>>    
+<<timed 24s>><<replace "#mount">><<type 60ms>>Whoever's grandma goes over there and stands facing the wall next to the door to number 11. 
 
- Until you get to a dead end.
+Everyone else starts up on the other side of the bollards up here.<</type>><</replace>><</timed>>    
+<<timed 37s>><<replace "#mount">><<type 60ms>>You all try to reach grandma and pick her pocket - I mean, tap her on the shoulder, what am i like, always confusing those two.<</type>><</replace>><</timed>>   
+<<timed 46s>><<replace "#mount">><<type 65ms>>If grandma turns around, everyone has to freeze. 
 
-When you’re there, choose one of you to start as grandma.
+If grandma sees any movement at all, you're out. 
 
-You know this game, don’t you?
+If you do tap grandma on the shoulder, you win that round and you become grandma.<</type>><</replace>><</timed>>    
+<<timed 60s>><<replace "#mount">><<type 60ms>>If you're standing or walking behind the bollards, you're not part of the game. 
 
-Grandma’s Footsteps. Whoever’s grandma goes over there and stands
-facing the wall next to number 11.
+But if you see folks that want to join in, just catch them up on the rules or tell them to listen to me.<</type>><</replace>><</timed>>    
+<<timed 71s>><<replace "#mount">><<type 55ms>>Play as many rounds as you fancy and when you're ready to go. Just let me know.<</type>><</replace>><</timed>> 
 
-Everyone else starts on side of the bollards up the door to the other ‘ere.
-
-You all try to reach grandma and pick her pocket - I mean - tap her on the shoulder. What am I like? Always confusing those two.
-
-If grandma turns around, everyone has to freeze. If grandma sees any movement at all, you’re out.
-
-If you do tap grandma on the shoulder, you win that round and you become grandma.
-
-If you’re standing or walking behind the bollards, you’re not part of the game.
-
-If you see folk what want to join in, just catch them up on the rules or tell them to listen to me.
-
-Play as many round as you fancy and when you’re ready to go, just let me know.
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 10s>><<set $prevpass to $passage>>
+<<timed 81s>><<set $prevpass to $passage>>
 <<switch $age>>
 <<case "child" "both">>
   <<goto "ADA-17B">>
@@ -881,169 +886,178 @@ Play as many round as you fancy and when you’re ready to go, just let me know.
 <</switch>>
 <</timed>>
 </main>
-<<include "footer">>
+<<include "footersimple">>
 
 
-:: ADA-17B {"position":"2000,700","size":"100,100"}
+:: ADA-17B {"position":"1915,680","size":"200,200"}
 <<set $passage to "ADA-17B">><<set $nextpassage to "ADA-18">><<audio ":all" stop>><<audio "ADA_17C_17B" play>>
 
-<main>Make sure you get the adults to play this too. They’ll be really bad at it and fall over and we can all laugh at them. Ha!
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-
-<<timed 5s>><<button "Let’s keep going, Jack">><<set $prevpass to $passage>><<goto "ADA-18">><</button>><</timed>>
-</main>
-<<include "footer">>
-
-
-:: ADA-17A {"position":"2000,900","size":"100,100"}
-<<set $passage to "ADA-17A">><<set $nextpassage to "ADA-18">><<audio ":all" stop>><<audio "ADA_17A" play>>
-
-<main>You’ve got to play too. Don’t think
-this is just for the children!
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-
-<<timed 5s>><<button "Let’s keep going, Jack">><<set $prevpass to $passage>><<goto "ADA-18">><</button>><</timed>>
-</main>
-<<include "footer">>
-
-
-:: ADA-18 {"position":"2200,800","size":"100,100"}
-<<set $passage to "ADA-18">><<set $myMap = setup.generateDirectionsMap(51.51475181321926, -0.08845052243756538,51.51565833716061, -0.08892530366773153)>><<set $nextpassage to "ADA-19">><<audio ":all" stop>><<audio "ADA_18" play>>
-
-<main>
-Well played all. I’ve added up the scores and that’s...
-
-Yes, that’s right. It’s 473 points for the adults but the children are still in the lead with...
-
-One million points!
-
-Hurrah!
-
-Don’t worry though, adults, the last game is where the real points are. There’s ooooh 16 million points up for grabs in that one, I reckon.
-
-Let’s go and find out. Through this tunnel. Yeah, that’s the one, toward the Dover Harbour, you know: Barber!
-
-Go all the way through until you get to Telegraph Street.
-
-We’ll play a game in here too.
-
-On Telegraph Street, make sure you’re heading left. Then look
-under your feat.
-
-We’re going to play: don’t step on the cracks. Just as far as the bollards there. This street is pretty easy so we can all play it. No points for this. Like a trial run. Off you go and let me know when you’re at the bollards.
-
-You know what a telegraph is, don’t you? It’s some way that I can tell you something through symbols. Don’t matter if it’s flags or needles pointing to letters of the alphabet. Or some other way you have of using symbols. As it happens, the year of the events described by Mr Charles Dickens, unfortunate for some (my dear Nancy) and fortunate for others (that lucky little so-and-so Oliver), that was the same year the first telegraph was invented. 1837. Not in London, as it happens. On the Liverpool-Manchester railway. So they could communicate at a distance. And now look at you. Communicating at a distance all the time. That’s when it all started you might say.
-
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 5s>>$myMap<</timed>>
-<<timed 15s>><<button "I'm at the bollards">><<set $prevpass to $passage>><<goto "ADA-19">><</button>><</timed>>
-</main>
-<<include "footer">>
-
-
-:: ADA-19 {"position":"2400,800","size":"100,100"}
-<<set $passage to "ADA-19">><<set $nextpassage to "ADA-20">><<audio ":all" stop>>
-<<audio "ADA_19" play>>
-<<set $myMap2 = setup.generateDirectionsMap(51.51565833716061, -0.08892530366773153,51.515695197856026, -0.08941678253564316)>><main>
-Nicely done, my covey, nicely done.
-Now hop across Moorgate, watching out for carriages, to Great Bell Alley.
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 5s>>$myMap2<</timed>>
-<<timed 15s>><<button "I’m at Great Bell Alley">><<set $prevpass to $passage>><<goto "ADA-20">><</button>><</timed>>
-</main>
-<<include "footer">>
-
-
-:: ADA-20 {"position":"2575,800","size":"100,100"}
-<<set $passage to "ADA-20">><<set $myMap3 = setup.generateDirectionsMap(51.515695197856026, -0.08941678253564316, 51.515790604379575, -0.08991730389566155)>><<set $nextpassage to "ADA-21">><<audio ":all" stop>><<audio "ADA_20" play>>
-
-<main>
-Okay, this time, it’s only the grown ups who have to avoid the cracks. Children, it’s your job to stop them succeeding. So find any way you can to get in their way. Don’t push them over or trip them though. That’s a foul.
-
-Any adult who touches a crack ten points deducted from the adults. And don’t think I can’t see you. I see everything!
-
-Now off you go and let me know when you’re at the end of the Alley at Coleman Street.
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 5s>>$myMap3<</timed>>
-<<timed 15s>><<button "I’m at the end of Great Bell Alley">><<set $prevpass to $passage>><<goto "ADA-21">><</button>><</timed>>
-  
-</main>
-<<include "footer">>
-
-
-:: ADA-21 {"position":"2800,800","size":"100,100"}
-<<set $passage to "ADA-21">><<set $myMap4 = setup.generateDirectionsMap(51.51577938009306, -0.08983162906827102,51.515782186164955, -0.090336659629731)>><<set $nextpassage to "ADA-22">><<audio ":all" stop>><<audio "ADA_21" play>>
-<main>
-So you are! Let’s see.
-
-Looks like that’s minus 700 points for the grown ups. Oooh gonna be hard to catch up now but never fear. You have a chance to get revenge!
-
-Cross Coleman Street to Mason’s Avenue first though.
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 5s>>$myMap4<</timed>>
-<<timed 15s>><<button "I'm at Masons Avenue">><<set $prevpass to $passage>><<goto "ADA-22">><</button>><</timed>>
-  
-</main>
-<<include "footer">>
-
-
-:: ADA-22 {"position":"3000,800","size":"100,100"}
-<<set $passage to "ADA-22">><<set $myMap5 = setup.generateDirectionsMap(51.515782186164955, -0.090336659629731,51.51579341045079, -0.09090030980993191)>><<set $nextpassage to "ADA-23">><<audio ":all" stop>><<audio "ADA_22.1" play>>
 <main>
 <div id="mount"></div>
- <<timed 0.5s>><<replace "#mount">>Good. Alright then. Because children are much better at this game than grown-ups and we have smaller feet, I’ve chosen Mason’s Avenue for the children because it’s advanced level Pavement Crack Avoiding.
 
-Same rules apply. Grown ups, do what you can to make the children step on the cracks. No pushing or tripping. That’s a foul and I’ll deduct 500 points for that.
+<<timed 0s>><<replace "#mount">><<type 50ms>>Make sure you get all the adults to play this too! They'll be really bad at it and fall over and we can laugh at them!
 
-Otherwise, any crack stepped on is minus 10 points.
+<<button "Let’s keep going, Jack">><<set $prevpass to $passage>><<goto "ADA-18">><</button>><</type>><</replace>><</timed>> 
 
-Good luck! 
+</main>
+<<include "footer">>
 
-<<button "Next">>
-<<replace "#mount">>
-<<audio ":all" stop>><<audio "ADA_22.2" play>>
-There’s Old Dr Butler’s Head to the left. It’s the name of a pub, not his actual ‘ead!
 
-Dr Butler lived before my time even. I’m not sure you’d call him a “doctor” anymore. He had a lot of them “miracle cures”. One of them, the best one, I reckon, could only take place on London Bridge. The patient’d get there and Dr Butler would tell them exactly where to stand. When they were in position, he’d pull a lever and open a trapdoor underneath them and they’d fall straight down into the Thames!
+:: ADA-17A {"position":"1915,933","size":"200,200"}
+<<set $passage to "ADA-17A">><<set $nextpassage to "ADA-18">><<audio ":all" stop>><<audio "ADA_17A" play>>
 
-Reckon whatever illness they had was the least of their worries after that!
+<main>
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>You gotta play this too, don't think this is just for children!!
+
+<<button "Let’s keep going, Jack">><<set $prevpass to $passage>><<goto "ADA-18">><</button>><</type>><</replace>><</timed>> 
+
+</main>
+<<include "footer">>
+
+
+:: ADA-18 {"position":"2080,800","size":"200,200"}
+<<set $passage to "ADA-18">><<set $myMap = setup.generateDirectionsMap(51.51507639168935, -0.08841492630374592,51.51563114205523, -0.08930105324055178)>><<set $nextpassage to "ADA-19">><<audio ":all" stop>><<audio "ADA_18" play>>
+<main>
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 55ms>>Well played all! 
+
+Now I've added up the scores. And that's, Yes, that's right. <</type>><</replace>><</timed>>   
+<<timed 7s>><<replace "#mount">><<type 70ms>>It's 473 points for the adults, but the children are still in the lead with 1 million points. 
+
+Hurrah! Don't worry, though, adults. The last game is where the real points are.<</type>><</replace>><</timed>>    
+<<timed 24s>><<replace "#mount">><<type 55ms>>There's, ooooh, 16 million points up for grabs in that one, I reckon. 
+
+Let's go and find out! Through this tunnel. 
+
+Yeah, that's the one towards the Dover harbor. You know, barber?<</type>><</replace>><</timed>>    
+<<timed 37s>><<replace "#mount">><<type 50ms>>Go all the way through until you get to Telegraph Street. 
+
+We'll play a game in here too. On Telegraph Street, make sure you're heading left. Then look under your feet.<</type>><</replace>><</timed>>    
+<<timed 50s>><<replace "#mount">><<type 50ms>>We're gonna play "don't step on the cracks", just as far as the bollards over there. 
+
+This street is pretty easy, so we can all play it. No points for this though. This is a trial run.<</type>><</replace>><</timed>>    
+<<timed 63s>><<replace "#mount">><<type 50ms>>Off you go and let me know when you're at the bollards.<</type>><</replace>><</timed>>   
+<<timed 72s>><<replace "#mount">><<type 55ms>>You know what a telegraph is, don't you?. 
+
+It's some way that I can tell you something through symbols. Don't matter if it's flags, or needles pointing to the letters of the alphabet, or some other way of using symbols.<</type>><</replace>><</timed>>    
+<<timed 85s>><<replace "#mount">><<type 50ms>>As it happens, the year of the events described by Mr. Charles Dickens, unfortunate for some - my dear Nancy - and fortunate for others - that lucky little so-and-so Oliver, that was the same year the first telegraph was invented, 1837.<</type>><</replace>><</timed>>   
+<<timed 103s>><<replace "#mount">><<type 50ms>>Not in London, though, as it happens - on the Liverpool Manchester railway. 
+
+So they could communicate at a distance.<</type>><</replace>><</timed>>    
+<<timed 110s>><<replace "#mount">><<type 50ms>>Now looking at you, communicating at a distance all the time. That's when it all started, you might say.<</type>><</replace>><</timed>> 
+
+<<timed 119s>><<replace "#mount">>$myMap
+
+<<button "I'm at the bollards">><<set $prevpass to $passage>><<goto "ADA-19">><</button>><</replace>><</timed>>
+</main>
+<<include "footer">>
+
+
+:: ADA-19 {"position":"2300,800","size":"200,200"}
+<<set $passage to "ADA-19">><<set $nextpassage to "ADA-20">><<audio ":all" stop>>
+<<audio "ADA_19" play>>
+<<set $myMap2 = setup.generateDirectionsMap(51.51563114205523, -0.08930105324055178,51.51572788724868, -0.08975307079622938)>><main>
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>Nicely done my covey, nicely done!<</type>><</replace>><</timed>>  
+<<timed 3s>><<replace "#mount">><<type 50ms>>Now, hop across Moorgate, watching out for carriages to Great Bell Alley. Let me know when you're across and I'll explain the next round.<</type>><</replace>><</timed>> 
+<<timed 15s>><<replace "#mount">>$myMap2
+
+<<button "I’m at Great Bell Alley">><<set $prevpass to $passage>><<goto "ADA-20">><</button>><</replace>><</timed>>
+</main>
+<<include "footer">>
+
+
+:: ADA-20 {"position":"2440,803","size":"200,200"}
+<<set $passage to "ADA-20">><<set $myMap3 = setup.generateDirectionsMap(51.51572788724868, -0.08975307079622938, 51.51573907857891, -0.08988615110554757)>><<set $nextpassage to "ADA-21">><<audio ":all" stop>><<audio "ADA_20" play>>
+<main>
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>Okay, this time, it's only the grownups who have to avoid the cracks. 
+
+Children, it's your job to stop them succeeding. So find any way you can to get in their way.<</type>><</replace>><</timed>>    
+<<timed 11s>><<replace "#mount">><<type 50ms>>Don't push them over though, or trip them up, that's a foul. 
+
+Any adult who touches a crack, 10 points will be deducted from them. 
+
+And don't think I can't see you. I see everything.<</type>><</replace>><</timed>>    
+<<timed 23s>><<replace "#mount">><<type 50ms>>Now, off you go and let me know when you're at the end of the alley at Coleman Street.<</type>><</replace>><</timed>> 
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 5s>>$myMap5<</timed>>
-<<timed 15s>><<button "At the end of Mason’s Avenue">><<set $prevpass to $passage>><<goto "ADA-23">><</button>><</timed>>
-<</replace>>
-<</button>><</replace>><</timed>>
+<<timed 33s>><<replace "#mount">>$myMap3
 
-
+<<button "I’m at the end of Great Bell Alley">><<set $prevpass to $passage>><<goto "ADA-21">><</button>><</replace>><</timed>>
   
 </main>
 <<include "footer">>
 
 
-:: ADA-23 {"position":"3200,800","size":"100,100"}
-<<set $passage to "ADA-23">><<set $nextpassage to "ADA-24">><<audio ":all" stop>><<audio "ADA_23" play>>
+:: ADA-21 {"position":"2660,800","size":"200,200"}
+<<set $passage to "ADA-21">><<set $myMap4 = setup.generateDirectionsMap(51.51577938009306, -0.08983162906827102,51.51578935976708, -0.09070683228623722)>><<set $nextpassage to "ADA-22">><<audio ":all" stop>><<audio "ADA_21" play>>
 <main>
-I knew that! Let me just work out those scores...
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 70ms>>So you are, let's see. 
 
-That’s one crack stepped on by the children so minus 10 for them. An almost flawless performance and a foul committed by the grown ups so they lose 500 points.
+Looks like that's minus 700 points for the grown ups. Oof. Gonna be hard to catch up now! But never fear, you have got a chance to get revenge!<</type>><</replace>><</timed>>    
+<<timed 16s>><<replace "#mount">><<type 50ms>>Cross Coleman Street to Mason's Avenue, first though.<</type>><</replace>><</timed>> 
 
-Bad day to be grown up, it would seem!
+<<timed 23s>><<replace "#mount">>$myMap4
 
-Still plenty to play for though, plenty to play for!
+<<button "I'm at Masons Avenue">><<set $prevpass to $passage>><<goto "ADA-22">><</button>><</replace>><</timed>>
+  
+</main>
+<<include "footer">>
 
-Let’s cross Basinghall Street next.
-There’s the Guildhall. Now...if you haven’t been you should take a look around the Guildhall but not now. There was an incident that involved a misunderstanding where I was innocently wanting to borrow an item but my motives were misinterpreted, you know what I mean?
 
-Anyway, I wouldn’t say I’m banned exactly. Just that it’s best I stay away from it!
+:: ADA-22 {"position":"2880,800","size":"200,200"}
+<<set $passage to "ADA-22">><<set $myMap5 = setup.generateDirectionsMap(51.51578935976708, -0.09070683228623722,51.51578935976708, -0.09070683228623722)>><<set $nextpassage to "ADA-23">><<audio ":all" stop>><<audio "ADA_22.1" play>>
+<main>
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>Good! Alright then, because children are much better at this game than grownups, and we have smaller feet, I've chosen Mason's Avenue for the children, because it's advanced-level pavement crack avoiding.<</type>><</replace>><</timed>>    
+<<timed 13s>><<replace "#mount">><<type 50ms>>Same rules apply. 
 
-So take a right here.
+Grownups do what you can to make the children stepon the cracks, no pushing or tripping, that's a foul and I'll deduct 500 points for that. 
 
-Now, adults, I don’t want to be encouraging you to try to leap over those bollards but if any of you could do it... I bet your children would be impressed...
+Otherwise, any crack stepped on is minus 10 points. Good luck.
 
-No pressure. I’ll give a moment.
+<<button "Next">>
+  <<replace "#mount">>
+    <<audio ":all" stop>><<audio "ADA_22.2" play>>
+  
+      <<timed 0s>><<replace "#mount">><<type 50ms>>There's old doctor Butler's head to the left! It's the name of a pub, not his actual head! Dr. Butler lived performed my time even.<</type>><</replace>><</timed>> 
+      <<timed 10s>><<replace "#mount">><<type 50ms>>I'm not sure you could call him a doctor anymore. He had a lot of them miracle cures. One of them, the best one, I reckon, could only take place on London Bridge.<</type>><</replace>><</timed>>    
+      <<timed 21s>><<replace "#mount">><<type 50ms>>The patient would get there and Dr. Butler would tell them exactly where to stand. When they were in position a pull a lever and open a trapdoor underneath them and they fall straight down into the Thames.<</type>><</replace>><</timed>> 
+      <<timed 34s>><<replace "#mount">><<type 50ms>>Reckon whatever illness they had was the least of their worries after that!<</type>><</replace>><</timed>> 
 
-/* Enough time for some of the adults to try to leap over the bollards. */
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 15s>><<set $prevpass to $passage>>
+      <<timed 40s>><<replace "#mount">>$myMap5
+      <<button "At the end of Mason’s Avenue">><<set $prevpass to $passage>><<goto "ADA-23">><</button>><</replace>><</timed>>
+  <</replace>>
+<</button>><</type>>
+<</replace>><</timed>> 
+</main>
+<<include "footer">>
+
+
+:: ADA-23 {"position":"3100,800","size":"200,200"}
+<<set $passage to "ADA-23">><<audio ":all" stop>><<audio "ADA_23" play>>
+<main>
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 60ms>>I knew that, let me just work out these scores. That one crack stepped on by the children, so that's minus 10 for them, an almost flawless performance and a foul committed by the grown ups so they lose 500 points.<</type>><</replace>><</timed>>    
+<<timed 18s>><<replace "#mount">><<type 55ms>>Bad day to be a grown up, it would seem. 
+
+Still plenty to play for though, plenty to play for. Let's cross basing Hall Street next. 
+
+There's the Guild Hall. Now, if you haven't been, you should take a look around the Guild Hall, but not now.<</type>><</replace>><</timed>>    
+<<timed 34s>><<replace "#mount">><<type 50ms>>There was an incident that involved a misunderstanding where I was innocently waiting to borrow an item, but my motives were misinterpreted, know what I mean.<</type>><</replace>><</timed>>    
+<<timed 45s>><<replace "#mount">><<type 50ms>>Anyway, I wouldn't say I'm banned, exactly, just that it's best I stay away from it. 
+
+So take a right here.<</type>><</replace>><</timed>>   
+<<timed 68s>><<replace "#mount">><<type 60ms>>Now, adults, I don't want to be encouraging you to try and leap over those bollards, but if any of you could do it, I bet your children would be impressed. 
+
+No pressure. I'll give you a moment.<</type>><</replace>><</timed>>  
+
+<<timed 88s>><<set $prevpass to $passage>>
 <<switch $age>>
 <<case "child">>
   <<goto "ADA-24C">>
@@ -1053,42 +1067,43 @@ No pressure. I’ll give a moment.
 <</timed>>
 
 </main>
-<<include "footer">>
+<<include "footersimple">>
 
 
-:: ADA-24C {"position":"3400,900","size":"100,100"}
+:: ADA-24C {"position":"3300,900","size":"200,200"}
 <<set $passage to "ADA-24C">><<set $nextpassage to "ADA-26">><<audio ":all" stop>>
 /* <<audio "ADA_24C" play>> */
 /* TODO AUDIO MISSING */
 <main>
-When I'm done scoring the grown ups, 
-
-<<button "Let's move on">><<set $prevpass to $passage>><<goto "ADA-26">><</button>>  
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>> When I'm done scoring the grown ups, let's move on. <</type>><</replace>><</timed>> 
+<<timed 2s>><<button "Let's move on">><<set $prevpass to $passage>><<goto "ADA-26">><</button>> <</timed>>
 </main>
 <<include "footer">>
 
 
-:: ADA-24B {"position":"3400,700","size":"100,100"}
+:: ADA-24B {"position":"3320,680","size":"200,200"}
 <<set $passage to "ADA-24B">><<set $nextpassage to $passage>><<audio ":all" stop>><<audio "ADA_24A_24B" play>>
 <main>
-Now, be honest. Did you leap over one?
+<div id="mount"></div>
+<<type 70ms>> Now, be honest. Did you leap over one?<</type>>
 
 <div class="menu-wrapper">
   <<button "Yes, I did">><<goto "ADA-25B-Y">><</button>>
   <<button "No, I failed">><<goto "ADA-25B-N">><</button>>
 </div>
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 
 </main>
 <<include "footer">>
 
 
-:: ADA-25B-Y {"position":"3600,700","size":"100,100"}
+:: ADA-25B-Y {"position":"3520,680","size":"200,200"}
 <<set $passage to "ADA-25B-Y">><<set $nextpassage to "ADA-26">><<audio ":all" stop>><<audio "ADA_25A_25B_Y" play>>
 <main>
-Nice work! I believe you, I’m a trusting fella. You can get an extra 10 points. How about that? Every point counts.
+<div id="mount"></div>
 
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 0s>><<replace "#mount">><<type 50ms>>Nice work! I believe you, I'm a trusting fellah, you can get an extra 10 points, how about that? Every point counts!<</type>><</replace>><</timed>> 
+
 <<timed 8s>><<button "Lets move on">><<set $prevpass to $passage>>
   <<goto "ADA-26">><</button>>
 <</timed>>
@@ -1097,11 +1112,11 @@ Nice work! I believe you, I’m a trusting fella. You can get an extra 10 points
 <<include "footer">>
 
 
-:: ADA-25B-N {"position":"3600,900","size":"100,100"}
+:: ADA-25B-N {"position":"3520,900","size":"200,200"}
 <<set $passage to "ADA-25B-N">><<set $nextpassage to "ADA-26">><<audio ":all" stop>><<audio "ADA_25A_25B_N" play>>
 <main>
-Yeah, it’s not easy. Maybe if you have some really tall and athletic friends, you can bring them and get them to do it!
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>Yeeah, it's not easy! Maybe if you have some really tall, athletic friends, you can bring them and get them to do it!<</type>><</replace>><</timed>> 
 <<timed 8s>><<button "Lets move on">><<set $prevpass to $passage>>
   <<goto "ADA-26">><</button>>
 <</timed>>
@@ -1110,129 +1125,128 @@ Yeah, it’s not easy. Maybe if you have some really tall and athletic friends, 
 <<include "footer">>
 
 
-:: ADA-26 {"position":"3800,800","size":"100,100"}
-<<set $passage to "ADA-26">><<set $myMap6 = setup.generateDirectionsMap(51.516531611170905, -0.09236516569324225,51.51637005442947, -0.09346830016698235)>><<set $nextpassage to "ADA-27">><<audio ":all" stop>><<audio "ADA_26" play>>
+:: ADA-26 {"position":"3660,800","size":"200,200"}
+<<set $passage to "ADA-26">><<set $myMap6 = setup.generateDirectionsMap(51.51578935976708, -0.09070683228623722,51.51649485751279, -0.0926145012151085)>><<set $nextpassage to "ADA-27">><<audio ":all" stop>><<audio "ADA_26" play>>
 <main>
-Go towards that fountain to Aldermanbury.
-
-Lucky it’s a Saturday because the Aldermen are always on my case!
-
-Don’t bother tryin’ to nick that statue. It’s miles too heavy.
-
-Not far from the last game now.
-Cross Aldermanbury and make your down Love Lane, going either side of the garden here, to Wood Street.
-
-The tree’s not too solid. Wouldn’t suggest trying to climb it. I got the wounds still from last time I tried.
-
-Now, cross Wood Street to St Albans Court.
-<<timed 5s>>$myMap6<</timed>>
-<<timed 15s>><<button "I’m across">><<set $prevpass to $passage>><<goto "ADA-27">><</button>><</timed>>
+<div id="mount"></div>
   
+<<timed 0s>><<replace "#mount">><<type 50ms>>Go towards that fountain to Aldermanbury. Lucky it's a Saturday, because the aldermen were always on my case!<</type>><</replace>><</timed>>    
+<<timed 12s>><<replace "#mount">>$myMap6
+<<button "I’m across">><<set $prevpass to $passage>><<goto "ADA-27">><</button>><</replace>><</timed>>
+<<timed 28s>><<type 50ms>>Don't bother trying to nick that statue - miles too heavy!<</type>><</timed>> 
+
+
+
 </main>
 <<include "footer">>
 
 
-:: ADA-27 {"position":"4000,825","size":"100,100"}
+:: ADA-27 {"position":"3880,825","size":"200,200"}
 <<set $passage to "ADA-27">><<set $nextpassage to "ADA-28">><<audio ":all" stop>><<audio "ADA_27" play>>
 <main>
-Narrow ol’ alley this one. Before I was reformed an’ all, it’d be perfect for stealing some ol’ gentleman’s purse, I reckon.
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>Narrow little alley, this one. Before I was reformed and all, it used to be perfect for stealing some old gentleman's purse I reckon.<</type>><</replace>><</timed>>   
+<<timed 18s>><<replace "#mount">><<type 50ms>>When you're out of there, you should see a grassy area under a big tree. And that is where we'll play the final game. See it?
 
-Beat to give them time to get to end of passageway.
+<<button "I can see it">><<set $prevpass to $passage>><<goto "ADA-28">><</button>><</type>><</replace>><</timed>> 
 
-When you’re out of there, you should see a grassy area under a big tree. That’s where we’ll play the final game.
-
-See it?
-
-<<timed 15s>><<button "I can see it">><<set $prevpass to $passage>><<goto "ADA-28">><</button>><</timed>>
   
 </main>
 <<include "footer">>
 
 
-:: ADA-28 {"position":"4200,800","size":"100,100"}
+:: ADA-28 {"position":"4100,800","size":"200,200"}
 <<set $passage to "ADA-28">><<set $nextpassage to "ADA-29">><<audio ":all" stop>><<audio "ADA_28" play>>
 
-<main>Good. Now go and stand on the green. Get into a circle with everyone what wants to play and two of you in the middle. Best to play with ten or more of you but if there are any more than 5, you can start it up and hope others join in. We make do.
+<main>
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>Good! Now go and stand on the green. Get into a circle with everyone that wants to play, an
 
-Let me know when you’re there. We need two players of more or less the same height in the middle and everyone else in a circle around them. If  others join, just get them to add themselves to the circle.
+d two of you in the middle.<</type>><</replace>><</timed>>   
+<<timed 8s>><<replace "#mount">><<type 50ms>>Best to play with 10 or more, but if there are any more than five, we can start it up and hopefully others will join in, we'll make do.<</type>><</replace>><</timed>>    
+<<timed 17s>><<replace "#mount">><<type 50ms>>Let me know when you're there. 
 
-<<timed 10s>><<button "We’re in a circle">><<set $prevpass to $passage>><<goto "ADA-29">><</button>><</timed>>
+We need two players of more or less the same height, in the middle, and everyone else in a circle around them. 
+
+If others join, just get them to add themselves to the circle.
+
+<<button "We’re in a circle">><<set $prevpass to $passage>><<goto "ADA-29">><</button>><</type>><</replace>><</timed>>    
+
   
 </main>
 <<include "footer">>
 
 
-:: ADA-29 {"position":"4400,800","size":"100,100"}
+:: ADA-29 {"position":"4320,800","size":"200,200"}
 <<set $passage to "ADA-29">><<set $nextpassage to "ADA-30">><<audio ":all" stop>><<audio "ADA_29" play>>
 <main>
-Good. I’mma play you a tune that you might recognize.
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>Good. 
+I'm gonna play you a tune that you might 
+recognize<</type>><</replace>><</timed>>    
+<<timed 14s>><<replace "#mount">><<type 50ms>>Everyone knows that. Do you know the words?<</type>><</replace>><</timed>>    
+<<timed 19s>><<replace "#mount">><<type 50ms>>Oranges and Lemons say the bells of St. Clements. 
+You owe me five farthings say the bells of St. Martin's.<</type>><</replace>><</timed>>    
+<<timed 27s>><<replace "#mount">><<type 50ms>>When will you pay me said the Bells of Old Bailey? 
+When I grow rich, say the bells of Shoreditch.<</type>><</replace>><</timed>>   
+<<timed 35s>><<replace "#mount">><<type 50ms>>When will that be? say the bells of Stepney? 
+I do not know say the Bells Great of Bow.<</type>><</replace>><</timed>>    
+<<timed 44s>><<replace "#mount">><<type 50ms>>Here comes a candle to light you to bed. 
+And here comes a chopper to chop off your head.<</type>><</replace>><</timed>>    
+<<timed 53s>><<replace "#mount">><<type 55ms>>Got it? Right this time sing along. 
 
-Everyone knows that!
-Now do you know the words?
+To do that you'll all need to count down and start together so press ready at the same time.
 
-Oranges and lemons,
-Say the bells of St Clement’s. You owe me five farthings,
-Say the bells of St Martin’s. When will you pay me?
-Say the bells of Old Bailey. When I grow rich,
-Say the bells of Shoreditch. When will that be?
-Say the bells of Stepney.
-I do not know,
-Says the great bell of Bow.
-Here comes a candle to light you to bed, And here comes a chopper to chop off your head! Chip-chop-chip-chop The last one’s head Must come OFF!
+<<button "Ready">><<set $prevpass to $passage>><<goto "ADA-30">><</button>><</type>><</replace>><</timed>> 
 
-Got it?
-
-Right, this time sing along. To do that, you’ll all need to count down and start together. So all press “Ready” at the same time.
-
-<<timed 10s>><<button "Ready">><<set $prevpass to $passage>><<goto "ADA-30">><</button>><</timed>>
   
 </main>
 <<include "footer">>
 
 
-:: ADA-30 {"position":"4600,800","size":"100,100"}
+:: ADA-30 {"position":"4540,800","size":"200,200"}
 <<set $passage to "ADA-30">><<set $seconds to 5>><<set $nextpassage to "ADA-31">><<audio ":all" stop>><<audio "ADA_30" play>>
-<main><span id="countdown" class="countdown">5</span>
+<main><span id="countdown" class="countdown">5</span><div id="mount"></div>
 <<timed 1s>><<silently>><<repeat 1s>><<set $seconds to $seconds - 1>><<if $seconds gt 0>><<replace "#countdown">>$seconds<</replace>>
   		<<else>> <<replace "#countdown">>Sing!<</replace>>
   			<<stop>>	<</if>><</repeat>>
   <</silently>>
 <</timed>>
+  
+<<timed 4.5s>><<replace "#mount">><<type 50ms>>Oranges and Lemons Say the bells of St. Clement's. 
+You owe me five farthings, say the bells of St. Martin's.<</type>><</replace>><</timed>>    
+<<timed 13s>><<replace "#mount">><<type 50ms>>When will you pay me said the bells of Old Bailey? 
+When I grow rich, say the bells of Shoreditch.<</type>><</replace>><</timed>>   
+<<timed 22s>><<replace "#mount">><<type 50ms>>When will that be, said the bells of Stepney? 
+I do not know said the bells of Great Bow.<</type>><</replace>><</timed>>    
+<<timed 30s>><<replace "#mount">><<type 50ms>>Here comes a candle to light you to bed. 
+And here comes a chopper to chop off your head!<</type>><</replace>><</timed>>    
+<<timed 39s>><<replace "#mount">><<type 50ms>>Sounds like you got it first time. 
+Now, do you know how to play?<</type>><</replace>><</timed>>    
+<<timed 46s>><<replace "#mount">><<type 50ms>>The two players in the middle make an arch by joining their hands and raising them. 
 
-Oranges and lemons,
-Say the bells of St Clement’s. You owe me five farthings,
-Say the bells of St Martin’s. When will you pay me?
-Say the bells of Old Bailey. When I grow rich,
-Say the bells of Shoreditch. When will that be?
-Say the bells of Stepney.
-I do not know,
-Says the great bell of Bow.
-Here comes a candle to light you to bed, And here comes a chopper to chop off your head! Chip-chop-chip-chop The last one’s head Must come OFF!
+Everyone else in the circle holds hands and moves around the circle as we sing the song.<</type>><</replace>><</timed>>    
+<<timed 58s>><<replace "#mount">><<type 50ms>>When it gets to the Great Bell of Bow, everyone has to pass through the arch, one by one, as fast as they can. 
 
+The last player to go through when the song ends is caught and they're out of the game.<</type>><</replace>><</timed>>     
+<<timed 70s>><<replace "#mount">><<type 50ms>>The winner is the last survivor. 
 
-Sounds like you got it first time!
+Play as many rounds as you want. I can play the song again if you need it. 
 
-Now do you know how to play?
+Let me know when you're done though and I'll work out the points!<</type>><</replace>><</timed>>  
 
-The two players in the middle make an arch by joining their hands and raising them.
-
-Everyone else in the circle holds hands and moves around the circle as we sing the song.
-
-When it gets to “the great bell of Bow”, everyone has to pass through the “arch” one by one as fast as they can. The last player to go through when the song ends so that’s the word “off” is caught and they’re out of the game.
-The winner is the last survivor.
-
-Play as many rounds as you want. I can play the song again if you need it. Let me know when you’re done though and I’ll work out the points!
-<<timed 20s>><<set $prevpass to $passage>><<goto "ADA-31">><</timed>>
+<<timed 84s>><<set $prevpass to $passage>><<goto "ADA-31">><</timed>>
   
 </main>
 <<include "footer">>
 
 
-:: ADA-31 {"position":"4800,800","size":"100,100"}
+:: ADA-31 {"position":"4760,800","size":"200,200"}
 <<set $passage to "ADA-31">><<set $nextpassage to $passage>><<audio ":all" stop>>
 <main>
-
-
 
 <div class="menu-wrapper">
   <<button "Play the song">><<goto "ADA-32">><</button>>
@@ -1243,53 +1257,54 @@ Play as many rounds as you want. I can play the song again if you need it. Let m
 <<include "footer">>
 
 
-:: ADA-32 {"position":"5000,800","size":"100,100"}
+:: ADA-32 {"position":"4980,800","size":"200,200"}
 <<set $passage to "ADA-32">><<set $seconds to 5>><<set $nextpassage to "ADA-33">><<audio ":all" stop>><<audio "ADA_32" play>>
 <main>
-<span id="countdown" class="countdown">5</span>
+<span id="countdown" class="countdown">5</span><div id="mount"></div>
 <<timed 1s>><<silently>><<repeat 1s>><<set $seconds to $seconds - 1>><<if $seconds gt 0>><<replace "#countdown">>$seconds<</replace>>
   		<<else>> <<replace "#countdown">>Sing!<</replace>>
   			<<stop>>	<</if>><</repeat>>
   <</silently>>
 <</timed>>
 
-Oranges and lemons,
-Say the bells of St Clement’s. You owe me five farthings,
-Say the bells of St Martin’s. When will you pay me?
-Say the bells of Old Bailey. When I grow rich,
-Say the bells of Shoreditch. When will that be?
-Say the bells of Stepney.
-I do not know,
-Says the great bell of Bow.
-Here comes a candle to light you to bed, And here comes a chopper to chop off your head! Chip-chop-chip-chop The last one’s head Must come OFF!
+<<timed 4.5s>><<replace "#mount">><<type 50ms>>Oranges and Lemons Say the bells of St. Clement's. 
+You owe me five farthings, say the bells of St. Martin's.<</type>><</replace>><</timed>>    
+<<timed 13s>><<replace "#mount">><<type 50ms>>When will you pay me said the bells of Old Bailey? 
+When I grow rich, say the bells of Shoreditch.<</type>><</replace>><</timed>>   
+<<timed 22s>><<replace "#mount">><<type 50ms>>When will that be, said the bells of Stepney? 
+I do not know said the bells of Great Bow.<</type>><</replace>><</timed>>    
+<<timed 30s>><<replace "#mount">><<type 50ms>>Here comes a candle to light you to bed. 
+And here comes a chopper to chop off your head!
 
+ <<button "Tell us the scores">><<goto "ADA-33">><</button>><</type>><</replace>><</timed>>   
 
-  <<button "Tell us the scores">><<goto "ADA-33">><</button>>
 </main>
 <<include "footer">>
 
 
-:: ADA-33 {"position":"5200,800","size":"100,100"}
+:: ADA-33 {"position":"5200,800","size":"200,200"}
 <<set $passage to "ADA-33">><<set $nextpassage to "end">><<audio ":all" stop>><<audio "ADA_33" play>>
-<main>
-Right then. As you know there were 16 million points up for grabs in that one. So everything to play for.
+<main><div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>Right then, as you know, there were 16 million points up for grabs in that one. 
+So everything's to play for!<</type>><</replace>><</timed>>   
+<<timed 7s>><<replace "#mount">><<type 60ms>>The grown ups did well, getting 3 million points, but the children are the victors with 18.5 million points.<</type>><</replace>><</timed>>    
+<<timed 21s>><<replace "#mount">><<type 50ms>>Well done all but well done children in particular, taking part's important and all, but winning'ss even better, that's what I say.<</type>><</replace>><</timed>>    
+<<timed 29s>><<replace "#mount">><<type 50ms>>I've been Jack Dawkins, the Artful Dodger. 
 
-The grown ups did very well. Getting 3 million points. 
-But the children are the victors with 18.5 million points!
+And if you remember one thing about me, remember this; this town can have its heirs and its graces. 
 
-Well done all but well done, children, in particular. Taking part’s important and all but winning’s even better. That’s what I say.
+It can get all clean and safe and expensive.<</type>><</replace>><</timed>>    
+<<timed 43s>><<replace "#mount">><<type 50ms>>But it's still my town. 
 
-I’ve been Jack Dawkins, the Artful Dodger. And if you remember one thing about me, remember this. This town can have its airs and its graces, it can get all clean and safe and expensive. But it’s still my town. And nothing’s gonna change that. Not never.
-
-Oh and if anyone does want one of them watches, come see me. No questions asked innit.
-
-<<button "End">><<goto "end">><</button>>
+And nothing's ever going to change that. Not ever.<</type>><</replace>><</timed>>    
+<<timed 50s>><<replace "#mount">><<type 50ms>>Oh, and if anyone does want one of them watches, come and see me, no questions asked innnit.<</type>><</replace>><</timed>> 
+<<timed 57s>><<button "End">><<goto "end">><</button>><</timed>>
 </main>
 <<include "footer">>
 
 
 :: end {"position":"100,675","size":"100,100"}
-<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap(51.516580852032476, -0.09431729185196457,51.51685580782133, -0.09511198679939459)>><<audio ":all" stop>>
+<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap(51.516771577938215, -0.09517276626248929,51.516771577938215, -0.09517276626248929)>><<audio ":all" stop>>
 <main>
 
 End location
@@ -1300,9 +1315,6 @@ $endMap
 <<include "footerend">>
 
 
-:: footerend {"position":"225,350","size":"100,100"}
-<footer>
-<div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div>
-</footer>
+
 
 

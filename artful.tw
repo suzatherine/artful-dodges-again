@@ -187,7 +187,7 @@ a:hover {
 
 /*---- GENERAL STYLES ----*/
 body{
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 600;
   font-family: "Space Grotesk";
   color:#fff;
@@ -307,7 +307,7 @@ width: 100%;
 /* SPECIFICS */
 
 .countdown{
-  font-size: 2rem
+  font-size: 3rem
 }
 .door-container{
   display:flex;
@@ -350,8 +350,6 @@ textarea{
   	max-width: 2em;
   	margin-inline-end:10px;
 }
-
-
 
 
 :: Story JavaScript [script]
@@ -426,64 +424,55 @@ iFrame.classList.add("map")
 iFrame.setAttribute("loading", "lazy")
 iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
 // iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${latorg},${longorg}&zoom=17&origin=${latorg},${longorg}&destination=${latdest},${longdest}&mode=walking`)
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${latorg},${longorg}&zoom=18&origin=${latorg},${longorg}&destination=${latdest},${longdest}&mode=walking`)
 const mount = document.getElementById("mapMount")
-console.log(iFrame)
+// console.log(iFrame)
 return iFrame
 // this.mapMount.appendChild(iFrame)
 }
 
-//Get random 5 letter word
-
-setup.generate5LetterCode = () => {
-const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-let word = ""
-for (let i =0 ; i < 5 ; i++){
-word += alphabet[Math.round((alphabet.length-1)*Math.random())];
-}
-  return word;
-}
-
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "ADA_05" "./assets/audio/ADA_05.mp3">>
-<<cacheaudio "ADA_06A" "./assets/audio/ADA_06A.mp3">>
-<<cacheaudio "ADA_06B" "./assets/audio/ADA_06B.mp3">>
-<<cacheaudio "ADA_06C" "./assets/audio/ADA_06C.mp3">>
-<<cacheaudio "ADA_07" "./assets/audio/ADA_07.mp3">>
-<<cacheaudio "ADA_08" "./assets/audio/ADA_08.mp3">>
-<<cacheaudio "ADA_09" "./assets/audio/ADA_09.mp3">>
-<<cacheaudio "ADA_10A" "./assets/audio/ADA_10A.mp3">>
-<<cacheaudio "ADA_10B" "./assets/audio/ADA_10B.mp3">>
-<<cacheaudio "ADA_10C" "./assets/audio/ADA_10C.mp3">>
-<<cacheaudio "ADA_11A" "./assets/audio/ADA_11A.mp3">>
-<<cacheaudio "ADA_11B" "./assets/audio/ADA_11B.mp3">>
-<<cacheaudio "ADA_11C" "./assets/audio/ADA_11C.mp3">>
-<<cacheaudio "ADA_12B" "./assets/audio/ADA_11B.mp3">>
-<<cacheaudio "ADA_13B" "./assets/audio/ADA_11B.mp3">>
-<<cacheaudio "ADA_14B" "./assets/audio/ADA_11B.mp3">>
-<<cacheaudio "ADA_15" "./assets/audio/ADA_15.mp3">>
-<<cacheaudio "ADA_16" "./assets/audio/ADA_16.mp3">>
-<<cacheaudio "ADA_17A" "./assets/audio/ADA_17A.mp3">>
-<<cacheaudio "ADA_17A_17B" "./assets/audio/ADA_17A_17B.mp3">>
-<<cacheaudio "ADA_18" "./assets/audio/ADA_18.mp3">>
-<<cacheaudio "ADA_20" "./assets/audio/ADA_20.mp3">>
-<<cacheaudio "ADA_21-001" "./assets/audio/ADA_21-001.mp3">>
-<<cacheaudio "ADA_21-002" "./assets/audio/ADA_21-002.mp3">>
-<<cacheaudio "ADA_22" "./assets/audio/ADA_22.mp3">>
-<<cacheaudio "ADA_24A_24B" "./assets/audio/ADA_24A_24B.mp3">>
-<<cacheaudio "ADA_25A_25B_N" "./assets/audio/ADA_25A_25B.mp3_N">>
-<<cacheaudio "ADA_25A_25B_Y" "./assets/audio/ADA_25A_25B.mp3_Y">>
-<<cacheaudio "ADA_26.5" "./assets/audio/ADA_26.5.mp3">>
-<<cacheaudio "ADA_26" "./assets/audio/ADA_26.mp3">>
-<<cacheaudio "ADA_27" "./assets/audio/ADA_27.mp3">>
-<<cacheaudio "ADA_28" "./assets/audio/ADA_28.mp3">>
-<<cacheaudio "ADA_29" "./assets/audio/ADA_29.mp3">>
-<<cacheaudio "ADA_30" "./assets/audio/ADA_30.mp3">>
-<<cacheaudio "ADA_32" "./assets/audio/ADA_32.mp3">>
-<<cacheaudio "ADA_33" "./assets/audio/ADA_33.mp3">>
-<<waitforaudio>>
+<<cacheaudio "ADA_05" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_05.mp3">>
+<<cacheaudio "ADA_06A" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_06A.mp3">>
+<<cacheaudio "ADA_06B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_06B.mp3">>
+<<cacheaudio "ADA_06C" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_06C.mp3">>
+<<cacheaudio "ADA_07" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_07.mp3">>
+<<cacheaudio "ADA_08" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_08.mp3">>
+<<cacheaudio "ADA_09" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_09.mp3">>
+<<cacheaudio "ADA_10A" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_10A.mp3">>
+<<cacheaudio "ADA_10B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_10B.mp3">>
+<<cacheaudio "ADA_10C" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_10C.mp3">>
+<<cacheaudio "ADA_11A" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11A.mp3">>
+<<cacheaudio "ADA_11B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11B.mp3">>
+<<cacheaudio "ADA_11C" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11C.mp3">>
+<<cacheaudio "ADA_12B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11B.mp3">>
+<<cacheaudio "ADA_13B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11B.mp3">>
+<<cacheaudio "ADA_14B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11B.mp3">>
+<<cacheaudio "ADA_15" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_15.mp3">>
+<<cacheaudio "ADA_16" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_16.mp3">>
+<<cacheaudio "ADA_17A" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_17A.mp3">>
+<<cacheaudio "ADA_17C_17B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_17C_17B.mp3">>
+<<cacheaudio "ADA_18" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_18.mp3">>
+<<cacheaudio "ADA_19" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_19.mp3">>
+<<cacheaudio "ADA_20" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_20.mp3">>
+<<cacheaudio "ADA_21" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_21.mp3">>
+<<cacheaudio "ADA_22.1" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_22.1.mp3">>
+<<cacheaudio "ADA_22.2" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_22.2.mp3">>
 
+<<cacheaudio "ADA_23" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_23.mp3">>
+<<cacheaudio "ADA_24A_24B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_24A_24B.mp3">>
+<<cacheaudio "ADA_25A_25B_N" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_25A_25B_N.mp3">>
+<<cacheaudio "ADA_25A_25B_Y" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_25A_25B_Y.mp3">>
+<<cacheaudio "ADA_26.5" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_26.5.mp3">>
+<<cacheaudio "ADA_26" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_26.mp3">>
+<<cacheaudio "ADA_27" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_27.mp3">>
+<<cacheaudio "ADA_28" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_28.mp3">>
+<<cacheaudio "ADA_29" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_29.mp3">>
+<<cacheaudio "ADA_30" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_30.mp3">>
+<<cacheaudio "ADA_32" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_32.mp3">>
+<<cacheaudio "ADA_33" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_33.mp3">>
+<<waitforaudio>>
 
 
 :: header {"position":"100,225","size":"100,100"}
@@ -503,11 +492,9 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 <<set $passage to "landing">>
 
 <main>
-landing page
 
 <<button "begin">><<set $prevpass to $passage>><<goto "ADA-05">><</button>>
 </main>
-<<include "footer">>
 
 
 :: lost {"position":"100,500","size":"100,100"}
@@ -564,7 +551,7 @@ Work that out amongst yourselves if you must. And then tell me which one you are
 
 
 :: ADA-06C {"position":"800,400","size":"100,100"}
-<<set $passage to "ADA-06C">><<set $nextpassage to "ADA-07">><<audio "ADA_06C" play>>
+<<set $passage to "ADA-06C">><<set $nextpassage to "ADA-07">><<audio ":all" stop>><<audio "ADA_06C" play>>
 
 /* Ideally this passage takes the same time as ADA-06A */
 <main>Don’t you fret your eyelids, pal.
@@ -573,6 +560,7 @@ We’ll have a fine ol’ time together. This City’s not as scary as it looks.
 <<timed 10s>><<set $prevpass to $passage>><<goto "ADA-07">><</timed>>
 </main>
 <<include "footer">>
+
 
 :: ADA-06A {"position":"800,400","size":"100,100"}
 <<set $passage to "ADA-06C">><<set $nextpassage to "ADA-07">><<audio ":all" stop>><<audio "ADA_06A" play>>
@@ -592,6 +580,7 @@ We’ll have a fine ol’ time together. This City’s not as scary as it looks.
 <<timed 10s>><<set $prevpass to $passage>><<goto "ADA-07">><</timed>>
 </main>
 <<include "footer">>
+
 
 :: ADA-07 {"position":"1000,400","size":"100,100"}
 <<set $passage to "ADA-07">><<set $nextpassage to "ADA-08">><<audio ":all" stop>><<audio "ADA_07" play>>
@@ -675,7 +664,7 @@ Are you ready for the first game?
 <<include "footer">>
 
 
-:: ADA-10A {"position":"600,900","size":"100,100"}
+:: ADA-10A {"position":"600,700","size":"100,100"}
 <<set $passage to "ADA-10A">><<set $nextpassage to "ADA-11A">><<audio ":all" stop>><<audio "ADA_10A" play>>
 
 <main>
@@ -713,7 +702,8 @@ Let me know when you get there.
 </main>
 <<include "footer">>
 
-:: ADA-10C {"position":"600,900","size":"100,100"}
+
+:: ADA-10C {"position":"600,700","size":"100,100"}
 <<set $passage to "ADA-10C">><<set $nextpassage to "ADA-11C">><<audio ":all" stop>><<audio "ADA_10C" play>>
 
 <main>
@@ -731,7 +721,8 @@ Now let’s go!
 </main>
 <<include "footer">>
 
-:: ADA-11C {"position":"600,900","size":"100,100"}
+
+:: ADA-11C {"position":"600,700","size":"100,100"}
 <<set $passage to "ADA-11C">><<set $nextpassage to "ADA-15">><<audio ":all" stop>><<audio "ADA_11C" play>>
 
 <main>
@@ -744,7 +735,8 @@ Now they’re in on the game so they’re gonna start making it harder for you. 
 </main>
 <<include "footer">>
 
-:: ADA-10B {"position":"600,900","size":"100,100"}
+
+:: ADA-10B {"position":"600,700","size":"100,100"}
 <<set $passage to "ADA-10B">><<set $nextpassage to "ADA-11B">><<audio ":all" stop>><<audio "ADA_10B" play>>
 
 <main>
@@ -759,7 +751,8 @@ me...
 </main>
 <<include "footer">>
 
-:: ADA-11B {"position":"800,900","size":"100,100"}
+
+:: ADA-11B {"position":"800,700","size":"100,100"}
 <<set $passage to "ADA-11B">><<set $nextpassage to "ADA-12B">><<audio ":all" stop>><<audio "ADA_11B" play>>
 
 <main>
@@ -782,7 +775,8 @@ When you’re there, let me know.
 </main>
 <<include "footer">>
 
-:: ADA-12B {"position":"800,900","size":"100,100"}
+
+:: ADA-12B {"position":"1000,700","size":"100,100"}
 <<set $passage to "ADA-12B">><<set $nextpassage to "ADA-13B">><<audio ":all" stop>><<audio "ADA_12B" play>>
 <main>
 
@@ -793,7 +787,8 @@ to the grown up now.<</type>>
 </main>
 <<include "footer">>
 
-:: ADA-13B {"position":"800,900","size":"100,100"}
+
+:: ADA-13B {"position":"1200,700","size":"100,100"}
 <<set $passage to "ADA-13B">><<set $nextpassage to "ADA-14B">><<audio ":all" stop>><<audio "ADA_13B" play>>
 <main>
 Hullo again! Good effort so far.
@@ -809,7 +804,8 @@ Now pass the screen back to the children
 </main>
 <<include "footer">>
 
-:: ADA-14B {"position":"800,900","size":"100,100"}
+
+:: ADA-14B {"position":"1425,700","size":"100,100"}
 <<set $passage to "ADA-14B">><<set $nextpassage to "ADA-15">><<audio ":all" stop>><<audio "ADA_14B" play>>
 <main>
 They’re in on the game now. So they might try to make it harder for you. But don’t worry, I know you can do it. We’re going to the corner of Tokenhouse Yard. Let me know when you get there.
@@ -818,7 +814,8 @@ They’re in on the game now. So they might try to make it harder for you. But d
 </main>
 <<include "footer">>
 
-:: ADA-15 {"position":"800,900","size":"100,100"}
+
+:: ADA-15 {"position":"1600,800","size":"100,100"}
 <<set $passage to "ADA-15">><<set $nextpassage to "ADA-16">><<audio ":all" stop>><<audio "ADA_15" play>>
 <main>
 There you are. After carefully considering my personal, extremely complex scoring system, I can confidently say that the adults scored a grand total of 672 points in that game
@@ -835,14 +832,14 @@ Are we ready for the next game?
 <<timed 5s>>
 <div class="menu-wrapper">
   <<button "You bet we are, Jack">><<set $prevpass to $passage>><<goto "ADA-16">><</button>>
-  <<button "You bet we are, Jack">><<set $prevpass to $passage>><<goto "ADA-16">><</button>>
+  <<button "Yes, Jack!">><<set $prevpass to $passage>><<goto "ADA-16">><</button>>
 </div>
 <</timed>>
 </main>
 <<include "footer">>
 
 
-:: ADA-16 {"position":"600,1300","size":"100,100"}
+:: ADA-16 {"position":"1800,800","size":"100,100"}
 <<set $passage to "ADA-16">><<set $nextpassage to $passage>><<audio ":all" stop>><<audio "ADA_16" play>>
 
 <main>
@@ -887,8 +884,8 @@ Play as many round as you fancy and when you’re ready to go, just let me know.
 <<include "footer">>
 
 
-:: ADA-17B {"position":"800,1300","size":"100,100"}
-<<set $passage to "ADA-17B">><<set $nextpassage to "ADA-18">><<audio ":all" stop>><<audio "ADA_17B" play>>
+:: ADA-17B {"position":"2000,700","size":"100,100"}
+<<set $passage to "ADA-17B">><<set $nextpassage to "ADA-18">><<audio ":all" stop>><<audio "ADA_17C_17B" play>>
 
 <main>Make sure you get the adults to play this too. They’ll be really bad at it and fall over and we can all laugh at them. Ha!
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
@@ -897,7 +894,8 @@ Play as many round as you fancy and when you’re ready to go, just let me know.
 </main>
 <<include "footer">>
 
-:: ADA-17A {"position":"800,1300","size":"100,100"}
+
+:: ADA-17A {"position":"2000,900","size":"100,100"}
 <<set $passage to "ADA-17A">><<set $nextpassage to "ADA-18">><<audio ":all" stop>><<audio "ADA_17A" play>>
 
 <main>You’ve got to play too. Don’t think
@@ -908,7 +906,8 @@ this is just for the children!
 </main>
 <<include "footer">>
 
-:: ADA-18 {"position":"1200,1300","size":"100,100"}
+
+:: ADA-18 {"position":"2200,800","size":"100,100"}
 <<set $passage to "ADA-18">><<set $myMap = setup.generateDirectionsMap(51.51475181321926, -0.08845052243756538,51.51565833716061, -0.08892530366773153)>><<set $nextpassage to "ADA-19">><<audio ":all" stop>><<audio "ADA_18" play>>
 
 <main>
@@ -942,9 +941,9 @@ You know what a telegraph is, don’t you? It’s some way that I can tell you s
 <<include "footer">>
 
 
-:: ADA-19 {"position":"1400,1300","size":"100,100"}
+:: ADA-19 {"position":"2400,800","size":"100,100"}
 <<set $passage to "ADA-19">><<set $nextpassage to "ADA-20">><<audio ":all" stop>>
-/* <<audio "ADA_19" play>> *//* TODO MISSING AUDIO */
+<<audio "ADA_19" play>>
 <<set $myMap2 = setup.generateDirectionsMap(51.51565833716061, -0.08892530366773153,51.515695197856026, -0.08941678253564316)>><main>
 Nicely done, my covey, nicely done.
 Now hop across Moorgate, watching out for carriages, to Great Bell Alley.
@@ -955,7 +954,7 @@ Now hop across Moorgate, watching out for carriages, to Great Bell Alley.
 <<include "footer">>
 
 
-:: ADA-20 {"position":"600,1700","size":"100,100"}
+:: ADA-20 {"position":"2575,800","size":"100,100"}
 <<set $passage to "ADA-20">><<set $myMap3 = setup.generateDirectionsMap(51.515695197856026, -0.08941678253564316, 51.515790604379575, -0.08991730389566155)>><<set $nextpassage to "ADA-21">><<audio ":all" stop>><<audio "ADA_20" play>>
 
 <main>
@@ -972,8 +971,8 @@ Now off you go and let me know when you’re at the end of the Alley at Coleman 
 <<include "footer">>
 
 
-:: ADA-21 {"position":"800,1700","size":"100,100"}
-<<set $passage to "ADA-21">><<set $myMap4 = setup.generateDirectionsMap(51.51577938009306, -0.08983162906827102,51.515782186164955, -0.090336659629731)>><<set $nextpassage to "ADA-22">><<audio ":all" stop>><<audio "ADA_21-001" play>>
+:: ADA-21 {"position":"2800,800","size":"100,100"}
+<<set $passage to "ADA-21">><<set $myMap4 = setup.generateDirectionsMap(51.51577938009306, -0.08983162906827102,51.515782186164955, -0.090336659629731)>><<set $nextpassage to "ADA-22">><<audio ":all" stop>><<audio "ADA_21" play>>
 <main>
 So you are! Let’s see.
 
@@ -988,10 +987,11 @@ Cross Coleman Street to Mason’s Avenue first though.
 <<include "footer">>
 
 
-:: ADA-22 {"position":"1000,1700","size":"100,100"}
-<<set $passage to "ADA-22">><<set $myMap5 = setup.generateDirectionsMap(51.515782186164955, -0.090336659629731,51.51579341045079, -0.09090030980993191)>><<set $nextpassage to "ADA-23">><<audio ":all" stop>><<audio "ADA_21-002" play>>
+:: ADA-22 {"position":"3000,800","size":"100,100"}
+<<set $passage to "ADA-22">><<set $myMap5 = setup.generateDirectionsMap(51.515782186164955, -0.090336659629731,51.51579341045079, -0.09090030980993191)>><<set $nextpassage to "ADA-23">><<audio ":all" stop>><<audio "ADA_22.1" play>>
 <main>
- Good. Alright then. Because children are much better at this game than grown-ups and we have smaller feet, I’ve chosen Mason’s Avenue for the children because it’s advanced level Pavement Crack Avoiding.
+<div id="mount"></div>
+ <<timed 0.5s>><<replace "#mount">>Good. Alright then. Because children are much better at this game than grown-ups and we have smaller feet, I’ve chosen Mason’s Avenue for the children because it’s advanced level Pavement Crack Avoiding.
 
 Same rules apply. Grown ups, do what you can to make the children step on the cracks. No pushing or tripping. That’s a foul and I’ll deduct 500 points for that.
 
@@ -999,6 +999,9 @@ Otherwise, any crack stepped on is minus 10 points.
 
 Good luck! 
 
+<<button "Next">>
+<<replace "#mount">>
+<<audio ":all" stop>><<audio "ADA_22.2" play>>
 There’s Old Dr Butler’s Head to the left. It’s the name of a pub, not his actual ‘ead!
 
 Dr Butler lived before my time even. I’m not sure you’d call him a “doctor” anymore. He had a lot of them “miracle cures”. One of them, the best one, I reckon, could only take place on London Bridge. The patient’d get there and Dr Butler would tell them exactly where to stand. When they were in position, he’d pull a lever and open a trapdoor underneath them and they’d fall straight down into the Thames!
@@ -1007,13 +1010,17 @@ Reckon whatever illness they had was the least of their worries after that!
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 <<timed 5s>>$myMap5<</timed>>
 <<timed 15s>><<button "At the end of Mason’s Avenue">><<set $prevpass to $passage>><<goto "ADA-23">><</button>><</timed>>
+<</replace>>
+<</button>><</replace>><</timed>>
+
+
   
 </main>
 <<include "footer">>
 
 
-:: ADA-23 {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-23">><<set $nextpassage to "ADA-24">><<audio ":all" stop>><<audio "ADA_22" play>>
+:: ADA-23 {"position":"3200,800","size":"100,100"}
+<<set $passage to "ADA-23">><<set $nextpassage to "ADA-24">><<audio ":all" stop>><<audio "ADA_23" play>>
 <main>
 I knew that! Let me just work out those scores...
 
@@ -1036,7 +1043,7 @@ No pressure. I’ll give a moment.
 
 /* Enough time for some of the adults to try to leap over the bollards. */
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 10s>><<set $prevpass to $passage>>
+<<timed 15s>><<set $prevpass to $passage>>
 <<switch $age>>
 <<case "child">>
   <<goto "ADA-24C">>
@@ -1049,8 +1056,7 @@ No pressure. I’ll give a moment.
 <<include "footer">>
 
 
-
-:: ADA-24C {"position":"1200,1700","size":"100,100"}
+:: ADA-24C {"position":"3400,900","size":"100,100"}
 <<set $passage to "ADA-24C">><<set $nextpassage to "ADA-26">><<audio ":all" stop>>
 /* <<audio "ADA_24C" play>> */
 /* TODO AUDIO MISSING */
@@ -1061,35 +1067,38 @@ When I'm done scoring the grown ups,
 </main>
 <<include "footer">>
 
-:: ADA-24B {"position":"1200,1700","size":"100,100"}
+
+:: ADA-24B {"position":"3400,700","size":"100,100"}
 <<set $passage to "ADA-24B">><<set $nextpassage to $passage>><<audio ":all" stop>><<audio "ADA_24A_24B" play>>
 <main>
 Now, be honest. Did you leap over one?
-<<button "Yes, I did">><<goto "ADA-25B-Y">><</button>>
-<<button "No, I failed">><<goto "ADA-25B-N">><</button>>
+
+<div class="menu-wrapper">
+  <<button "Yes, I did">><<goto "ADA-25B-Y">><</button>>
+  <<button "No, I failed">><<goto "ADA-25B-N">><</button>>
+</div>
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 8s>><<set $prevpass to $passage>>
-  <<goto "ADA-24C">>
+
+</main>
+<<include "footer">>
+
+
+:: ADA-25B-Y {"position":"3600,700","size":"100,100"}
+<<set $passage to "ADA-25B-Y">><<set $nextpassage to "ADA-26">><<audio ":all" stop>><<audio "ADA_25A_25B_Y" play>>
+<main>
+Nice work! I believe you, I’m a trusting fella. You can get an extra 10 points. How about that? Every point counts.
+
+/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<<timed 8s>><<button "Lets move on">><<set $prevpass to $passage>>
+  <<goto "ADA-26">><</button>>
 <</timed>>
   
 </main>
 <<include "footer">>
 
-:: ADA-25B-Y {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-25B-Y">><<set $nextpassage to "ADA-26">><<audio ":all" stop>><<audio "ADA_25B-Y" play>>
-<main>
-Nice work! I believe you, I’m a trusting fella. You can get an extra 10 points. How about that? Every point counts.
-<<timed 5s>><<set $prevpass to $passage>><<goto "ADA-26">><</timed>>
 
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-
-  
-</main>
-<<include "footer">>
-
-:: ADA-25B-N {"position":"1200,1700","size":"100,100"}
-<<set $passage to "ADA-25B-N">><<set $nextpassage to "ADA-26">><<audio ":all" stop>><<audio "ADA_25B-N" play>>
-<main>
+:: ADA-25B-N {"position":"3600,900","size":"100,100"}
+<<set $passage to "ADA-25B-N">><<set $nextpassage to "ADA-26">><<audio ":all" stop>><<audio "ADA_25A_25B_N" play>>
 <main>
 Yeah, it’s not easy. Maybe if you have some really tall and athletic friends, you can bring them and get them to do it!
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
@@ -1100,7 +1109,8 @@ Yeah, it’s not easy. Maybe if you have some really tall and athletic friends, 
 </main>
 <<include "footer">>
 
-:: ADA-26{"position":"1200,1700","size":"100,100"}
+
+:: ADA-26 {"position":"3800,800","size":"100,100"}
 <<set $passage to "ADA-26">><<set $myMap6 = setup.generateDirectionsMap(51.516531611170905, -0.09236516569324225,51.51637005442947, -0.09346830016698235)>><<set $nextpassage to "ADA-27">><<audio ":all" stop>><<audio "ADA_26" play>>
 <main>
 Go towards that fountain to Aldermanbury.
@@ -1121,7 +1131,8 @@ Now, cross Wood Street to St Albans Court.
 </main>
 <<include "footer">>
 
-:: ADA-27{"position":"1200,1700","size":"100,100"}
+
+:: ADA-27 {"position":"4000,825","size":"100,100"}
 <<set $passage to "ADA-27">><<set $nextpassage to "ADA-28">><<audio ":all" stop>><<audio "ADA_27" play>>
 <main>
 Narrow ol’ alley this one. Before I was reformed an’ all, it’d be perfect for stealing some ol’ gentleman’s purse, I reckon.
@@ -1137,7 +1148,8 @@ See it?
 </main>
 <<include "footer">>
 
-:: ADA-28{"position":"1200,1700","size":"100,100"}
+
+:: ADA-28 {"position":"4200,800","size":"100,100"}
 <<set $passage to "ADA-28">><<set $nextpassage to "ADA-29">><<audio ":all" stop>><<audio "ADA_28" play>>
 
 <main>Good. Now go and stand on the green. Get into a circle with everyone what wants to play and two of you in the middle. Best to play with ten or more of you but if there are any more than 5, you can start it up and hope others join in. We make do.
@@ -1149,7 +1161,8 @@ Let me know when you’re there. We need two players of more or less the same he
 </main>
 <<include "footer">>
 
-:: ADA-29{"position":"1200,1700","size":"100,100"}
+
+:: ADA-29 {"position":"4400,800","size":"100,100"}
 <<set $passage to "ADA-29">><<set $nextpassage to "ADA-30">><<audio ":all" stop>><<audio "ADA_29" play>>
 <main>
 Good. I’mma play you a tune that you might recognize.
@@ -1176,11 +1189,12 @@ Right, this time sing along. To do that, you’ll all need to count down and sta
 </main>
 <<include "footer">>
 
-:: ADA-30 {"position":"1200,1700","size":"100,100"}
+
+:: ADA-30 {"position":"4600,800","size":"100,100"}
 <<set $passage to "ADA-30">><<set $seconds to 5>><<set $nextpassage to "ADA-31">><<audio ":all" stop>><<audio "ADA_30" play>>
 <main><span id="countdown" class="countdown">5</span>
 <<timed 1s>><<silently>><<repeat 1s>><<set $seconds to $seconds - 1>><<if $seconds gt 0>><<replace "#countdown">>$seconds<</replace>>
-  		<<else>> <<replace "#countdown">>Times up!<</replace>>
+  		<<else>> <<replace "#countdown">>Sing!<</replace>>
   			<<stop>>	<</if>><</repeat>>
   <</silently>>
 <</timed>>
@@ -1213,7 +1227,8 @@ Play as many rounds as you want. I can play the song again if you need it. Let m
 </main>
 <<include "footer">>
 
-:: ADA-31 {"position":"1200,1700","size":"100,100"}
+
+:: ADA-31 {"position":"4800,800","size":"100,100"}
 <<set $passage to "ADA-31">><<set $nextpassage to $passage>><<audio ":all" stop>>
 <main>
 
@@ -1227,12 +1242,13 @@ Play as many rounds as you want. I can play the song again if you need it. Let m
 </main>
 <<include "footer">>
 
-:: ADA-32 {"position":"1200,1700","size":"100,100"}
+
+:: ADA-32 {"position":"5000,800","size":"100,100"}
 <<set $passage to "ADA-32">><<set $seconds to 5>><<set $nextpassage to "ADA-33">><<audio ":all" stop>><<audio "ADA_32" play>>
 <main>
 <span id="countdown" class="countdown">5</span>
 <<timed 1s>><<silently>><<repeat 1s>><<set $seconds to $seconds - 1>><<if $seconds gt 0>><<replace "#countdown">>$seconds<</replace>>
-  		<<else>> <<replace "#countdown">>Times up!<</replace>>
+  		<<else>> <<replace "#countdown">>Sing!<</replace>>
   			<<stop>>	<</if>><</repeat>>
   <</silently>>
 <</timed>>
@@ -1252,7 +1268,8 @@ Here comes a candle to light you to bed, And here comes a chopper to chop off yo
 </main>
 <<include "footer">>
 
-:: ADA-33 {"position":"1200,1700","size":"100,100"}
+
+:: ADA-33 {"position":"5200,800","size":"100,100"}
 <<set $passage to "ADA-33">><<set $nextpassage to "end">><<audio ":all" stop>><<audio "ADA_33" play>>
 <main>
 Right then. As you know there were 16 million points up for grabs in that one. So everything to play for.
@@ -1271,9 +1288,8 @@ Oh and if anyone does want one of them watches, come see me. No questions asked 
 <<include "footer">>
 
 
-
-:: end {"position":"100,700","size":"100,100"}
-<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap(51.516580852032476, -0.09431729185196457,51.51685580782133, -0.09511198679939459)>>
+:: end {"position":"100,675","size":"100,100"}
+<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap(51.516580852032476, -0.09431729185196457,51.51685580782133, -0.09511198679939459)>><<audio ":all" stop>>
 <main>
 
 End location
@@ -1281,5 +1297,12 @@ End location
 $endMap
   
 </main>
-<<include "footer">>
+<<include "footerend">>
+
+
+:: footerend {"position":"225,350","size":"100,100"}
+<footer>
+<div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div>
+</footer>
+
 

@@ -278,7 +278,7 @@ body{
   color:#fff;
   /* color:#000; */
   overflow:scroll;
-  background: #1c8f93;
+  background: #188081;
   /* padding: 1.5rem */
   display:flex;
   flex-direction: column
@@ -308,7 +308,7 @@ align-items: end;
   bottom: 0;
   padding: 2rem;
   width: 100%;
-background: #1c8f93;
+background: #188081;
 }
 
 nav{
@@ -573,7 +573,9 @@ You have two options:
 &lt;&lt;include &quot;footer&quot;&gt;&gt;
 &lt;/main&gt;</tw-passagedata><tw-passagedata pid="8" name="ADA-05" tags="" position="516,160" size="200,100">&lt;&lt;set $passage to &quot;ADA-05&quot;&gt;&gt;&lt;&lt;set $nextpassage to $passage&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;ADA_05&quot; play&gt;&gt;
 &lt;main&gt;
-&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;&lt;&lt;timed 1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;[connecting...]&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+    &lt;&lt;timed 5s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 60ms&gt;&gt;[connecting...]&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
 &lt;&lt;timed 8s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Hello my covey! &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
 &lt;&lt;timed 12s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;Oi, fam! Over here!&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;  
 &lt;&lt;timed 19s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;My eyes, you&#39;re all over the place, you must be green. You&#39;re facing that Royal Exchange, right? It&#39;s closed today, which is lucky because I&#39;m banned i

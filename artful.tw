@@ -193,7 +193,7 @@ body{
   color:#fff;
   /* color:#000; */
   overflow:scroll;
-  background: #1c8f93;
+  background: #188081;
   /* padding: 1.5rem */
   display:flex;
   flex-direction: column
@@ -223,7 +223,7 @@ align-items: end;
   bottom: 0;
   padding: 2rem;
   width: 100%;
-background: #1c8f93;
+background: #188081;
 }
 
 nav{
@@ -523,7 +523,9 @@ You have two options:
 :: ADA-05 {"position":"516,160","size":"200,100"}
 <<set $passage to "ADA-05">><<set $nextpassage to $passage>><<audio ":all" stop>><<audio "ADA_05" play>>
 <main>
-<div id="mount"></div>
+<div id="mount"></div><<timed 1s>><<replace "#mount">><<type 60ms>>[connecting...]<</type>><</replace>><</timed>>
+    <<timed 5s>><<replace "#mount">><<type 60ms>>[connecting...]<</type>><</replace>><</timed>>
+
 <<timed 8s>><<replace "#mount">><<type 50ms>>Hello my covey! <</type>><</replace>><</timed>> 
 <<timed 12s>><<replace "#mount">><<type 50ms>>Oi, fam! Over here!<</type>><</replace>><</timed>>  
 <<timed 19s>><<replace "#mount">><<type 50ms>>My eyes, you're all over the place, you must be green. You're facing that Royal Exchange, right? It's closed today, which is lucky because I'm banned i

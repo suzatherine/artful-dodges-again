@@ -310,6 +310,43 @@ width: 100%;
 	border:0
 }
 }
+
+/* LANDING  */
+main.landing{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 95vh
+}
+
+.landing > h2 {
+  font-family: "Big John";
+  text-align:center;
+  margin-block-end: 0;
+}
+
+.landing > a {
+  display:flex;    
+  justify-content: center;
+  
+}
+
+.landing > a:active{
+  background-color: transparent;
+
+}
+
+.landing > a > img {
+  width: 80%;
+  max-width: 300px;
+}
+
+/* END */
+main.end > h2{
+  margin-block-end: 0;
+}
+
 /* KEY  */
 .key-wrapper{
   width:fit-content;
@@ -583,8 +620,11 @@ return iFrame
 <div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div>
 </footer>
 
-:: footerkey
-<footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "ADA-35">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "ADA-36">><</button>></div></div></footer>
+
+:: footerkey {"position":"225,225","size":"100,100"}
+<footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "Show map">><<set $prevpass to $passage>><<goto "end">><</button>></div></div>
+<div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "ADA-35">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "ADA-36">><</button>></div></div></footer>
+
 
 :: footerlost {"position":"100,625","size":"100,100"}
 <footer><div class="nav-wrapper "><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div></footer>
@@ -592,10 +632,9 @@ return iFrame
 
 :: landing {"position":"300,100","size":"100,100"}
 <<set $passage to "landing">><<audio ":all" stop>>
-
-<main>
+<main class="landing">
 <h2>The Artful Dodges Again</h2>
-
+ <<link "<img src='./assets/dragon2.gif'>">><<set $prevpass to $passage>><<goto "ADA-01">><</link>>
 <<button "begin">><<set $prevpass to $passage>><<goto "ADA-01">><</button>>
 </main>
 
@@ -658,7 +697,7 @@ And then tell me which one you are.<</type>><</replace>><</timed>>
 <<include "footer">>
 
 
-:: ADA-06C {"position":"1050,325","size":"200,100"}
+:: ADA-06C {"position":"1075,325","size":"200,100"}
 <<set $passage to "ADA-06C">><<set $nextpassage to "ADA-07">><<audio ":all" stop>><<audio "ADA_06C" play>>
 <main>
 <div id="mount"></div>
@@ -679,7 +718,7 @@ And then tell me which one you are.<</type>><</replace>><</timed>>
 <<include "footer">>
 
 
-:: ADA-06B {"position":"825,325","size":"200,100"}
+:: ADA-06B {"position":"850,325","size":"200,100"}
 <<set $passage to "ADA-06C">><<set $nextpassage to "ADA-07">><<audio ":all" stop>><<audio "ADA_06B" play>>
 <main>
 <div id="mount"></div>
@@ -689,10 +728,11 @@ And then tell me which one you are.<</type>><</replace>><</timed>>
 <<include "footer">>
 
 
-:: ADA-07 {"position":"1275,325","size":"200,100"}
+:: ADA-07 {"position":"1325,325","size":"200,100"}
 <<set $passage to "ADA-07">><<set $nextpassage to "ADA-08">><<audio ":all" stop>><<audio "ADA_07" play>>
-
+<<set $myMap10 = setup.generateDirectionsMap(51.513548, -0.088065,51.513682, -0.087952)>>
 <main>
+$myMap10
 <div id="mount"></div>
 <<timed 0s>><<replace "#mount">><<type 45ms>>Now we've got that out of the way let's get going.<</type>><</replace>><</timed>>   
 <<timed 3.5s>><<replace "#mount">><<type 50ms>>Cross over first to where I am. Make sure you're standing under the camera so I can talk to you. 
@@ -703,7 +743,7 @@ I can't risk getting seen by those things. Not when there's a price on my head, 
 <<include "footer">>
 
 
-:: ADA-08 {"position":"1525,350","size":"200,100"}
+:: ADA-08 {"position":"1550,325","size":"200,100"}
 <<set $passage to "ADA-08">><<set $nextpassage to "ADA-09">><<audio ":all" stop>><<audio "ADA_08" play>>
 <main>
 <div id="mount"></div>
@@ -740,7 +780,7 @@ Now I'm not saying that's not true, if you are being all literal!<</type>><</rep
 <<include "footer">>
 
 
-:: ADA-09 {"position":"1750,325","size":"200,100"}
+:: ADA-09 {"position":"1775,325","size":"200,100"}
 <<set $passage to "ADA-09">><<set $nextpassage to "ADA-10B">><<audio ":all" stop>><<audio "ADA_09" play>>
 <main>
 <div id="mount"></div>
@@ -760,7 +800,7 @@ Now I'm not saying that's not true, if you are being all literal!<</type>><</rep
 <<include "footer">>
 
 
-:: ADA-10A {"position":"360,506","size":"200,100"}
+:: ADA-10A {"position":"350,500","size":"200,100"}
 <<set $passage to "ADA-10A">><<set $myMap8 = setup.generateDirectionsMap(51.513691, -0.087918,51.514588, -0.087821)>><<set $nextpassage to "ADA-11A">><<audio ":all" stop>><<audio "ADA_10A" play>>
 <main>
 $myMap8
@@ -787,9 +827,9 @@ Keep going and don't worry about your little ones. Not like me to lead them astr
 
 
 :: ADA-11A {"position":"593,526","size":"200,100"}
-<<set $passage to "ADA-11A">><<set $myMap9 = setup.generateDirectionsMap(51.514588, -0.087821,51.514693, -0.088435)>><<set $nextpassage to "ADA-15">><<audio ":all" stop>><<audio "ADA_11A" play>>
+<<set $passage to "ADA-11A">><<set $myMap8 = setup.generateDirectionsMap(51.513691, -0.087918,51.514588, -0.087821)>><<set $nextpassage to "ADA-15">><<audio ":all" stop>><<audio "ADA_11A" play>>
 <main>
-$myMap9
+$myMap8
 <div id="mount"></div>
   
 <<timed 0s>><<replace "#mount">><<type 55ms>>You've done well so far! Reckon you've worked out what the game is by now? 
@@ -806,9 +846,10 @@ Let them know you know they're copying you! Have some fun with it, go on!<</type
 
 
 :: ADA-10C {"position":"353,766","size":"200,100"}
-<<set $passage to "ADA-10C">><<set $nextpassage to "ADA-11C">><<audio ":all" stop>><<audio "ADA_10C" play>>
+<<set $passage to "ADA-10C">><<set $nextpassage to "ADA-11C">><<set $myMap8 = setup.generateDirectionsMap(51.513691, -0.087918,51.514588, -0.087821)>><<audio ":all" stop>><<audio "ADA_10C" play>>
 
 <main>
+$myMap8
 <div id="mount"></div>
   
 <<timed 0s>><<replace "#mount">><<type 50ms>>These grownups are gonna start walking, just walking without a clue what's going on? What we're going to do is imitate them.<</type>><</replace>><</timed>>    
@@ -828,8 +869,9 @@ Make sure they agree though. People don't always like it when they see someone c
 
 
 :: ADA-11C {"position":"603,773","size":"200,100"}
-<<set $passage to "ADA-11C">><<set $nextpassage to "ADA-15">><<audio ":all" stop>><<audio "ADA_11C" play>>
+<<set $passage to "ADA-11C">><<set $myMap9 = setup.generateDirectionsMap(51.514588, -0.087821,51.514693, -0.088435)>><<set $nextpassage to "ADA-15">><<audio ":all" stop>><<audio "ADA_11C" play>>
 <main>
+$myMap9
 <div id="mount"></div>
 <<timed 0s>><<replace "#mount">><<type 50ms>>Nicely done, my covey, nicely done. Now they're in on the game, so they're going to start making it harder for you! 
 
@@ -845,8 +887,9 @@ Have fun, and let me know when you get there.
 
 
 :: ADA-10B {"position":"350,650","size":"200,100"}
-<<set $passage to "ADA-10B">><<set $nextpassage to "ADA-11B">><<audio ":all" stop>><<audio "ADA_10B" play>>
+<<set $passage to "ADA-10B">><<set $myMap8 = setup.generateDirectionsMap(51.513691, -0.087918,51.514588, -0.087821)>><<set $nextpassage to "ADA-11B">><<audio ":all" stop>><<audio "ADA_10B" play>>
 <main>
+$myMap8
 <div id="mount"></div>
 <<timed 0s>><<replace "#mount">><<type 50ms>>For this game all the grownups have to do is walk. We'll go round the corner here on Bartholomew Lane, all the way down to the corner with Loftbury.<</type>><</replace>><</timed>>    
 <<timed 10s>><<replace "#mount">><<type 50ms>>But before you start walking, pass me over to the children, because I have a message for them.
@@ -858,8 +901,9 @@ Have fun, and let me know when you get there.
 
 
 :: ADA-11B {"position":"586,646","size":"200,100"}
-<<set $passage to "ADA-11B">><<set $nextpassage to "ADA-12B">><<audio ":all" stop>><<audio "ADA_11B" play>>
+<<set $passage to "ADA-11B">><<set $myMap8 = setup.generateDirectionsMap(51.513691, -0.087918,51.514588, -0.087821)>><<set $nextpassage to "ADA-12B">><<audio ":all" stop>><<audio "ADA_11B" play>>
 <main>
+$myMap8
 <div id="mount"></div>
   
 <<timed 0s>><<replace "#mount">><<type 50ms>>Make sure they can't see or hear me. 
@@ -885,7 +929,7 @@ The grown ups should stop at the corner of Loftbury. If they don't shout at them
 
 
 :: ADA-12B {"position":"810,660","size":"200,100"}
-<<set $passage to "ADA-12B">><<set $nextpassage to "ADA-13B">><<audio ":all" stop>><<audio "ADA_12B" play>>
+<<set $passage to "ADA-12B">><<audio ":all" stop>><<set $nextpassage to "ADA-13B">><<audio "ADA_12B" play>>
 <main>
 <div id="mount"></div>
 <<type 70ms >>Okay, you can give the screen back to the grown up now.<</type>>
@@ -895,8 +939,9 @@ The grown ups should stop at the corner of Loftbury. If they don't shout at them
 
 
 :: ADA-13B {"position":"1033,616","size":"200,200"}
-<<set $passage to "ADA-13B">><<set $nextpassage to "ADA-14B">><<audio ":all" stop>><<audio "ADA_13B" play>>
+<<set $passage to "ADA-13B">><<set $nextpassage to "ADA-14B">><<set $myMap9 = setup.generateDirectionsMap(51.514588, -0.087821,51.514693, -0.088435)>><<audio ":all" stop>><<audio "ADA_13B" play>>
 <main>
+$myMap9
 <div id="mount"></div>
   
 <<timed 1s>><<replace "#mount">><<type 50ms>>Hello again, good efforts so far. Reckon you've worked out what the game is by now?<</type>><</replace>><</timed>>    
@@ -910,8 +955,9 @@ The grown ups should stop at the corner of Loftbury. If they don't shout at them
 
 
 :: ADA-14B {"position":"1250,625","size":"200,200"}
-<<set $passage to "ADA-14B">><<set $nextpassage to "ADA-15">><<audio ":all" stop>><<audio "ADA_14B" play>>
+<<set $passage to "ADA-14B">><<set $nextpassage to "ADA-15">><<set $nextpassage to "ADA-15">><<set $myMap9 = setup.generateDirectionsMap(51.514588, -0.087821,51.514693, -0.088435)>><<audio ":all" stop>><<audio "ADA_14B" play>>
 <main>
+$myMap9
 <div id="mount"></div>
   
 <<timed 0s>><<replace "#mount">><<type 50ms>>They're in on the game now, so they might try to make it harder for you, but don't worry I know you can do it!<</type>><</replace>><</timed>>    
@@ -948,9 +994,7 @@ Are we ready for the next game?
 
 :: ADA-16 {"position":"1700,725","size":"200,200"}
 <<set $passage to "ADA-16">><<set $nextpassage to "ADA-17B">><<set $myMap10 = setup.generateDirectionsMap(51.514693, -0.088435,51.515485, -0.088030)>><<audio ":all" stop>><<audio "ADA_16" play>>
-
-<main>
-$myMap10
+<main>$myMap10
 <div id="mount"></div>
   
 <<timed 0s>><<replace "#mount">><<type 60ms>>Well, let's not dawdle, then! Fix Up! Look Sharp! 
@@ -1123,7 +1167,7 @@ Otherwise, any crack stepped on is minus 10 points. Good luck.
 
 
 :: ADA-23 {"position":"3100,800","size":"200,200"}
-<<set $passage to "ADA-23">><<set $nextpassage to "ADA-24B">><<audio ":all" stop>><<audio "ADA_23" play>>
+<<set $passage to "ADA-23">><<set $nextpassage to "ADA-24B">><<set $myMap12 = setup.generateDirectionsMap(51.51578935976708, -0.09070683228623722,51.516189, -0.091298)>><<audio ":all" stop>><<audio "ADA_23" play>>
 <main>
 <div id="mount"></div>
   
@@ -1136,8 +1180,12 @@ There's the Guild Hall. Now, if you haven't been, you should take a look around 
 <<timed 34s>><<replace "#mount">><<type 50ms>>There was an incident that involved a misunderstanding where I was innocently waiting to borrow an item, but my motives were misinterpreted, know what I mean.<</type>><</replace>><</timed>>    
 <<timed 45s>><<replace "#mount">><<type 50ms>>Anyway, I wouldn't say I'm banned, exactly, just that it's best I stay away from it. 
 
-So take a right here.<</type>><</replace>><</timed>>   
-<<timed 68s>><<replace "#mount">><<type 60ms>>Now, adults, I don't want to be encouraging you to try and leap over those bollards, but if any of you could do it, I bet your children would be impressed. 
+So take a right here.<</type>>
+$myMap12<</replace>><</timed>>   
+<<timed 68s>><<replace "#mount">>
+$myMap12
+<<type 60ms>>
+Now, adults, I don't want to be encouraging you to try and leap over those bollards, but if any of you could do it, I bet your children would be impressed. 
 
 No pressure. I'll give you a moment.<</type>><</replace>><</timed>>  
 
@@ -1167,7 +1215,7 @@ No pressure. I'll give you a moment.<</type>><</replace>><</timed>>
 
 
 :: ADA-24B {"position":"3300,675","size":"200,200"}
-<<set $passage to "ADA-24B">><<set $nextpassage to "ADA-24BY">><<audio ":all" stop>><<audio "ADA_24A_24B" play>>
+<<set $passage to "ADA-24B">><<set $nextpassage to "ADA-25B-Y">><<audio ":all" stop>><<audio "ADA_24A_24B" play>>
 <main>
 <div id="mount"></div>
 <<type 70ms>> Now, be honest. Did you leap over one?<</type>>
@@ -1389,24 +1437,26 @@ It can get all clean and safe and expensive.<</type>><</replace>><</timed>>
 <<timed 43s>><<replace "#mount">><<type 50ms>>But it's still my town. 
 
 And nothing's ever going to change that. Not ever.<</type>><</replace>><</timed>>    
-<<timed 50s>><<replace "#mount">><<type 50ms>>Oh, and if anyone does want one of them watches, come and see me, no questions asked innnit.<</type>><</replace>><</timed>> 
-<<timed 57s>><<button "End">><<goto "end">><</button>><</timed>>
+<<timed 50s>><<replace "#mount">><<type 50ms>>Oh, and if anyone does want one of them watches, come and see me, no questions asked innnit.<</type>>
+<<button "Thanks Jack!">><<goto "ADA-34">><</button>>
+<</replace>><</timed>> 
+
 </main>
 <<include "footer">>
 
 
 :: end {"position":"100,675","size":"100,100"}
-<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap(51.516771577938215, -0.09517276626248929,51.516771577938215, -0.09517276626248929)>><<audio ":all" stop>>
-<main>
+<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap(51.513539226642976, -0.08798158773224084,51.516771577938215, -0.09517276626248929)>><<audio ":all" stop>>
+<main class="end"><h2>End location</h2>Pewterer's Hall
+Oat Lane
+Barbican, EC2V 7DE
 
-End location
+<<button "Next">><<set $prevpass to $passage>><<goto "ADA-35">><</button>>
 
 $endMap
 
-<<button "Next">><<set $prevpass to $passage>><<goto "ADA-35">><</button>>
-  
 </main>
-<<include "footerend">>
+<<include "footerkey">>
 
 
 :: ADA-18.2 {"position":"2125,525","size":"200,200"}

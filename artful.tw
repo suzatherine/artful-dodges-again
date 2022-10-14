@@ -1446,7 +1446,7 @@ And nothing's ever going to change that. Not ever.<</type>><</replace>><</timed>
 
 
 :: end {"position":"100,675","size":"100,100"}
-<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap(51.513539226642976, -0.08798158773224084,51.516771577938215, -0.09517276626248929)>><<audio ":all" stop>>
+<<set $passage to "end">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap(51.513539226642976, -0.08798158773224084,51.516771577938215, -0.09517276626248929)>><<audio ":all" stop>>
 <main class="end"><h2>End location</h2>Pewterer's Hall
 Oat Lane
 Barbican, EC2V 7DE

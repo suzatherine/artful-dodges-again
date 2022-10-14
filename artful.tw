@@ -637,16 +637,16 @@ I don't like to use that word though. <</type>><</replace>><</timed>>
 
 I don't like being told I can't do things.<</type>><</replace>><</timed>>    
 <<timed 70s>><<replace "#mount">><<type 50ms>>So while I may be a child, technically speaking, that is, I'm also my own man. Best of both worlds, you might say. So what are you?<</type>><</replace>><</timed>>    /*AUDIO HERE ISN'T Q EDITED RIGHT, there's a line repeat*/
-<<timed 84s>><<replace "#mount">><<type 55ms>>And before you answer this adventures for grownups and children, so if you're all grown ups, choose the youngest ones to be the children. 
+<<timed 82s>><<replace "#mount">><<type 40ms>>And before you answer this adventures for grownups and children, so if you're all grown ups, choose the youngest ones to be the children. 
 
 And if you're all children, the biggest can pretend to be the grown ups for the day.<</type>><</replace>><</timed>>    
-<<timed 96s>><<replace "#mount">><<type 50ms>>Either way, we want an even split. 
+<<timed 96s>><<replace "#mount">><<type 40ms>>Either way, we want an even split. 
 
 Work that out amongst yourselves if you must. 
 
 And then tell me which one you are.<</type>><</replace>><</timed>> 
 
-<<timed 107s>><<replace "#mount">>
+<<timed 110s>><<replace "#mount">>
 <div class="menu-wrapper">
   <<button "A child">><<set $prevpass to $passage>><<set $age to "child">><<goto "ADA-06C">><</button>>
   <<button "A grown up">><<set $prevpass to $passage>><<set $age to "adult">><<goto "ADA-06A">><</button>>
@@ -1410,7 +1410,7 @@ $endMap
 
 
 :: ADA-18.2 {"position":"2125,525","size":"200,200"}
-<<set $passage to "ADA-18.2">><<set $nextpassage to "ADA-19">><<audio ":all" stop>><<audio "ADA_18.2" play>>
+<<set $passage to "ADA-18.2">><<set $nextpassage to "ADA-19">><<audio ":all" stop>><<audio "ADA_18.5" play>>
 <main>
 <div id="mount"></div>
   
@@ -1493,7 +1493,7 @@ I’m going to connect you with one of my favorite Londoners: Jack, in the year 
 
 He’ll guide you into an excellent adventure, I’m sure.
 
-<<timed 8s>><<set $prevpass to $passage>><<goto "ADA-05">><</timed>>
+<<timed 18s>><<set $prevpass to $passage>><<goto "ADA-05">><</timed>>
 
 </main>
 <<include "footer">>

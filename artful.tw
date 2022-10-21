@@ -539,7 +539,7 @@ iFrame.classList.add("map")
 iFrame.setAttribute("loading", "lazy")
 iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
 // iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${latorg},${longorg}&zoom=18&origin=${latorg},${longorg}&destination=${latdest},${longdest}&mode=walking`)
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyCSbMwR1cUMfnIAh0Pxi0F1N16kvDGZXGU&center=${latorg},${longorg}&zoom=18&origin=${latorg},${longorg}&destination=${latdest},${longdest}&mode=walking`)
 const mount = document.getElementById("mapMount")
 // console.log(iFrame)
 return iFrame
@@ -548,52 +548,52 @@ return iFrame
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "ADA_01" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_01.mp3">>
-<<cacheaudio "ADA_04" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA-04.mp3">>
-<<cacheaudio "ADA_05" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_05.mp3">>
-<<cacheaudio "ADA_06A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_06A.mp3">>
-<<cacheaudio "ADA_06B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_06B.mp3">>
-<<cacheaudio "ADA_06C" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_06C.mp3">>
-<<cacheaudio "ADA_07" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_07.mp3">>
-<<cacheaudio "ADA_08" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_08.mp3">>
-<<cacheaudio "ADA_09" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_09.mp3">>
-<<cacheaudio "ADA_10A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_10A.mp3">>
-<<cacheaudio "ADA_10B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_10B.mp3">>
-<<cacheaudio "ADA_10C" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_10C.mp3">>
-<<cacheaudio "ADA_11A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_11A.mp3">>
-<<cacheaudio "ADA_11B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_11B.mp3">>
-<<cacheaudio "ADA_11C" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_11C.mp3">>
-<<cacheaudio "ADA_12B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_12B.mp3">>
-<<cacheaudio "ADA_13B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_13B.mp3">>
-<<cacheaudio "ADA_14B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_14B.mp3">>
-<<cacheaudio "ADA_15" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_15.mp3">>
-<<cacheaudio "ADA_16" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_16.mp3">>
-<<cacheaudio "ADA_17A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_17A.mp3">>
-<<cacheaudio "ADA_17C_17B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_17C_17B.mp3">>
-<<cacheaudio "ADA_18" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_18.mp3">>
-<<cacheaudio "ADA_18.5" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_18.5.mp3">>
-<<cacheaudio "ADA_19" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_19.mp3">>
-<<cacheaudio "ADA_20" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_20.mp3">>
-<<cacheaudio "ADA_21" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_21.mp3">>
-<<cacheaudio "ADA_22.1" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_22.1.mp3">>
-<<cacheaudio "ADA_22.2" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_22.2.mp3">>
+<<cacheaudio "ADA_01" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_01.mp3">>
+<<cacheaudio "ADA_04" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA-04.mp3">>
+<<cacheaudio "ADA_05" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_05.mp3">>
+<<cacheaudio "ADA_06A" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_06A.mp3">>
+<<cacheaudio "ADA_06B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_06B.mp3">>
+<<cacheaudio "ADA_06C" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_06C.mp3">>
+<<cacheaudio "ADA_07" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_07.mp3">>
+<<cacheaudio "ADA_08" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_08.mp3">>
+<<cacheaudio "ADA_09" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_09.mp3">>
+<<cacheaudio "ADA_10A" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_10A.mp3">>
+<<cacheaudio "ADA_10B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_10B.mp3">>
+<<cacheaudio "ADA_10C" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_10C.mp3">>
+<<cacheaudio "ADA_11A" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11A.mp3">>
+<<cacheaudio "ADA_11B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11B.mp3">>
+<<cacheaudio "ADA_11C" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_11C.mp3">>
+<<cacheaudio "ADA_12B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_12B.mp3">>
+<<cacheaudio "ADA_13B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_13B.mp3">>
+<<cacheaudio "ADA_14B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_14B.mp3">>
+<<cacheaudio "ADA_15" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_15.mp3">>
+<<cacheaudio "ADA_16" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_16.mp3">>
+<<cacheaudio "ADA_17A" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_17A.mp3">>
+<<cacheaudio "ADA_17C_17B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_17C_17B.mp3">>
+<<cacheaudio "ADA_18" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_18.mp3">>
+<<cacheaudio "ADA_18.5" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_18.5.mp3">>
+<<cacheaudio "ADA_19" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_19.mp3">>
+<<cacheaudio "ADA_20" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_20.mp3">>
+<<cacheaudio "ADA_21" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_21.mp3">>
+<<cacheaudio "ADA_22.1" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_22.1.mp3">>
+<<cacheaudio "ADA_22.2" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_22.2.mp3">>
 
-<<cacheaudio "ADA_23" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_23.mp3">>
-<<cacheaudio "ADA_24A_24B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_24A_24B.mp3">>
-<<cacheaudio "ADA_25A_25B_N" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_25A_25B_N.mp3">>
-<<cacheaudio "ADA_25A_25B_Y" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_25A_25B_Y.mp3">>
-<<cacheaudio "ADA_26.5" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_26.5.mp3">>
-<<cacheaudio "ADA_26" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_26.mp3">>
-<<cacheaudio "ADA_27" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_27.mp3">>
-<<cacheaudio "ADA_28" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_28.mp3">>
-<<cacheaudio "ADA_29" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_29.mp3">>
-<<cacheaudio "ADA_30" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_30.mp3">>
-<<cacheaudio "ADA_32" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_32.mp3">>
-<<cacheaudio "ADA_33" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA_33.mp3">>
-<<cacheaudio "ADA_34" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/ADA-34.mp3">>
-<<cacheaudio "teams" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/XX_02_teams.mp3">>
-<<cacheaudio "owndevice" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/ADA/XX_02_owndevice.mp3">>
-<<cacheaudio "03" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/MC/XX_03.mp3">>
+<<cacheaudio "ADA_23" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_23.mp3">>
+<<cacheaudio "ADA_24A_24B" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_24A_24B.mp3">>
+<<cacheaudio "ADA_25A_25B_N" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_25A_25B_N.mp3">>
+<<cacheaudio "ADA_25A_25B_Y" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_25A_25B_Y.mp3">>
+<<cacheaudio "ADA_26.5" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_26.5.mp3">>
+<<cacheaudio "ADA_26" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_26.mp3">>
+<<cacheaudio "ADA_27" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_27.mp3">>
+<<cacheaudio "ADA_28" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_28.mp3">>
+<<cacheaudio "ADA_29" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_29.mp3">>
+<<cacheaudio "ADA_30" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_30.mp3">>
+<<cacheaudio "ADA_32" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_32.mp3">>
+<<cacheaudio "ADA_33" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA_33.mp3">>
+<<cacheaudio "ADA_34" "https://www.youhavefoundconey.net/tgksnd/ADA/ADA-34.mp3">>
+<<cacheaudio "teams" "https://www.youhavefoundconey.net/tgksnd/ADA/XX_02_teams.mp3">>
+<<cacheaudio "owndevice" "https://www.youhavefoundconey.net/tgksnd/ADA/XX_02_owndevice.mp3">>
+<<cacheaudio "03" "https://www.youhavefoundconey.net/tgksnd/MC/XX_03.mp3">>
 <<waitforaudio>>
 
 
@@ -1509,7 +1509,7 @@ Now, cross Wood Street to St Albans Court.<</type>>
 
 
 :: ADA-02A {"position":"550,25","size":"100,100"}
-<<set $passage to "ADA-02A">><<set $nextpassage to "UMC03">>
+<<set $passage to "ADA-02A">><<set $nextpassage to "ADA-03">>
 <<audio ":all" stop>><<audio "teams" play>>
 <main>
 <div id="mount"></div> 
@@ -1550,7 +1550,7 @@ He’ll guide you into an excellent adventure, I’m sure.
 
 
 :: ADA-03 {"position":"675,100","size":"100,100"}
-<<set $passage to "UMC03">><<set $nextpassage to "ADA-04">>
+<<set $passage to "ADA-03">><<set $nextpassage to "ADA-04">>
 <<audio ":all" stop>><<audio "03" play>>
 <main>
 <div id="mount"></div> 
